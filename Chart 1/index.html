@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chart 1 - Tourism is back, but unevenly</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body { margin: 0; padding: 32px; color: #222; font: 16px/1.5 Arial, sans-serif; }
+    main { max-width: 1050px; margin: auto; }
+    h1 { margin-bottom: 8px; font-size: 28px; }
+    p { max-width: 780px; }
+    #chart { width: 100%; }
+    .note { color: #555; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Tourism jobs are well above 2019, but international visitors are not</h1>
+    <p>Tourism jobs and Australians returning from overseas are above their 2019 levels, while overseas visitor arrivals remain below. Each point compares a quarter with the same quarter in 2019, so 100 means “the same as that quarter in 2019”.</p>
+    <div id="chart"></div>
+    <p class="note">Arrivals are calendar-quarter totals and jobs are quarter-ending estimates. The lines are aligned by quarter, but they measure different things. Source: Australian Bureau of Statistics, Overseas Arrivals and Departures and Tourism Labour Statistics.</p>
+  </main>
+  <script>
+    vegaEmbed("#chart", "chart1_index.vg.json", {actions: false, renderer: "svg"})
+      .catch(error => document.querySelector("#chart").textContent = error);
+  </script>
+</body>
+</html>
