@@ -4,7 +4,7 @@
   "width": 680,
   "height": 430,
   "padding": {"left": 12, "right": 190, "top": 10, "bottom": 8},
-  "data": {"url": "chart1_index.csv"},
+  "data": {"url": "data/chart1_index.csv"},
   "transform": [
     {
       "calculate": "toDate(substring(datum.quarter, 0, 4) + '-' + (substring(datum.quarter, 6, 7) === '1' ? '01' : substring(datum.quarter, 6, 7) === '2' ? '04' : substring(datum.quarter, 6, 7) === '3' ? '07' : '10') + '-01')",

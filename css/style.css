@@ -1,0 +1,8 @@
+body { margin: 0; padding: 32px; color: #222; font: 16px/1.5 Arial, sans-serif; }
+main { max-width: 1050px; margin: auto; }
+h1 { margin-bottom: 8px; font-size: 28px; }
+h2 { font-size: 20px; margin-bottom: 4px; }
+p { max-width: 780px; }
+section { margin-bottom: 40px; }
+.pure-g > div { padding: 0 12px; box-sizing: border-box; }
+.note { color: #555; font-size: 13px; }

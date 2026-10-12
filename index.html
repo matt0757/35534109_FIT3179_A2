@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tourism is back, but unevenly</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Tourism is back, but unevenly</h1>
+    </header>
+
+    <!-- Chart 1: full width -->
+    <section class="pure-g">
+      <div class="pure-u-1">
+        <h2>Tourism jobs are well above 2019, but international visitors are not</h2>
+        <p>Tourism jobs and Australians returning from overseas are above their 2019 levels, while overseas visitor arrivals remain below. Each point compares a quarter with the same quarter in 2019, so 100 means “the same as that quarter in 2019”.</p>
+        <div id="chart1"></div>
+        <p class="note">Arrivals are calendar-quarter totals and jobs are quarter-ending estimates. The lines are aligned by quarter, but they measure different things. Source: Australian Bureau of Statistics, Overseas Arrivals and Departures and Tourism Labour Statistics.</p>
+      </div>
+    </section>
+
+    <!-- Chart 2 and 3: two columns (example) -->
+    <section class="pure-g">
+      <div class="pure-u-1 pure-u-lg-1-2">
+        <h2>Chart 2 title</h2>
+        <div id="chart2"></div>
+      </div>
+      <div class="pure-u-1 pure-u-lg-1-2">
+        <h2>Chart 3 title</h2>
+        <div id="chart3"></div>
+      </div>
+    </section>
+
+    <footer class="note">
+      Source: Australian Bureau of Statistics.
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
