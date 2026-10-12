@@ -19,7 +19,7 @@
         "x": {"field": "start", "type": "temporal"},
         "x2": {"field": "end"},
         "y": {"value": 0},
-        "y2": {"value": 430}
+        "y2": {"value": {"expr": "height"}}
       }
     },
     {
@@ -30,8 +30,8 @@
       }
     },
     {
-      "data": {"values": [{"quarter_date": "2020-04-01", "label": "International borders\nlargely closed"}]},
-      "mark": {"type": "text", "fontSize": 12, "align": "center", "lineBreak": "\n", "color": "#555", "dx": 60, "dy": 0},
+      "data": {"values": [{"quarter_date": "2021-01-01", "label": "International borders\nlargely closed"}]},
+      "mark": {"type": "text", "fontSize": 12, "align": "center", "lineBreak": "\n", "color": "#555", "dx": 0, "dy": 0},
       "encoding": {
         "x": {"field": "quarter_date", "type": "temporal"},
         "y": {"value": 27},
@@ -54,7 +54,7 @@
           "field": "quarter_date",
           "type": "temporal",
           "title": "Year",
-          "scale": {"domain": ["2018-01-01", "2026-07-01"]},
+          "scale": {"type": "utc", "domain": ["2018-01-01", "2026-07-01"]},
           "axis": {"format": "%Y", "tickCount": 9, "labelAngle": 0, "grid": true}
         },
         "y": {
