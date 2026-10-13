@@ -1,0 +1,427 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Streamgraph: visitors in the 12 months to each month, by region of origin, Dec 2017 to Jun 2026.",
+ "width": "container",
+ "height": 420,
+ "padding": {
+  "left": 8,
+  "right": 8,
+  "top": 34,
+  "bottom": 8
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "layer": [
+  {
+   "data": {
+    "url": "data/chart5_stream.csv"
+   },
+   "mark": {
+    "type": "area",
+    "interpolate": "monotone",
+    "stroke": "#ffffff",
+    "strokeWidth": 0.6
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2018-01-01",
+       "2026-06-01"
+      ]
+     },
+     "title": null,
+     "axis": {
+      "format": "%Y",
+      "tickCount": 9,
+      "labelAngle": 0,
+      "grid": false,
+      "domain": true
+     }
+    },
+    "y": {
+     "field": "visitors_m",
+     "type": "quantitative",
+     "stack": "center",
+     "scale": {
+      "domain": [
+       0,
+       9.6
+      ]
+     },
+     "axis": null
+    },
+    "color": {
+     "field": "region",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "North-East Asia",
+       "South-East Asia",
+       "South & Central Asia",
+       "Oceania",
+       "Europe",
+       "Americas",
+       "Africa & Middle East"
+      ],
+      "range": [
+       "#5e3c99",
+       "#b2abd2",
+       "#e08214",
+       "#35978f",
+       "#a1887f",
+       "#80b1d3",
+       "#bdbdbd"
+      ]
+     },
+     "legend": null
+    },
+    "order": {
+     "field": "order",
+     "type": "quantitative"
+    },
+    "tooltip": [
+     {
+      "field": "region",
+      "title": "Region"
+     },
+     {
+      "field": "month",
+      "title": "12 months to"
+     },
+     {
+      "field": "visitors_m",
+      "title": "Visitors (millions)",
+      "format": ".2f"
+     }
+    ]
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "date": "2020-03-20",
+      "t": "Borders largely closed\n(Mar 2020)"
+     }
+    ]
+   },
+   "mark": {
+    "type": "rule",
+    "color": "#555",
+    "strokeDash": [
+     4,
+     3
+    ],
+    "strokeWidth": 1.3
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2018-01-01",
+       "2026-06-01"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "date": "2020-03-20",
+      "t": "Borders close\n(Mar 2020)"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "right",
+    "baseline": "bottom",
+    "dx": -5,
+    "dy": -4,
+    "fontSize": 12,
+    "color": "#444",
+    "lineBreak": "\n"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2018-01-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "value": -4
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "date": "2022-02-21",
+      "t": "Borders reopen\n(Feb 2022)"
+     }
+    ]
+   },
+   "mark": {
+    "type": "rule",
+    "color": "#555",
+    "strokeDash": [
+     4,
+     3
+    ],
+    "strokeWidth": 1.3
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2018-01-01",
+       "2026-06-01"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "date": "2022-02-21",
+      "t": "Borders reopen\n(Feb 2022)"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "bottom",
+    "dx": 5,
+    "dy": -4,
+    "fontSize": 12,
+    "color": "#444",
+    "lineBreak": "\n"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2018-01-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "value": -4
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "date": "2021-06-01",
+      "a": 0.4,
+      "b": 1.4,
+      "t": "1 million visitors"
+     }
+    ]
+   },
+   "mark": {
+    "type": "rule",
+    "color": "#222",
+    "strokeWidth": 3
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2018-01-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "field": "a",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       9.6
+      ]
+     },
+     "axis": null
+    },
+    "y2": {
+     "field": "b"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "date": "2021-06-01",
+      "m": 0.9,
+      "t": "= 1 million visitors"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "dx": 8,
+    "fontSize": 12,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2018-01-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "field": "m",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       9.6
+      ]
+     },
+     "axis": null
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "data": {
+    "url": "data/chart5_labels.csv"
+   },
+   "transform": [
+    {
+     "filter": "datum.month === '2026-06'"
+    },
+    {
+     "calculate": "datum.region + '  ' + format(datum.visitors_m,'.2f') + 'M (' + (datum.delta >= 0 ? '+' : '\u2212') + format(abs(datum.delta),'.2f') + ')'",
+     "as": "lab"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 6,
+    "fontSize": 13,
+    "fontWeight": "bold"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2018-01-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "field": "mid",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       9.6
+      ]
+     },
+     "axis": null
+    },
+    "text": {
+     "field": "lab"
+    },
+    "color": {
+     "field": "region",
+     "type": "nominal",
+     "legend": null,
+     "scale": {
+      "domain": [
+       "North-East Asia",
+       "South-East Asia",
+       "South & Central Asia",
+       "Oceania",
+       "Europe",
+       "Americas",
+       "Africa & Middle East"
+      ],
+      "range": [
+       "#5e3c99",
+       "#8a7fc0",
+       "#c26a00",
+       "#25807a",
+       "#7d6258",
+       "#4a8ab5",
+       "#7a7a7a"
+      ]
+     }
+    }
+   }
+  }
+ ],
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  },
+  "axis": {
+   "labelColor": "#444"
+  }
+ },
+ "resolve": {
+  "scale": {
+   "color": "independent"
+  }
+ }
+}
