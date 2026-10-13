@@ -1,0 +1,492 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Slope chart: rank and visitor numbers of the 25 biggest origin countries, 2019 vs year to June 2026.",
+ "width": "container",
+ "height": 540,
+ "padding": {
+  "left": 6,
+  "right": 6,
+  "top": 28,
+  "bottom": 6
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "layer": [
+  {
+   "data": {
+    "url": "data/chart4_slope.csv"
+   },
+   "transform": [
+    {
+     "calculate": "0",
+     "as": "x0"
+    },
+    {
+     "calculate": "1",
+     "as": "x1"
+    }
+   ],
+   "mark": {
+    "type": "rule",
+    "strokeWidth": 2.5,
+    "opacity": 0.9
+   },
+   "encoding": {
+    "x": {
+     "field": "x0",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1
+      ]
+     },
+     "axis": null
+    },
+    "x2": {
+     "field": "x1"
+    },
+    "y": {
+     "field": "rank2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       25.6,
+       0.4
+      ]
+     },
+     "axis": null
+    },
+    "y2": {
+     "field": "rank2026"
+    },
+    "color": {
+     "field": "band",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "Under 80%",
+       "80\u201395%",
+       "95\u2013105%",
+       "105\u2013125%",
+       "Over 125%"
+      ],
+      "range": [
+       "#b2182b",
+       "#ef8a62",
+       "#a6acb2",
+       "#67a9cf",
+       "#2166ac"
+      ]
+     },
+     "title": "Visitors compared with 2019",
+     "legend": {
+      "orient": "bottom",
+      "direction": "horizontal",
+      "columns": 3,
+      "symbolType": "stroke",
+      "symbolStrokeWidth": 5,
+      "titleLimit": 300,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "columnPadding": 10,
+      "rowPadding": 4
+     }
+    },
+    "tooltip": [
+     {
+      "field": "name",
+      "title": "Country"
+     },
+     {
+      "field": "v2019",
+      "title": "2019",
+      "format": ","
+     },
+     {
+      "field": "v2026",
+      "title": "Year to Jun 2026",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "% of 2019",
+      "format": ".0f"
+     },
+     {
+      "field": "rank2019",
+      "title": "Rank 2019"
+     },
+     {
+      "field": "rank2026",
+      "title": "Rank 2026"
+     }
+    ]
+   }
+  },
+  {
+   "data": {
+    "url": "data/chart4_slope.csv"
+   },
+   "transform": [
+    {
+     "calculate": "0",
+     "as": "x"
+    }
+   ],
+   "mark": {
+    "type": "circle",
+    "size": 55,
+    "opacity": 1
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1
+      ]
+     },
+     "axis": null
+    },
+    "y": {
+     "field": "rank2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       25.6,
+       0.4
+      ]
+     },
+     "axis": null
+    },
+    "color": {
+     "field": "band",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "Under 80%",
+       "80\u201395%",
+       "95\u2013105%",
+       "105\u2013125%",
+       "Over 125%"
+      ],
+      "range": [
+       "#b2182b",
+       "#ef8a62",
+       "#a6acb2",
+       "#67a9cf",
+       "#2166ac"
+      ]
+     },
+     "title": "Visitors compared with 2019",
+     "legend": null
+    },
+    "tooltip": [
+     {
+      "field": "name",
+      "title": "Country"
+     },
+     {
+      "field": "v2019",
+      "title": "2019",
+      "format": ","
+     },
+     {
+      "field": "v2026",
+      "title": "Year to Jun 2026",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "% of 2019",
+      "format": ".0f"
+     },
+     {
+      "field": "rank2019",
+      "title": "Rank 2019"
+     },
+     {
+      "field": "rank2026",
+      "title": "Rank 2026"
+     }
+    ]
+   }
+  },
+  {
+   "data": {
+    "url": "data/chart4_slope.csv"
+   },
+   "transform": [
+    {
+     "calculate": "1",
+     "as": "x"
+    }
+   ],
+   "mark": {
+    "type": "circle",
+    "size": 55,
+    "opacity": 1
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1
+      ]
+     },
+     "axis": null
+    },
+    "y": {
+     "field": "rank2026",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       25.6,
+       0.4
+      ]
+     },
+     "axis": null
+    },
+    "color": {
+     "field": "band",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "Under 80%",
+       "80\u201395%",
+       "95\u2013105%",
+       "105\u2013125%",
+       "Over 125%"
+      ],
+      "range": [
+       "#b2182b",
+       "#ef8a62",
+       "#a6acb2",
+       "#67a9cf",
+       "#2166ac"
+      ]
+     },
+     "title": "Visitors compared with 2019",
+     "legend": null
+    },
+    "tooltip": [
+     {
+      "field": "name",
+      "title": "Country"
+     },
+     {
+      "field": "v2019",
+      "title": "2019",
+      "format": ","
+     },
+     {
+      "field": "v2026",
+      "title": "Year to Jun 2026",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "% of 2019",
+      "format": ".0f"
+     },
+     {
+      "field": "rank2019",
+      "title": "Rank 2019"
+     },
+     {
+      "field": "rank2026",
+      "title": "Rank 2026"
+     }
+    ]
+   }
+  },
+  {
+   "data": {
+    "url": "data/chart4_slope.csv"
+   },
+   "transform": [
+    {
+     "calculate": "0",
+     "as": "x"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "align": "right",
+    "baseline": "middle",
+    "dx": -9,
+    "fontSize": 12,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1
+      ]
+     },
+     "axis": null
+    },
+    "y": {
+     "field": "rank2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       25.6,
+       0.4
+      ]
+     },
+     "axis": null
+    },
+    "text": {
+     "field": "label2019"
+    }
+   }
+  },
+  {
+   "data": {
+    "url": "data/chart4_slope.csv"
+   },
+   "transform": [
+    {
+     "calculate": "1",
+     "as": "x"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 9,
+    "fontSize": 12,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1
+      ]
+     },
+     "axis": null
+    },
+    "y": {
+     "field": "rank2026",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       25.6,
+       0.4
+      ]
+     },
+     "axis": null
+    },
+    "text": {
+     "field": "label2026"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "x": 0,
+      "t": "2019"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "center",
+    "baseline": "bottom",
+    "fontSize": 14,
+    "fontWeight": "bold",
+    "dy": -4,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1
+      ]
+     },
+     "axis": null
+    },
+    "y": {
+     "value": -6
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "x": 1,
+      "t": "Year to Jun 2026"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "center",
+    "baseline": "bottom",
+    "fontSize": 14,
+    "fontWeight": "bold",
+    "dy": -4,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1
+      ]
+     },
+     "axis": null
+    },
+    "y": {
+     "value": -6
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  }
+ ],
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  },
+  "legend": {
+   "titleColor": "#333",
+   "labelColor": "#444"
+  }
+ }
+}
