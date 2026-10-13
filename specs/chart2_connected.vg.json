@@ -1,0 +1,449 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Connected scatterplot: each dot is a 12-month period, plotting overseas visitors against tourism jobs from 2018 to mid-2026.",
+  "width": "container",
+  "height": 400,
+  "padding": {
+    "left": 12,
+    "right": 20,
+    "top": 10,
+    "bottom": 8
+  },
+  "data": {
+    "url": "data/chart2_connected.csv"
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.quarter === '2019-Q4'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#777",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_m",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.quarter === '2019-Q4'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#777",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "y": {
+          "field": "jobs_k",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 9.6,
+            "y": 318,
+            "label": "2019 visitors"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "fontSize": 12,
+        "color": "#555",
+        "dx": -5
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0.05,
+            "y": 537,
+            "label": "2019 jobs level"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 12,
+        "color": "#555",
+        "dx": 4,
+        "baseline": "top"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0.05,
+            "y": 690,
+            "label": "More jobs than 2019, fewer visitors"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 13,
+        "fontStyle": "italic",
+        "color": "#555",
+        "dx": 4
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#b8bcc0",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_m",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "jobs_k",
+          "type": "quantitative"
+        },
+        "order": {
+          "field": "quarter",
+          "type": "ordinal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 70,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_m",
+          "type": "quantitative",
+          "title": "Overseas visitors in the 12 months to each quarter (millions)",
+          "scale": {
+            "domain": [
+              0,
+              10
+            ]
+          },
+          "axis": {
+            "values": [
+              0,
+              2,
+              4,
+              6,
+              8,
+              10
+            ],
+            "grid": true,
+            "format": "d"
+          }
+        },
+        "y": {
+          "field": "jobs_k",
+          "type": "quantitative",
+          "title": "Tourism jobs, average over the 12 months (thousands)",
+          "scale": {
+            "domain": [
+              300,
+              700
+            ]
+          },
+          "axis": {
+            "values": [
+              300,
+              400,
+              500,
+              600,
+              700
+            ],
+            "grid": true
+          }
+        },
+        "color": {
+          "field": "phase",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Before COVID",
+              "Borders closed",
+              "Recovery"
+            ],
+            "range": [
+              "#6b7280",
+              "#c0392b",
+              "#7e3fa8"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "symbolSize": 90,
+            "labelFontSize": 13
+          }
+        },
+        "tooltip": [
+          {
+            "field": "quarter",
+            "type": "nominal",
+            "title": "12 months to end of"
+          },
+          {
+            "field": "visitors_m",
+            "type": "quantitative",
+            "title": "Overseas visitors (millions)",
+            "format": ".2f"
+          },
+          {
+            "field": "jobs_k",
+            "type": "quantitative",
+            "title": "Tourism jobs (thousands)",
+            "format": ".0f"
+          },
+          {
+            "field": "phase",
+            "type": "nominal",
+            "title": "Period"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "({'2019-Q4': 'Year to Dec 2019'})[datum.quarter]",
+          "as": "label"
+        },
+        {
+          "filter": "datum.label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -6,
+        "dy": -10
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_m",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "jobs_k",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "field": "phase",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "({'2021-Q1': 'Year to Mar 2021:\\nalmost no visitors'})[datum.quarter]",
+          "as": "label"
+        },
+        {
+          "filter": "datum.label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "dx": 8,
+        "dy": 14
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_m",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "jobs_k",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "field": "phase",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "({'2026-Q2': 'Year to Jun 2026\\n(latest)'})[datum.quarter]",
+          "as": "label"
+        },
+        {
+          "filter": "datum.label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -10,
+        "dy": -10
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_m",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "jobs_k",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "field": "phase",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "({'2023-Q1': 'Year to Mar 2023: jobs\\nalready above 2019 with\\nabout half the visitors'})[datum.quarter]",
+          "as": "label"
+        },
+        {
+          "filter": "datum.label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -14,
+        "dy": -34
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_m",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "jobs_k",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "field": "phase",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#444",
+      "titleColor": "#333",
+      "gridColor": "#dfe2e4"
+    },
+    "text": {
+      "font": "Arial"
+    },
+    "scale": {
+      "zero": false
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  }
+}

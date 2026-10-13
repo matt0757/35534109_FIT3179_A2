@@ -1,0 +1,35 @@
+quarter,visitors_m,jobs_k,phase
+2018-Q1,9.02,490.9,Before COVID
+2018-Q2,9.07,498.9,Before COVID
+2018-Q3,9.17,506.2,Before COVID
+2018-Q4,9.25,510.6,Before COVID
+2019-Q1,9.25,516.2,Before COVID
+2019-Q2,9.34,522.1,Before COVID
+2019-Q3,9.41,530.8,Before COVID
+2019-Q4,9.47,544.4,Before COVID
+2020-Q1,8.76,525.6,Borders closed
+2020-Q2,6.74,471.4,Borders closed
+2020-Q3,4.47,425.0,Borders closed
+2020-Q4,1.83,373.2,Borders closed
+2021-Q1,0.07,356.6,Borders closed
+2021-Q2,0.15,376.5,Borders closed
+2021-Q3,0.17,364.7,Borders closed
+2021-Q4,0.25,368.7,Borders closed
+2022-Q1,0.55,385.5,Recovery
+2022-Q2,1.19,409.1,Recovery
+2022-Q3,2.21,460.9,Recovery
+2022-Q4,3.69,515.8,Recovery
+2023-Q1,5.0,561.0,Recovery
+2023-Q2,5.86,592.5,Recovery
+2023-Q3,6.62,617.2,Recovery
+2023-Q4,7.19,620.1,Recovery
+2024-Q1,7.78,618.4,Recovery
+2024-Q2,7.97,621.9,Recovery
+2024-Q3,8.1,619.0,Recovery
+2024-Q4,8.27,623.3,Recovery
+2025-Q1,8.31,627.6,Recovery
+2025-Q2,8.4,634.3,Recovery
+2025-Q3,8.65,643.2,Recovery
+2025-Q4,8.94,651.7,Recovery
+2026-Q1,9.16,659.1,Recovery
+2026-Q2,9.1,664.1,Recovery

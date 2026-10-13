@@ -1,6 +1,6 @@
 const charts = [
   { id: "#chart1", spec: "specs/chart1_index.vg.json" },
-  { id: "#chart2", spec: "specs/chart2_xxx.vg.json" },
+  { id: "#chart2", spec: "specs/chart2_connected.vg.json" },
   { id: "#chart3", spec: "specs/chart3_xxx.vg.json" }
 ];
 

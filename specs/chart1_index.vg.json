@@ -1,10 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Quarterly tourism recovery index, with each quarter compared with the same quarter in 2019.",
-  "width": 680,
-  "height": 430,
-  "padding": {"left": 12, "right": 190, "top": 10, "bottom": 8},
-  "data": {"url": "data/chart1_index.csv"},
+  "width": "container",
+  "height": 470,
+  "padding": {
+    "left": 12,
+    "right": 12,
+    "top": 10,
+    "bottom": 8
+  },
+  "data": {
+    "url": "data/chart1_index.csv"
+  },
   "transform": [
     {
       "calculate": "toDate(substring(datum.quarter, 0, 4) + '-' + (substring(datum.quarter, 6, 7) === '1' ? '01' : substring(datum.quarter, 6, 7) === '2' ? '04' : substring(datum.quarter, 6, 7) === '3' ? '07' : '10') + '-01')",
@@ -13,92 +20,294 @@
   ],
   "layer": [
     {
-      "data": {"values": [{"start": "2020-01-01", "end": "2022-01-01"}]},
-      "mark": {"type": "rect", "color": "#d9dde0", "opacity": 0.55},
+      "data": {
+        "values": [
+          {
+            "start": "2020-01-01",
+            "end": "2022-01-01"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "color": "#d9dde0",
+        "opacity": 0.55
+      },
       "encoding": {
-        "x": {"field": "start", "type": "temporal"},
-        "x2": {"field": "end"},
-        "y": {"value": 0},
-        "y2": {"value": {"expr": "height"}}
+        "x": {
+          "field": "start",
+          "type": "temporal",
+          "scale": {
+            "type": "utc"
+          }
+        },
+        "x2": {
+          "field": "end"
+        },
+        "y": {
+          "value": 0
+        },
+        "y2": {
+          "value": {
+            "expr": "height"
+          }
+        }
       }
     },
     {
-      "mark": {"type": "rule", "color": "#777", "strokeDash": [4, 3], "strokeWidth": 1.5},
+      "mark": {
+        "type": "rule",
+        "color": "#777",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "strokeWidth": 1.5
+      },
       "encoding": {
-        "y": {"datum": 100},
-        "tooltip": {"value": "Same quarter in 2019"}
+        "y": {
+          "datum": 100
+        },
+        "tooltip": {
+          "value": "Same quarter in 2019"
+        }
       }
     },
     {
-      "data": {"values": [{"quarter_date": "2021-01-01", "label": "International borders\nlargely closed"}]},
-      "mark": {"type": "text", "fontSize": 12, "align": "center", "lineBreak": "\n", "color": "#555", "dx": 0, "dy": 0},
+      "data": {
+        "values": [
+          {
+            "quarter_date": "2020-04-01",
+            "label": "International borders\nlargely closed"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "center",
+        "lineBreak": "\n",
+        "color": "#555",
+        "dx": 60,
+        "dy": 0
+      },
       "encoding": {
-        "x": {"field": "quarter_date", "type": "temporal"},
-        "y": {"value": 27},
-        "text": {"field": "label"}
+        "x": {
+          "field": "quarter_date",
+          "type": "temporal",
+          "scale": {
+            "type": "utc"
+          }
+        },
+        "y": {
+          "value": 27
+        },
+        "text": {
+          "field": "label"
+        }
       }
     },
     {
-      "data": {"values": [{"quarter_date": "2020-04-01", "index": 6, "label": "Visitor arrivals fell\nbelow 1% of\n2019 levels"}]},
-      "mark": {"type": "text", "fontSize": 12, "align": "left", "lineBreak": "\n", "color": "#2878b5", "fontWeight": "bold", "dx": 8, "dy": -30},
+      "data": {
+        "values": [
+          {
+            "quarter_date": "2020-04-01",
+            "index": 6,
+            "label": "Visitor arrivals fell\nbelow 1% of\n2019 levels"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "left",
+        "lineBreak": "\n",
+        "color": "#2878b5",
+        "fontWeight": "bold",
+        "dx": 8,
+        "dy": -42,
+        "baseline": "bottom"
+      },
       "encoding": {
-        "x": {"field": "quarter_date", "type": "temporal"},
-        "y": {"field": "index", "type": "quantitative"},
-        "text": {"field": "label"}
+        "x": {
+          "field": "quarter_date",
+          "type": "temporal",
+          "scale": {
+            "type": "utc"
+          }
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
       }
     },
     {
-      "mark": {"type": "line", "strokeWidth": 3},
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      },
       "encoding": {
         "x": {
           "field": "quarter_date",
           "type": "temporal",
           "title": "Year",
-          "scale": {"type": "utc", "domain": ["2018-01-01", "2026-07-01"]},
-          "axis": {"format": "%Y", "tickCount": 9, "labelAngle": 0, "grid": true}
+          "scale": {
+            "domain": [
+              "2018-01-01",
+              "2026-07-01"
+            ],
+            "type": "utc"
+          },
+          "axis": {
+            "format": "%Y",
+            "tickCount": 9,
+            "labelAngle": 0,
+            "grid": true
+          }
         },
         "y": {
           "field": "index",
           "type": "quantitative",
           "title": "Compared with the same quarter of 2019 (2019 = 100)",
-          "scale": {"domain": [0, 140]},
-          "axis": {"values": [0, 25, 50, 75, 100, 125], "grid": true}
+          "scale": {
+            "domain": [
+              0,
+              140
+            ]
+          },
+          "axis": {
+            "values": [
+              0,
+              25,
+              50,
+              75,
+              100,
+              125
+            ],
+            "grid": true
+          }
         },
         "color": {
           "field": "series",
           "type": "nominal",
           "scale": {
-            "domain": ["Visitors arriving", "Residents returning", "Tourism main jobs", "Whole-economy main jobs"],
-            "range": ["#2878b5", "#d9770b", "#16866d", "#7b8084"]
+            "domain": [
+              "Visitors arriving",
+              "Residents returning",
+              "Tourism main jobs",
+              "Whole-economy main jobs"
+            ],
+            "range": [
+              "#2878b5",
+              "#d9770b",
+              "#16866d",
+              "#7b8084"
+            ]
           },
           "legend": null
         },
-        "detail": {"field": "series"},
+        "detail": {
+          "field": "series"
+        },
         "tooltip": [
-          {"field": "series", "type": "nominal", "title": "Series"},
-          {"field": "quarter", "type": "nominal", "title": "Quarter"},
-          {"field": "index", "type": "quantitative", "title": "Index", "format": ".1f"},
-          {"field": "raw_value", "type": "quantitative", "title": "Original value", "format": ",.1f"}
+          {
+            "field": "series",
+            "type": "nominal",
+            "title": "Series"
+          },
+          {
+            "field": "quarter",
+            "type": "nominal",
+            "title": "Quarter"
+          },
+          {
+            "field": "index",
+            "type": "quantitative",
+            "title": "Index",
+            "format": ".1f"
+          },
+          {
+            "field": "raw_value",
+            "type": "quantitative",
+            "title": "Original value",
+            "format": ",.1f"
+          }
         ]
       }
     },
     {
       "transform": [
-        {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "quarter_date", "order": "descending"}], "groupby": ["series"]},
-        {"filter": "datum.rank === 1"},
-        {"calculate": "datum.series + '  ' + format(datum.index, '.0f') + '% of 2019'", "as": "end_label"}
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "quarter_date",
+              "order": "descending"
+            }
+          ],
+          "groupby": [
+            "series"
+          ]
+        },
+        {
+          "filter": "datum.rank === 1"
+        },
+        {
+          "calculate": "datum.series + '  ' + format(datum.index, '.0f') + '% of 2019'",
+          "as": "end_label"
+        },
+        {
+          "calculate": "+datum.index + (datum.series === 'Whole-economy main jobs' ? 3 : datum.series === 'Residents returning' ? -3 : 0)",
+          "as": "label_y"
+        }
       ],
-      "mark": {"type": "text", "align": "left", "dx": 8, "fontSize": 13, "fontWeight": "bold"},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 13,
+        "fontWeight": "bold"
+      },
       "encoding": {
-        "x": {"field": "quarter_date", "type": "temporal"},
-        "y": {"field": "index", "type": "quantitative"},
-        "text": {"field": "end_label"},
+        "x": {
+          "field": "quarter_date",
+          "type": "temporal",
+          "scale": {
+            "type": "utc"
+          }
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "end_label"
+        },
         "color": {
           "field": "series",
           "type": "nominal",
           "scale": {
-            "domain": ["Visitors arriving", "Residents returning", "Tourism main jobs", "Whole-economy main jobs"],
-            "range": ["#2878b5", "#d9770b", "#16866d", "#7b8084"]
+            "domain": [
+              "Visitors arriving",
+              "Residents returning",
+              "Tourism main jobs",
+              "Whole-economy main jobs"
+            ],
+            "range": [
+              "#2878b5",
+              "#d9770b",
+              "#16866d",
+              "#7b8084"
+            ]
           },
           "legend": null
         }
@@ -106,8 +315,20 @@
     }
   ],
   "config": {
-    "view": {"stroke": null},
-    "axis": {"labelColor": "#444", "titleColor": "#333", "gridColor": "#dfe2e4"},
-    "text": {"font": "Arial"}
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#444",
+      "titleColor": "#333",
+      "gridColor": "#dfe2e4"
+    },
+    "text": {
+      "font": "Arial"
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
   }
 }
