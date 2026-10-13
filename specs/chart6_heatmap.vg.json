@@ -1,0 +1,368 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Month by year heatmap of overseas visitor arrivals, Jan 2017 to Jun 2026.",
+ "width": "container",
+ "height": 400,
+ "padding": {
+  "left": 8,
+  "right": 8,
+  "top": 8,
+  "bottom": 8
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "data": {
+  "url": "data/chart6_heatmap.csv",
+  "format": {
+   "type": "csv",
+   "parse": {
+    "year": "number",
+    "visitors_k": "number",
+    "pct_2019": "number"
+   }
+  }
+ },
+ "transform": [
+  {
+   "window": [
+    {
+     "op": "rank",
+     "as": "peak"
+    }
+   ],
+   "sort": [
+    {
+     "field": "visitors_k",
+     "order": "descending"
+    }
+   ],
+   "groupby": [
+    "year"
+   ]
+  }
+ ],
+ "layer": [
+  {
+   "mark": {
+    "type": "rect",
+    "stroke": "#ffffff",
+    "strokeWidth": 1.5
+   },
+   "encoding": {
+    "x": {
+     "field": "month_name",
+     "type": "ordinal",
+     "sort": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+     ],
+     "title": null,
+     "axis": {
+      "orient": "top",
+      "labelAngle": 0,
+      "labelFontSize": 13,
+      "ticks": false,
+      "domain": false
+     }
+    },
+    "y": {
+     "field": "year",
+     "type": "ordinal",
+     "title": null,
+     "axis": {
+      "labelFontSize": 13,
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 6
+     }
+    },
+    "color": {
+     "field": "visitors_k",
+     "type": "quantitative",
+     "title": "Visitors per month (thousands)",
+     "scale": {
+      "scheme": "blues",
+      "domain": [
+       0,
+       1100
+      ]
+     },
+     "legend": {
+      "orient": "bottom",
+      "direction": "horizontal",
+      "gradientLength": 300,
+      "titleLimit": 320,
+      "titleFontSize": 12,
+      "labelFontSize": 12,
+      "format": ",.0f"
+     }
+    },
+    "tooltip": [
+     {
+      "field": "year",
+      "title": "Year"
+     },
+     {
+      "field": "month_name",
+      "title": "Month"
+     },
+     {
+      "field": "visitors_k",
+      "title": "Visitors (thousands)",
+      "format": ",.0f"
+     },
+     {
+      "field": "pct_2019",
+      "title": "% of same month in 2019",
+      "format": ".0f"
+     }
+    ]
+   }
+  },
+  {
+   "mark": {
+    "type": "text",
+    "fontSize": 11
+   },
+   "encoding": {
+    "x": {
+     "field": "month_name",
+     "type": "ordinal",
+     "sort": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+     ],
+     "title": null,
+     "axis": {
+      "orient": "top",
+      "labelAngle": 0,
+      "labelFontSize": 13,
+      "ticks": false,
+      "domain": false
+     }
+    },
+    "y": {
+     "field": "year",
+     "type": "ordinal",
+     "title": null,
+     "axis": {
+      "labelFontSize": 13,
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 6
+     }
+    },
+    "text": {
+     "field": "visitors_k",
+     "type": "quantitative",
+     "format": ",.0f"
+    },
+    "color": {
+     "condition": {
+      "test": "datum.visitors_k > 650",
+      "value": "#ffffff"
+     },
+     "value": "#222"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.peak === 1"
+    }
+   ],
+   "mark": {
+    "type": "rect",
+    "fill": null,
+    "stroke": "#d9770b",
+    "strokeWidth": 3
+   },
+   "encoding": {
+    "x": {
+     "field": "month_name",
+     "type": "ordinal",
+     "sort": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+     ],
+     "title": null,
+     "axis": {
+      "orient": "top",
+      "labelAngle": 0,
+      "labelFontSize": 13,
+      "ticks": false,
+      "domain": false
+     }
+    },
+    "y": {
+     "field": "year",
+     "type": "ordinal",
+     "title": null,
+     "axis": {
+      "labelFontSize": 13,
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 6
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "year": 2020,
+      "t": "Borders close in March"
+     },
+     {
+      "year": 2021,
+      "t": "Borders closed"
+     },
+     {
+      "year": 2022,
+      "t": "Borders reopen in February"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "fontSize": 12,
+    "color": "#555",
+    "fontStyle": "italic",
+    "dx": {
+     "expr": "width/24+10"
+    }
+   },
+   "encoding": {
+    "x": {
+     "datum": "Dec",
+     "type": "ordinal",
+     "sort": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+     ]
+    },
+    "y": {
+     "field": "year",
+     "type": "ordinal",
+     "title": null,
+     "axis": {
+      "labelFontSize": 13,
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 6
+     }
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "year": 2019,
+      "t": "Orange outline = busiest month of the year"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "fontSize": 12,
+    "color": "#b35f00",
+    "fontWeight": "bold",
+    "dx": {
+     "expr": "width/24+10"
+    }
+   },
+   "encoding": {
+    "x": {
+     "datum": "Dec",
+     "type": "ordinal",
+     "sort": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+     ]
+    },
+    "y": {
+     "field": "year",
+     "type": "ordinal",
+     "title": null,
+     "axis": {
+      "labelFontSize": 13,
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 6
+     }
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  }
+ ],
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  }
+ }
+}
