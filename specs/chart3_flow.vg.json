@@ -1,0 +1,609 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Flow map: curves from the 25 biggest visitor origin countries to Australia. Curve width is the number of visitors in the year to June 2026; colour is how that compares with 2019.",
+  "width": "container",
+  "height": 440,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "padding": {
+    "left": 8,
+    "right": 8,
+    "top": 8,
+    "bottom": 8
+  },
+  "projection": {
+    "type": "equalEarth",
+    "rotate": [
+      -150,
+      0,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.id !== '010'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e3e6e9",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number",
+            "visitors": "number",
+            "visitors_2019": "number",
+            "pct_of_2019": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "calculate": "{type: 'LineString', coordinates: [[datum.lon, datum.lat], [134, -26]]}",
+          "as": "route"
+        },
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80\u201395%' : datum.pct_of_2019 < 105 ? '95\u2013105%' : datum.pct_of_2019 < 125 ? '105\u2013125%' : 'Over 125%'",
+          "as": "band"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "filled": false,
+        "strokeCap": "round",
+        "opacity": 0.8
+      },
+      "encoding": {
+        "shape": {
+          "field": "route",
+          "type": "geojson"
+        },
+        "stroke": {
+          "field": "band",
+          "type": "nominal",
+          "title": "Visitors compared with 2019",
+          "scale": {
+            "domain": [
+              "Under 80%",
+              "80\u201395%",
+              "95\u2013105%",
+              "105\u2013125%",
+              "Over 125%"
+            ],
+            "range": [
+              "#b2182b",
+              "#ef8a62",
+              "#a6acb2",
+              "#67a9cf",
+              "#2166ac"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "stroke",
+            "symbolStrokeWidth": 6,
+            "titleFontSize": 12,
+            "labelFontSize": 12,
+            "columnPadding": 14,
+            "titleLimit": 320
+          }
+        },
+        "strokeWidth": {
+          "field": "visitors",
+          "type": "quantitative",
+          "title": "Visitors per year",
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              1500000
+            ],
+            "range": [
+              0.5,
+              16
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "values": [
+              100000,
+              500000,
+              1000000
+            ],
+            "format": ",.0f",
+            "symbolType": "stroke",
+            "symbolStrokeColor": "#555",
+            "titleFontSize": 12,
+            "labelFontSize": 12
+          }
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "visitors",
+            "type": "quantitative",
+            "title": "Visitors, year to Jun 2026",
+            "format": ","
+          },
+          {
+            "field": "visitors_2019",
+            "type": "quantitative",
+            "title": "Visitors in 2019",
+            "format": ","
+          },
+          {
+            "field": "pct_of_2019",
+            "type": "quantitative",
+            "title": "Compared with 2019 (%)",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number",
+            "pct_of_2019": "number"
+          }
+        }
+      },
+      "mark": {
+        "type": "circle",
+        "size": 22,
+        "color": "#333",
+        "opacity": 0.9
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.label_pos === 'top'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#ffffff",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -7,
+        "stroke": "#ffffff",
+        "strokeWidth": 4,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.label_pos === 'top'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#222",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -7
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.label_pos === 'left'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#ffffff",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -8,
+        "stroke": "#ffffff",
+        "strokeWidth": 4,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.label_pos === 'left'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#222",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.label_pos === 'right'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#ffffff",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "stroke": "#ffffff",
+        "strokeWidth": 4,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.label_pos === 'right'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#222",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.label_pos === 'topright'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#ffffff",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": -4,
+        "dy": -7,
+        "stroke": "#ffffff",
+        "strokeWidth": 4,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/chart3_flow.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.label_pos === 'topright'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#222",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": -4,
+        "dy": -7
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 134,
+            "lat": -26,
+            "label": "Australia"
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 150,
+        "color": "#ffffff",
+        "stroke": "#222",
+        "strokeWidth": 2.5,
+        "opacity": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 134,
+            "lat": -26,
+            "label": "AUSTRALIA"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "dy": 12,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#111"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "text": {
+      "font": "Arial"
+    },
+    "legend": {
+      "titleColor": "#333",
+      "labelColor": "#444",
+      "titlePadding": 6,
+      "padding": 4
+    }
+  }
+}

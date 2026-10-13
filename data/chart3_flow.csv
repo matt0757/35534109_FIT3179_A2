@@ -1,0 +1,26 @@
+name,country_source,lon,lat,visitors,visitors_2019,pct_of_2019,label_pos,label
+New Zealand,New Zealand,174.78,-41.29,1422760,1433770,99.2,right,New Zealand 99%
+China,China,116.41,39.9,1127110,1438670,78.3,left,China 78%
+United States,United States of America,-77.04,38.91,755490,817990,92.4,top,United States 92%
+United Kingdom,"UK, CIs & IOM",-0.13,51.51,751430,715820,105.0,top,United Kingdom 105%
+Singapore,Singapore,103.82,1.35,448310,478500,93.7,left,Singapore 94%
+Japan,Japan,139.69,35.69,447600,498640,89.8,right,Japan 90%
+India,India,77.21,28.61,435560,399300,109.1,top,India 109%
+South Korea,"Korea, South",126.98,37.57,407610,280480,145.3,topright,South Korea 145%
+Hong Kong,Hong Kong,114.17,22.32,252720,315150,80.2,,
+Indonesia,Indonesia,106.85,-6.21,244250,221730,110.2,,
+Malaysia,Malaysia,101.69,3.14,215450,384900,56.0,,
+Taiwan,Taiwan,121.57,25.03,206910,194610,106.3,,
+Philippines,Philippines,120.98,14.6,198230,158550,125.0,,
+Germany,Germany,13.4,52.52,180110,207090,87.0,,
+Canada,Canada,-75.7,45.42,176900,189610,93.3,,
+Vietnam,Vietnam,105.85,21.03,162010,123460,131.2,,
+France,France,2.35,48.86,152300,143730,106.0,,
+Thailand,Thailand,100.5,13.76,97330,102700,94.8,,
+Ireland,Ireland,-6.26,53.35,93570,67280,139.1,,
+Italy,Italy,12.5,41.9,79560,75210,105.8,,
+Nepal,Nepal,85.32,27.72,63150,38110,165.7,,
+Fiji,Fiji,178.44,-18.14,60170,45670,131.7,,
+Netherlands,Netherlands,4.9,52.37,55670,64750,86.0,,
+Spain,Spain,-3.7,40.42,51710,47460,109.0,,
+Sri Lanka,Sri Lanka,79.86,6.93,51650,43960,117.5,,
