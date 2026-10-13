@@ -6,7 +6,8 @@ const charts = [
   { id: "#chart5", spec: "specs/chart5_stream.vg.json" },
   { id: "#chart6", spec: "specs/chart6_heatmap.vg.json" },
   { id: "#chart7a", spec: "specs/chart7a_purpose.vg.json" },
-  { id: "#chart7b", spec: "specs/chart7b_duration.vg.json" }
+  { id: "#chart7b", spec: "specs/chart7b_duration.vg.json" },
+  { id: "#chart8", spec: "specs/chart8_horizon.vg.json" }
 ];
 
 charts.forEach(({ id, spec }) => {

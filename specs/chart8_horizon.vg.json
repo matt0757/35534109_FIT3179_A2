@@ -1,0 +1,618 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Horizon chart small multiples: tourism jobs by industry compared with each industry's 2019 average, Sep 2016 to Jun 2026.",
+ "width": "container",
+ "height": 408,
+ "padding": {
+  "left": 6,
+  "right": 6,
+  "top": 6,
+  "bottom": 6
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "data": {
+  "url": "data/chart8_horizon.csv",
+  "format": {
+   "type": "csv",
+   "parse": {
+    "jobs_thousands": "number",
+    "base": "number",
+    "dev": "number",
+    "rowpos": "number"
+   }
+  }
+ },
+ "layer": [
+  {
+   "data": {
+    "values": [
+     {
+      "s": "2020-03-20",
+      "e": "2022-02-21"
+     }
+    ]
+   },
+   "mark": {
+    "type": "rect",
+    "color": "#d9dde0",
+    "opacity": 0.5
+   },
+   "encoding": {
+    "x": {
+     "field": "s",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "x2": {
+     "field": "e"
+    },
+    "y": {
+     "value": 0
+    },
+    "y2": {
+     "value": {
+      "expr": "height"
+     }
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "datum.rowpos * 34 + min(max(datum.dev - 0, 0), 30)",
+     "as": "top"
+    },
+    {
+     "calculate": "datum.rowpos * 34",
+     "as": "bot"
+    }
+   ],
+   "mark": {
+    "type": "area",
+    "color": "#2166ac",
+    "opacity": 0.38,
+    "interpolate": "linear"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     },
+     "title": null,
+     "axis": {
+      "format": "%Y",
+      "tickCount": 10,
+      "labelAngle": 0,
+      "grid": false,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "top",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null,
+     "stack": null
+    },
+    "y2": {
+     "field": "bot"
+    },
+    "detail": {
+     "field": "industry"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "datum.rowpos * 34 + min(max(datum.dev - 30, 0), 30)",
+     "as": "top"
+    },
+    {
+     "calculate": "datum.rowpos * 34",
+     "as": "bot"
+    }
+   ],
+   "mark": {
+    "type": "area",
+    "color": "#2166ac",
+    "opacity": 0.38,
+    "interpolate": "linear"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     },
+     "title": null,
+     "axis": {
+      "format": "%Y",
+      "tickCount": 10,
+      "labelAngle": 0,
+      "grid": false,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "top",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null,
+     "stack": null
+    },
+    "y2": {
+     "field": "bot"
+    },
+    "detail": {
+     "field": "industry"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "datum.rowpos * 34 + min(max(datum.dev - 60, 0), 30)",
+     "as": "top"
+    },
+    {
+     "calculate": "datum.rowpos * 34",
+     "as": "bot"
+    }
+   ],
+   "mark": {
+    "type": "area",
+    "color": "#2166ac",
+    "opacity": 0.38,
+    "interpolate": "linear"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     },
+     "title": null,
+     "axis": {
+      "format": "%Y",
+      "tickCount": 10,
+      "labelAngle": 0,
+      "grid": false,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "top",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null,
+     "stack": null
+    },
+    "y2": {
+     "field": "bot"
+    },
+    "detail": {
+     "field": "industry"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "datum.rowpos * 34 + min(max(-datum.dev - 0, 0), 30)",
+     "as": "top"
+    },
+    {
+     "calculate": "datum.rowpos * 34",
+     "as": "bot"
+    }
+   ],
+   "mark": {
+    "type": "area",
+    "color": "#b2182b",
+    "opacity": 0.38,
+    "interpolate": "linear"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     },
+     "title": null,
+     "axis": {
+      "format": "%Y",
+      "tickCount": 10,
+      "labelAngle": 0,
+      "grid": false,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "top",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null,
+     "stack": null
+    },
+    "y2": {
+     "field": "bot"
+    },
+    "detail": {
+     "field": "industry"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "datum.rowpos * 34 + min(max(-datum.dev - 30, 0), 30)",
+     "as": "top"
+    },
+    {
+     "calculate": "datum.rowpos * 34",
+     "as": "bot"
+    }
+   ],
+   "mark": {
+    "type": "area",
+    "color": "#b2182b",
+    "opacity": 0.38,
+    "interpolate": "linear"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     },
+     "title": null,
+     "axis": {
+      "format": "%Y",
+      "tickCount": 10,
+      "labelAngle": 0,
+      "grid": false,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "top",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null,
+     "stack": null
+    },
+    "y2": {
+     "field": "bot"
+    },
+    "detail": {
+     "field": "industry"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "datum.rowpos * 34 + min(max(-datum.dev - 60, 0), 30)",
+     "as": "top"
+    },
+    {
+     "calculate": "datum.rowpos * 34",
+     "as": "bot"
+    }
+   ],
+   "mark": {
+    "type": "area",
+    "color": "#b2182b",
+    "opacity": 0.38,
+    "interpolate": "linear"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     },
+     "title": null,
+     "axis": {
+      "format": "%Y",
+      "tickCount": 10,
+      "labelAngle": 0,
+      "grid": false,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "top",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null,
+     "stack": null
+    },
+    "y2": {
+     "field": "bot"
+    },
+    "detail": {
+     "field": "industry"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "datum.rowpos * 34",
+     "as": "bot"
+    }
+   ],
+   "mark": {
+    "type": "rule",
+    "color": "#999",
+    "strokeWidth": 0.8
+   },
+   "encoding": {
+    "y": {
+     "field": "bot",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "datum.rowpos * 34 + 14",
+     "as": "mid"
+    }
+   ],
+   "mark": {
+    "type": "point",
+    "opacity": 0,
+    "size": 80
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "field": "mid",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null
+    },
+    "tooltip": [
+     {
+      "field": "name",
+      "title": "Industry"
+     },
+     {
+      "field": "quarter_label",
+      "title": "Quarter"
+     },
+     {
+      "field": "jobs_thousands",
+      "title": "Jobs (thousands)",
+      "format": ".1f"
+     },
+     {
+      "field": "dev",
+      "title": "vs 2019 average (%)",
+      "format": "+.0f"
+     }
+    ]
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.quarter_label === '2016-Q3'"
+    },
+    {
+     "calculate": "datum.rowpos * 34 + 15",
+     "as": "mid"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "align": "right",
+    "baseline": "middle",
+    "dx": -8,
+    "fontSize": 13,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "field": "mid",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.quarter_label === '2026-Q2'"
+    },
+    {
+     "calculate": "datum.rowpos * 34 + 15",
+     "as": "mid"
+    },
+    {
+     "calculate": "(datum.dev >= 0 ? '+' : '\u2212') + format(abs(datum.dev), '.0f') + '%'",
+     "as": "lab"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 8,
+    "fontSize": 13,
+    "fontWeight": "bold"
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "field": "mid",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       408
+      ],
+      "nice": false
+     },
+     "axis": null
+    },
+    "text": {
+     "field": "lab"
+    },
+    "color": {
+     "condition": {
+      "test": "datum.dev >= 0",
+      "value": "#2166ac"
+     },
+     "value": "#b2182b"
+    }
+   }
+  }
+ ],
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  },
+  "axis": {
+   "labelColor": "#444"
+  }
+ }
+}
