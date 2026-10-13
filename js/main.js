@@ -4,7 +4,9 @@ const charts = [
   { id: "#chart3", spec: "specs/chart3_flow.vg.json" },
   { id: "#chart4", spec: "specs/chart4_slope.vg.json" },
   { id: "#chart5", spec: "specs/chart5_stream.vg.json" },
-  { id: "#chart6", spec: "specs/chart6_heatmap.vg.json" }
+  { id: "#chart6", spec: "specs/chart6_heatmap.vg.json" },
+  { id: "#chart7a", spec: "specs/chart7a_purpose.vg.json" },
+  { id: "#chart7b", spec: "specs/chart7b_duration.vg.json" }
 ];
 
 charts.forEach(({ id, spec }) => {

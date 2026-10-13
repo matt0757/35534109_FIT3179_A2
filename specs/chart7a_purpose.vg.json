@@ -1,0 +1,348 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Dumbbell chart: visitors by purpose of visit, year to June 2026 as a percentage of 2019.",
+ "width": "container",
+ "height": {
+  "step": 34
+ },
+ "padding": {
+  "left": 6,
+  "right": 6,
+  "top": 6,
+  "bottom": 6
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "data": {
+  "url": "data/chart7_purpose_duration.csv",
+  "format": {
+   "type": "csv",
+   "parse": {
+    "v2019": "number",
+    "v2026": "number",
+    "pct": "number",
+    "order": "number"
+   }
+  }
+ },
+ "transform": [
+  {
+   "filter": "datum.group === 'reason'"
+  },
+  {
+   "calculate": "100",
+   "as": "base"
+  }
+ ],
+ "layer": [
+  {
+   "mark": {
+    "type": "rule",
+    "color": "#777",
+    "strokeDash": [
+     4,
+     3
+    ],
+    "strokeWidth": 1.5
+   },
+   "encoding": {
+    "x": {
+     "datum": 100,
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       50,
+       255
+      ]
+     },
+     "title": "Year to Jun 2026, % of 2019 (100 = same)",
+     "axis": {
+      "values": [
+       50,
+       100,
+       150,
+       200
+      ],
+      "grid": false,
+      "titleFontSize": 12,
+      "labelFontSize": 12
+     }
+    }
+   }
+  },
+  {
+   "mark": {
+    "type": "rule",
+    "strokeWidth": 5,
+    "strokeCap": "round",
+    "opacity": 0.9
+   },
+   "encoding": {
+    "x": {
+     "field": "base",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       50,
+       255
+      ]
+     },
+     "title": "Year to Jun 2026, % of 2019 (100 = same)"
+    },
+    "x2": {
+     "field": "pct"
+    },
+    "y": {
+     "field": "item",
+     "type": "nominal",
+     "sort": {
+      "field": "order"
+     },
+     "title": null,
+     "axis": {
+      "labelFontSize": 12,
+      "ticks": false,
+      "domain": false,
+      "labelLimit": 148,
+      "labelPadding": 8,
+      "minExtent": 148
+     }
+    },
+    "color": {
+     "field": "band",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "Under 80%",
+       "80\u201395%",
+       "95\u2013105%",
+       "105\u2013125%",
+       "Over 125%"
+      ],
+      "range": [
+       "#b2182b",
+       "#ef8a62",
+       "#a6acb2",
+       "#67a9cf",
+       "#2166ac"
+      ]
+     },
+     "title": "Visitors compared with 2019",
+     "legend": {
+      "orient": "bottom",
+      "direction": "horizontal",
+      "columns": 3,
+      "symbolType": "stroke",
+      "symbolStrokeWidth": 5,
+      "titleLimit": 300,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "columnPadding": 10,
+      "rowPadding": 4
+     }
+    },
+    "tooltip": [
+     {
+      "field": "item",
+      "title": "Group"
+     },
+     {
+      "field": "v2019",
+      "title": "2019",
+      "format": ","
+     },
+     {
+      "field": "v2026",
+      "title": "Year to Jun 2026",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "% of 2019",
+      "format": ".0f"
+     }
+    ]
+   }
+  },
+  {
+   "mark": {
+    "type": "circle",
+    "size": 55,
+    "color": "#ffffff",
+    "stroke": "#777",
+    "strokeWidth": 1.8,
+    "opacity": 1
+   },
+   "encoding": {
+    "x": {
+     "field": "base",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       50,
+       255
+      ]
+     },
+     "title": "Year to Jun 2026, % of 2019 (100 = same)"
+    },
+    "y": {
+     "field": "item",
+     "type": "nominal",
+     "sort": {
+      "field": "order"
+     },
+     "title": null,
+     "axis": {
+      "labelFontSize": 12,
+      "ticks": false,
+      "domain": false,
+      "labelLimit": 148,
+      "labelPadding": 8,
+      "minExtent": 148
+     }
+    }
+   }
+  },
+  {
+   "mark": {
+    "type": "circle",
+    "size": 170,
+    "opacity": 1
+   },
+   "encoding": {
+    "x": {
+     "field": "pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       50,
+       255
+      ]
+     },
+     "title": "Year to Jun 2026, % of 2019 (100 = same)"
+    },
+    "y": {
+     "field": "item",
+     "type": "nominal",
+     "sort": {
+      "field": "order"
+     },
+     "title": null,
+     "axis": {
+      "labelFontSize": 12,
+      "ticks": false,
+      "domain": false,
+      "labelLimit": 148,
+      "labelPadding": 8,
+      "minExtent": 148
+     }
+    },
+    "color": {
+     "field": "band",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "Under 80%",
+       "80\u201395%",
+       "95\u2013105%",
+       "105\u2013125%",
+       "Over 125%"
+      ],
+      "range": [
+       "#b2182b",
+       "#ef8a62",
+       "#a6acb2",
+       "#67a9cf",
+       "#2166ac"
+      ]
+     },
+     "title": "Visitors compared with 2019",
+     "legend": null
+    },
+    "tooltip": [
+     {
+      "field": "item",
+      "title": "Group"
+     },
+     {
+      "field": "v2019",
+      "title": "2019",
+      "format": ","
+     },
+     {
+      "field": "v2026",
+      "title": "Year to Jun 2026",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "% of 2019",
+      "format": ".0f"
+     }
+    ]
+   }
+  },
+  {
+   "transform": [
+    {
+     "calculate": "207",
+     "as": "lx"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "color": "#222",
+    "baseline": "middle",
+    "align": "left"
+   },
+   "encoding": {
+    "x": {
+     "field": "lx",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       50,
+       255
+      ]
+     },
+     "title": "Year to Jun 2026, % of 2019 (100 = same)"
+    },
+    "y": {
+     "field": "item",
+     "type": "nominal",
+     "sort": {
+      "field": "order"
+     },
+     "title": null,
+     "axis": {
+      "labelFontSize": 12,
+      "ticks": false,
+      "domain": false,
+      "labelLimit": 148,
+      "labelPadding": 8,
+      "minExtent": 148
+     }
+    },
+    "text": {
+     "field": "label"
+    }
+   }
+  }
+ ],
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  },
+  "axis": {
+   "labelColor": "#444",
+   "titleColor": "#333"
+  }
+ }
+}
