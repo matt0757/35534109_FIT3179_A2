@@ -1,0 +1,41 @@
+period,sex,employment_type,jobs_k,signed,cat,sex_total,pt_share,signed_total,emp_order,order
+2017,Female,Full-time,93.1,93.1,Female full-time,276.5,66.0,276.5,0,2017
+2017,Female,Part-time,183.4,183.4,Female part-time,276.5,66.0,276.5,1,2017
+2017,Male,Full-time,126.2,-126.2,Male full-time,206.7,39.0,-206.7,0,2017
+2017,Male,Part-time,80.5,-80.5,Male part-time,206.7,39.0,-206.7,1,2017
+2018,Female,Full-time,98.6,98.6,Female full-time,288.6,66.0,288.6,0,2018
+2018,Female,Part-time,190.0,190.0,Female part-time,288.6,66.0,288.6,1,2018
+2018,Male,Full-time,132.8,-132.8,Male full-time,222.0,40.0,-222.0,0,2018
+2018,Male,Part-time,89.2,-89.2,Male part-time,222.0,40.0,-222.0,1,2018
+2019,Female,Full-time,109.6,109.6,Female full-time,308.0,64.0,308.0,0,2019
+2019,Female,Part-time,198.4,198.4,Female part-time,308.0,64.0,308.0,1,2019
+2019,Male,Full-time,139.6,-139.6,Male full-time,236.5,41.0,-236.5,0,2019
+2019,Male,Part-time,96.9,-96.9,Male part-time,236.5,41.0,-236.5,1,2019
+2020,Female,Full-time,72.2,72.2,Female full-time,208.0,65.0,208.0,0,2020
+2020,Female,Part-time,135.8,135.8,Female part-time,208.0,65.0,208.0,1,2020
+2020,Male,Full-time,96.3,-96.3,Male full-time,165.2,42.0,-165.2,0,2020
+2020,Male,Part-time,68.9,-68.9,Male part-time,165.2,42.0,-165.2,1,2020
+2021,Female,Full-time,64.1,64.1,Female full-time,202.6,68.0,202.6,0,2021
+2021,Female,Part-time,138.5,138.5,Female part-time,202.6,68.0,202.6,1,2021
+2021,Male,Full-time,96.6,-96.6,Male full-time,166.1,42.0,-166.1,0,2021
+2021,Male,Part-time,69.5,-69.5,Male part-time,166.1,42.0,-166.1,1,2021
+2022,Female,Full-time,103.7,103.7,Female full-time,289.6,64.0,289.6,0,2022
+2022,Female,Part-time,185.9,185.9,Female part-time,289.6,64.0,289.6,1,2022
+2022,Male,Full-time,132.3,-132.3,Male full-time,226.2,42.0,-226.2,0,2022
+2022,Male,Part-time,93.9,-93.9,Male part-time,226.2,42.0,-226.2,1,2022
+2023,Female,Full-time,126.8,126.8,Female full-time,343.3,63.0,343.3,0,2023
+2023,Female,Part-time,216.5,216.5,Female part-time,343.3,63.0,343.3,1,2023
+2023,Male,Full-time,159.5,-159.5,Male full-time,276.8,42.0,-276.8,0,2023
+2023,Male,Part-time,117.3,-117.3,Male part-time,276.8,42.0,-276.8,1,2023
+2024,Female,Full-time,119.7,119.7,Female full-time,338.9,65.0,338.9,0,2024
+2024,Female,Part-time,219.2,219.2,Female part-time,338.9,65.0,338.9,1,2024
+2024,Male,Full-time,161.3,-161.3,Male full-time,284.3,43.0,-284.3,0,2024
+2024,Male,Part-time,123.0,-123.0,Male part-time,284.3,43.0,-284.3,1,2024
+2025,Female,Full-time,129.7,129.7,Female full-time,352.3,63.0,352.3,0,2025
+2025,Female,Part-time,222.6,222.6,Female part-time,352.3,63.0,352.3,1,2025
+2025,Male,Full-time,164.4,-164.4,Male full-time,299.4,45.0,-299.4,0,2025
+2025,Male,Part-time,135.0,-135.0,Male part-time,299.4,45.0,-299.4,1,2025
+Year to Jun 2026,Female,Full-time,134.2,134.2,Female full-time,363.5,63.0,363.5,0,99
+Year to Jun 2026,Female,Part-time,229.3,229.3,Female part-time,363.5,63.0,363.5,1,99
+Year to Jun 2026,Male,Full-time,164.8,-164.8,Male full-time,300.6,45.0,-300.6,0,99
+Year to Jun 2026,Male,Part-time,135.8,-135.8,Male part-time,300.6,45.0,-300.6,1,99

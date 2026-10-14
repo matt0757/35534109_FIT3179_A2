@@ -9,7 +9,7 @@ const charts = [
   { id: "#chart7b", spec: "specs/chart7b_duration.vg.json" },
   { id: "#chart8", spec: "specs/chart8_horizon.vg.json" },
   { id: "#chart9", spec: "specs/chart9_quadrant.vg.json" },
-  // { id: "#chart10", spec: "specs/chart10_butterfly.vg.json" }
+  { id: "#chart10", spec: "specs/chart10_butterfly.vg.json" }
 ];
 
 charts.forEach(({ id, spec }) => {
