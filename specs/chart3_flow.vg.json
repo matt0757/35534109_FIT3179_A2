@@ -62,7 +62,7 @@
           "as": "route"
         },
         {
-          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80\u201395%' : datum.pct_of_2019 < 105 ? '95\u2013105%' : datum.pct_of_2019 < 125 ? '105\u2013125%' : 'Over 125%'",
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
           "as": "band"
         }
       ],
@@ -70,7 +70,7 @@
         "type": "geoshape",
         "filled": false,
         "strokeCap": "round",
-        "opacity": 0.8
+        "cursor": "pointer"
       },
       "encoding": {
         "shape": {
@@ -84,9 +84,9 @@
           "scale": {
             "domain": [
               "Under 80%",
-              "80\u201395%",
-              "95\u2013105%",
-              "105\u2013125%",
+              "80–95%",
+              "95–105%",
+              "105–125%",
               "Over 125%"
             ],
             "range": [
@@ -162,8 +162,30 @@
             "title": "Compared with 2019 (%)",
             "format": ".0f"
           }
-        ]
-      }
+        ],
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 0.8
+          },
+          "value": 0.12
+        }
+      },
+      "params": [
+        {
+          "name": "bandSel",
+          "select": {
+            "type": "point",
+            "fields": [
+              "band"
+            ],
+            "on": "click",
+            "toggle": true
+          },
+          "bind": "legend"
+        }
+      ]
     },
     {
       "data": {
@@ -180,8 +202,7 @@
       "mark": {
         "type": "circle",
         "size": 22,
-        "color": "#333",
-        "opacity": 0.9
+        "color": "#333"
       },
       "encoding": {
         "longitude": {
@@ -191,8 +212,22 @@
         "latitude": {
           "field": "lat",
           "type": "quantitative"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 0.9
+          },
+          "value": 0.2
         }
-      }
+      },
+      "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        }
+      ]
     },
     {
       "data": {
@@ -206,6 +241,10 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        },
         {
           "filter": "datum.label_pos === 'top'"
         }
@@ -234,6 +273,14 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
@@ -249,6 +296,10 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        },
         {
           "filter": "datum.label_pos === 'top'"
         }
@@ -274,6 +325,14 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
@@ -289,6 +348,10 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        },
         {
           "filter": "datum.label_pos === 'left'"
         }
@@ -317,6 +380,14 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
@@ -332,6 +403,10 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        },
         {
           "filter": "datum.label_pos === 'left'"
         }
@@ -357,6 +432,14 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
@@ -372,6 +455,10 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        },
         {
           "filter": "datum.label_pos === 'right'"
         }
@@ -400,6 +487,14 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
@@ -415,6 +510,10 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        },
         {
           "filter": "datum.label_pos === 'right'"
         }
@@ -440,6 +539,14 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
@@ -455,6 +562,10 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        },
         {
           "filter": "datum.label_pos === 'topright'"
         }
@@ -484,6 +595,14 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
@@ -499,6 +618,10 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
+          "as": "band"
+        },
         {
           "filter": "datum.label_pos === 'topright'"
         }
@@ -525,6 +648,14 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "bandSel",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
