@@ -485,64 +485,6 @@
   {
    "transform": [
     {
-     "calculate": "datum.rowpos * 34 + 14",
-     "as": "mid"
-    }
-   ],
-   "mark": {
-    "type": "point",
-    "opacity": 0,
-    "size": 80
-   },
-   "encoding": {
-    "x": {
-     "field": "date",
-     "type": "temporal",
-     "scale": {
-      "type": "utc",
-      "domain": [
-       "2016-09-01",
-       "2026-06-01"
-      ]
-     }
-    },
-    "y": {
-     "field": "mid",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       0,
-       30
-      ],
-      "nice": false
-     },
-     "axis": null
-    },
-    "tooltip": [
-     {
-      "field": "name",
-      "title": "Industry"
-     },
-     {
-      "field": "quarter_label",
-      "title": "Quarter"
-     },
-     {
-      "field": "jobs_thousands",
-      "title": "Jobs (thousands)",
-      "format": ".1f"
-     },
-     {
-      "field": "dev",
-      "title": "vs 2019 average (%)",
-      "format": "+.0f"
-     }
-    ]
-   }
-  },
-  {
-   "transform": [
-    {
      "filter": "datum.quarter_label === '2026-Q2'"
     },
     {
@@ -596,6 +538,54 @@
      },
      "value": "#b2182b"
     }
+   }
+  },
+  {
+   "mark": {
+    "type": "bar",
+    "opacity": 0
+   },
+   "encoding": {
+    "x": {
+     "field": "date",
+     "type": "temporal",
+     "timeUnit": "utcyearquarter",
+     "scale": {
+      "type": "utc",
+      "domain": [
+       "2016-09-01",
+       "2026-06-01"
+      ]
+     }
+    },
+    "y": {
+     "value": 0
+    },
+    "y2": {
+     "value": {
+      "expr": "height"
+     }
+    },
+    "tooltip": [
+     {
+      "field": "name",
+      "title": "Industry"
+     },
+     {
+      "field": "quarter_label",
+      "title": "Quarter"
+     },
+     {
+      "field": "jobs_thousands",
+      "title": "Jobs (thousands)",
+      "format": ".1f"
+     },
+     {
+      "field": "dev",
+      "title": "vs 2019 average (%)",
+      "format": "+.0f"
+     }
+    ]
    }
   }
  ],
