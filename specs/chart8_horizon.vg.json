@@ -1,8 +1,17 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
  "description": "Interactive horizon chart: select one of twelve tourism industries to compare its jobs with its 2019 average, Sep 2016 to Jun 2026.",
+ "title": {
+  "text": {
+   "expr": "industrySelector"
+  },
+  "anchor": "start",
+  "fontSize": 13,
+  "fontWeight": "normal",
+  "color": "#222"
+ },
  "width": "container",
- "height": 120,
+ "height": 200,
  "padding": {
   "left": 6,
   "right": 6,
@@ -529,53 +538,6 @@
       "format": "+.0f"
      }
     ]
-   }
-  },
-  {
-   "transform": [
-    {
-     "filter": "datum.quarter_label === '2016-Q3'"
-    },
-    {
-     "calculate": "datum.rowpos * 34 + 15",
-     "as": "mid"
-    }
-   ],
-   "mark": {
-    "type": "text",
-    "align": "right",
-    "baseline": "middle",
-    "dx": -8,
-    "fontSize": 13,
-    "color": "#222"
-   },
-   "encoding": {
-    "x": {
-     "field": "date",
-     "type": "temporal",
-     "scale": {
-      "type": "utc",
-      "domain": [
-       "2016-09-01",
-       "2026-06-01"
-      ]
-     }
-    },
-    "y": {
-     "field": "mid",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       0,
-       30
-      ],
-      "nice": false
-     },
-     "axis": null
-    },
-    "text": {
-     "field": "name"
-    }
    }
   },
   {
