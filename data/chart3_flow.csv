@@ -1,26 +1,251 @@
-name,country_source,lon,lat,visitors,visitors_2019,pct_of_2019,label_pos,label
-New Zealand,New Zealand,174.78,-41.29,1422760,1433770,99.2,right,New Zealand 99%
-China,China,116.41,39.9,1127110,1438670,78.3,left,China 78%
-United States,United States of America,-77.04,38.91,755490,817990,92.4,top,United States 92%
-United Kingdom,"UK, CIs & IOM",-0.13,51.51,751430,715820,105.0,top,United Kingdom 105%
-Singapore,Singapore,103.82,1.35,448310,478500,93.7,left,Singapore 94%
-Japan,Japan,139.69,35.69,447600,498640,89.8,right,Japan 90%
-India,India,77.21,28.61,435560,399300,109.1,top,India 109%
-South Korea,"Korea, South",126.98,37.57,407610,280480,145.3,topright,South Korea 145%
-Hong Kong,Hong Kong,114.17,22.32,252720,315150,80.2,,
-Indonesia,Indonesia,106.85,-6.21,244250,221730,110.2,,
-Malaysia,Malaysia,101.69,3.14,215450,384900,56.0,,
-Taiwan,Taiwan,121.57,25.03,206910,194610,106.3,,
-Philippines,Philippines,120.98,14.6,198230,158550,125.0,,
-Germany,Germany,13.4,52.52,180110,207090,87.0,,
-Canada,Canada,-75.7,45.42,176900,189610,93.3,,
-Vietnam,Vietnam,105.85,21.03,162010,123460,131.2,,
-France,France,2.35,48.86,152300,143730,106.0,,
-Thailand,Thailand,100.5,13.76,97330,102700,94.8,,
-Ireland,Ireland,-6.26,53.35,93570,67280,139.1,,
-Italy,Italy,12.5,41.9,79560,75210,105.8,,
-Nepal,Nepal,85.32,27.72,63150,38110,165.7,,
-Fiji,Fiji,178.44,-18.14,60170,45670,131.7,,
-Netherlands,Netherlands,4.9,52.37,55670,64750,86.0,,
-Spain,Spain,-3.7,40.42,51710,47460,109.0,,
-Sri Lanka,Sri Lanka,79.86,6.93,51650,43960,117.5,,
+year,period,country,name,lon,lat,visitors,visitors_2019,pct_of_2019,label,label_pos
+2017,2017,New Zealand,New Zealand,174.78,-41.29,1359510,1433770,94.8,New Zealand,right
+2017,2017,China,China,116.41,39.9,1356910,1438670,94.3,China,topright
+2017,2017,United States of America,United States,-77.04,38.91,780570,817990,95.4,United States,left
+2017,2017,"UK, CIs & IOM",United Kingdom,-0.13,51.51,732890,715820,102.4,United Kingdom,right
+2017,2017,Japan,Japan,139.69,35.69,434550,498640,87.1,Japan,right
+2017,2017,Singapore,Singapore,103.82,1.35,432970,478500,90.5,Singapore,left
+2017,2017,Malaysia,Malaysia,101.69,3.14,396770,384900,103.1,,
+2017,2017,India,India,77.21,28.61,302570,399300,75.8,India,left
+2017,2017,"Korea, South",South Korea,126.98,37.57,302210,280480,107.7,,
+2017,2017,Hong Kong,Hong Kong,114.17,22.32,281200,315150,89.2,,
+2017,2017,Germany,Germany,13.4,52.52,208350,207090,100.6,,
+2017,2017,Indonesia,Indonesia,106.85,-6.21,192790,221730,86.9,,
+2017,2017,Taiwan,Taiwan,121.56,25.03,179930,194610,92.5,,
+2017,2017,Canada,Canada,-75.7,45.42,167580,189610,88.4,,
+2017,2017,France,France,2.35,48.86,129620,143730,90.2,,
+2017,2017,Philippines,Philippines,120.98,14.6,127300,158550,80.3,,
+2017,2017,Thailand,Thailand,100.5,13.76,97870,102700,95.3,,
+2017,2017,Vietnam,Vietnam,105.85,21.03,93860,123460,76.0,,
+2017,2017,Italy,Italy,12.5,41.9,75300,75210,100.1,,
+2017,2017,Ireland,Ireland,-6.26,53.35,57160,67280,85.0,,
+2017,2017,Netherlands,Netherlands,4.9,52.37,55450,64750,85.6,,
+2017,2017,Fiji,Fiji,178.44,-18.14,41670,45670,91.2,,
+2017,2017,Spain,Spain,-3.7,40.42,40410,47460,85.1,,
+2017,2017,Sri Lanka,Sri Lanka,79.86,6.93,35540,43960,80.8,,
+2017,2017,Nepal,Nepal,85.32,27.72,19960,38110,52.4,,
+2018,2018,China,China,116.41,39.9,1432140,1438670,99.5,China,topright
+2018,2018,New Zealand,New Zealand,174.78,-41.29,1385000,1433770,96.6,New Zealand,right
+2018,2018,United States of America,United States,-77.04,38.91,789110,817990,96.5,United States,left
+2018,2018,"UK, CIs & IOM",United Kingdom,-0.13,51.51,733450,715820,102.5,United Kingdom,right
+2018,2018,Japan,Japan,139.69,35.69,469330,498640,94.1,Japan,right
+2018,2018,Singapore,Singapore,103.82,1.35,447980,478500,93.6,Singapore,left
+2018,2018,Malaysia,Malaysia,101.69,3.14,401170,384900,104.2,,
+2018,2018,India,India,77.21,28.61,357700,399300,89.6,India,left
+2018,2018,Hong Kong,Hong Kong,114.17,22.32,308750,315150,98.0,,
+2018,2018,"Korea, South",South Korea,126.98,37.57,287990,280480,102.7,,
+2018,2018,Indonesia,Indonesia,106.85,-6.21,208910,221730,94.2,,
+2018,2018,Germany,Germany,13.4,52.52,207120,207090,100.0,,
+2018,2018,Taiwan,Taiwan,121.56,25.03,202820,194610,104.2,,
+2018,2018,Canada,Canada,-75.7,45.42,182100,189610,96.0,,
+2018,2018,Philippines,Philippines,120.98,14.6,143700,158550,90.6,,
+2018,2018,France,France,2.35,48.86,142600,143730,99.2,,
+2018,2018,Vietnam,Vietnam,105.85,21.03,110820,123460,89.8,,
+2018,2018,Thailand,Thailand,100.5,13.76,99410,102700,96.8,,
+2018,2018,Italy,Italy,12.5,41.9,77900,75210,103.6,,
+2018,2018,Ireland,Ireland,-6.26,53.35,62340,67280,92.7,,
+2018,2018,Netherlands,Netherlands,4.9,52.37,59750,64750,92.3,,
+2018,2018,Spain,Spain,-3.7,40.42,47080,47460,99.2,,
+2018,2018,Fiji,Fiji,178.44,-18.14,45640,45670,99.9,,
+2018,2018,Sri Lanka,Sri Lanka,79.86,6.93,42070,43960,95.7,,
+2018,2018,Nepal,Nepal,85.32,27.72,29140,38110,76.5,,
+2019,2019,China,China,116.41,39.9,1438670,1438670,100.0,China,topright
+2019,2019,New Zealand,New Zealand,174.78,-41.29,1433770,1433770,100.0,New Zealand,right
+2019,2019,United States of America,United States,-77.04,38.91,817990,817990,100.0,United States,left
+2019,2019,"UK, CIs & IOM",United Kingdom,-0.13,51.51,715820,715820,100.0,United Kingdom,right
+2019,2019,Japan,Japan,139.69,35.69,498640,498640,100.0,Japan,right
+2019,2019,Singapore,Singapore,103.82,1.35,478500,478500,100.0,Singapore,left
+2019,2019,India,India,77.21,28.61,399300,399300,100.0,India,left
+2019,2019,Malaysia,Malaysia,101.69,3.14,384900,384900,100.0,,
+2019,2019,Hong Kong,Hong Kong,114.17,22.32,315150,315150,100.0,,
+2019,2019,"Korea, South",South Korea,126.98,37.57,280480,280480,100.0,,
+2019,2019,Indonesia,Indonesia,106.85,-6.21,221730,221730,100.0,,
+2019,2019,Germany,Germany,13.4,52.52,207090,207090,100.0,,
+2019,2019,Taiwan,Taiwan,121.56,25.03,194610,194610,100.0,,
+2019,2019,Canada,Canada,-75.7,45.42,189610,189610,100.0,,
+2019,2019,Philippines,Philippines,120.98,14.6,158550,158550,100.0,,
+2019,2019,France,France,2.35,48.86,143730,143730,100.0,,
+2019,2019,Vietnam,Vietnam,105.85,21.03,123460,123460,100.0,,
+2019,2019,Thailand,Thailand,100.5,13.76,102700,102700,100.0,,
+2019,2019,Italy,Italy,12.5,41.9,75210,75210,100.0,,
+2019,2019,Ireland,Ireland,-6.26,53.35,67280,67280,100.0,,
+2019,2019,Netherlands,Netherlands,4.9,52.37,64750,64750,100.0,,
+2019,2019,Spain,Spain,-3.7,40.42,47460,47460,100.0,,
+2019,2019,Fiji,Fiji,178.44,-18.14,45670,45670,100.0,,
+2019,2019,Sri Lanka,Sri Lanka,79.86,6.93,43960,43960,100.0,,
+2019,2019,Nepal,Nepal,85.32,27.72,38110,38110,100.0,,
+2020,2020,New Zealand,New Zealand,174.78,-41.29,242440,1433770,16.9,New Zealand,right
+2020,2020,China,China,116.41,39.9,207690,1438670,14.4,China,topright
+2020,2020,"UK, CIs & IOM",United Kingdom,-0.13,51.51,200800,715820,28.1,United Kingdom,right
+2020,2020,United States of America,United States,-77.04,38.91,188680,817990,23.1,United States,left
+2020,2020,Japan,Japan,139.69,35.69,91720,498640,18.4,Japan,right
+2020,2020,India,India,77.21,28.61,83960,399300,21.0,India,left
+2020,2020,Hong Kong,Hong Kong,114.17,22.32,60930,315150,19.3,,
+2020,2020,Singapore,Singapore,103.82,1.35,58320,478500,12.2,Singapore,left
+2020,2020,"Korea, South",South Korea,126.98,37.57,53520,280480,19.1,,
+2020,2020,Germany,Germany,13.4,52.52,53030,207090,25.6,,
+2020,2020,Canada,Canada,-75.7,45.42,52290,189610,27.6,,
+2020,2020,Malaysia,Malaysia,101.69,3.14,44790,384900,11.6,,
+2020,2020,Taiwan,Taiwan,121.56,25.03,35950,194610,18.5,,
+2020,2020,France,France,2.35,48.86,34710,143730,24.1,,
+2020,2020,Indonesia,Indonesia,106.85,-6.21,34360,221730,15.5,,
+2020,2020,Vietnam,Vietnam,105.85,21.03,28470,123460,23.1,,
+2020,2020,Philippines,Philippines,120.98,14.6,26530,158550,16.7,,
+2020,2020,Ireland,Ireland,-6.26,53.35,17080,67280,25.4,,
+2020,2020,Netherlands,Netherlands,4.9,52.37,15260,64750,23.6,,
+2020,2020,Thailand,Thailand,100.5,13.76,15100,102700,14.7,,
+2020,2020,Italy,Italy,12.5,41.9,14980,75210,19.9,,
+2020,2020,Spain,Spain,-3.7,40.42,11220,47460,23.6,,
+2020,2020,Fiji,Fiji,178.44,-18.14,8600,45670,18.8,,
+2020,2020,Sri Lanka,Sri Lanka,79.86,6.93,8550,43960,19.4,,
+2020,2020,Nepal,Nepal,85.32,27.72,7780,38110,20.4,,
+2021,2021,New Zealand,New Zealand,174.78,-41.29,96760,1433770,6.7,New Zealand,right
+2021,2021,"UK, CIs & IOM",United Kingdom,-0.13,51.51,21890,715820,3.1,United Kingdom,right
+2021,2021,United States of America,United States,-77.04,38.91,16760,817990,2.0,United States,left
+2021,2021,Singapore,Singapore,103.82,1.35,15830,478500,3.3,Singapore,left
+2021,2021,India,India,77.21,28.61,12960,399300,3.2,India,left
+2021,2021,China,China,116.41,39.9,6550,1438670,0.5,China,topright
+2021,2021,Philippines,Philippines,120.98,14.6,4460,158550,2.8,,
+2021,2021,Canada,Canada,-75.7,45.42,3280,189610,1.7,,
+2021,2021,Germany,Germany,13.4,52.52,3120,207090,1.5,,
+2021,2021,Hong Kong,Hong Kong,114.17,22.32,3090,315150,1.0,,
+2021,2021,France,France,2.35,48.86,2980,143730,2.1,,
+2021,2021,Indonesia,Indonesia,106.85,-6.21,2830,221730,1.3,,
+2021,2021,Malaysia,Malaysia,101.69,3.14,2340,384900,0.6,,
+2021,2021,"Korea, South",South Korea,126.98,37.57,2060,280480,0.7,,
+2021,2021,Ireland,Ireland,-6.26,53.35,1890,67280,2.8,,
+2021,2021,Japan,Japan,139.69,35.69,1870,498640,0.4,Japan,right
+2021,2021,Italy,Italy,12.5,41.9,1770,75210,2.4,,
+2021,2021,Netherlands,Netherlands,4.9,52.37,1670,64750,2.6,,
+2021,2021,Sri Lanka,Sri Lanka,79.86,6.93,1640,43960,3.7,,
+2021,2021,Nepal,Nepal,85.32,27.72,1400,38110,3.7,,
+2021,2021,Thailand,Thailand,100.5,13.76,1390,102700,1.4,,
+2021,2021,Vietnam,Vietnam,105.85,21.03,1300,123460,1.1,,
+2021,2021,Fiji,Fiji,178.44,-18.14,1150,45670,2.5,,
+2021,2021,Spain,Spain,-3.7,40.42,1030,47460,2.2,,
+2021,2021,Taiwan,Taiwan,121.56,25.03,480,194610,0.2,,
+2022,2022,New Zealand,New Zealand,174.78,-41.29,697630,1433770,48.7,New Zealand,right
+2022,2022,"UK, CIs & IOM",United Kingdom,-0.13,51.51,399190,715820,55.8,United Kingdom,right
+2022,2022,United States of America,United States,-77.04,38.91,326030,817990,39.9,United States,left
+2022,2022,India,India,77.21,28.61,303330,399300,76.0,India,left
+2022,2022,Singapore,Singapore,103.82,1.35,295800,478500,61.8,Singapore,left
+2022,2022,Indonesia,Indonesia,106.85,-6.21,90840,221730,41.0,,
+2022,2022,China,China,116.41,39.9,89250,1438670,6.2,China,topright
+2022,2022,Canada,Canada,-75.7,45.42,88010,189610,46.4,,
+2022,2022,Germany,Germany,13.4,52.52,85350,207090,41.2,,
+2022,2022,Malaysia,Malaysia,101.69,3.14,85260,384900,22.2,,
+2022,2022,Philippines,Philippines,120.98,14.6,80290,158550,50.6,,
+2022,2022,Japan,Japan,139.69,35.69,79390,498640,15.9,Japan,right
+2022,2022,"Korea, South",South Korea,126.98,37.57,72510,280480,25.9,,
+2022,2022,Vietnam,Vietnam,105.85,21.03,69820,123460,56.6,,
+2022,2022,France,France,2.35,48.86,60520,143730,42.1,,
+2022,2022,Hong Kong,Hong Kong,114.17,22.32,53720,315150,17.0,,
+2022,2022,Thailand,Thailand,100.5,13.76,52660,102700,51.3,,
+2022,2022,Ireland,Ireland,-6.26,53.35,46240,67280,68.7,,
+2022,2022,Nepal,Nepal,85.32,27.72,39370,38110,103.3,,
+2022,2022,Italy,Italy,12.5,41.9,36320,75210,48.3,,
+2022,2022,Netherlands,Netherlands,4.9,52.37,31400,64750,48.5,,
+2022,2022,Fiji,Fiji,178.44,-18.14,28120,45670,61.6,,
+2022,2022,Sri Lanka,Sri Lanka,79.86,6.93,27800,43960,63.2,,
+2022,2022,Taiwan,Taiwan,121.56,25.03,26160,194610,13.4,,
+2022,2022,Spain,Spain,-3.7,40.42,23770,47460,50.1,,
+2023,2023,New Zealand,New Zealand,174.78,-41.29,1272140,1433770,88.7,New Zealand,right
+2023,2023,United States of America,United States,-77.04,38.91,659740,817990,80.7,United States,left
+2023,2023,"UK, CIs & IOM",United Kingdom,-0.13,51.51,596880,715820,83.4,United Kingdom,right
+2023,2023,China,China,116.41,39.9,535790,1438670,37.2,China,topright
+2023,2023,India,India,77.21,28.61,395560,399300,99.1,India,left
+2023,2023,Singapore,Singapore,103.82,1.35,364010,478500,76.1,Singapore,left
+2023,2023,Japan,Japan,139.69,35.69,297720,498640,59.7,Japan,right
+2023,2023,"Korea, South",South Korea,126.98,37.57,288010,280480,102.7,,
+2023,2023,Indonesia,Indonesia,106.85,-6.21,201500,221730,90.9,,
+2023,2023,Hong Kong,Hong Kong,114.17,22.32,183700,315150,58.3,,
+2023,2023,Malaysia,Malaysia,101.69,3.14,175550,384900,45.6,,
+2023,2023,Vietnam,Vietnam,105.85,21.03,166630,123460,135.0,,
+2023,2023,Philippines,Philippines,120.98,14.6,157570,158550,99.4,,
+2023,2023,Canada,Canada,-75.7,45.42,157190,189610,82.9,,
+2023,2023,Germany,Germany,13.4,52.52,151870,207090,73.3,,
+2023,2023,Taiwan,Taiwan,121.56,25.03,122790,194610,63.1,,
+2023,2023,France,France,2.35,48.86,114160,143730,79.4,,
+2023,2023,Thailand,Thailand,100.5,13.76,96710,102700,94.2,,
+2023,2023,Ireland,Ireland,-6.26,53.35,79190,67280,117.7,,
+2023,2023,Italy,Italy,12.5,41.9,62300,75210,82.8,,
+2023,2023,Fiji,Fiji,178.44,-18.14,55040,45670,120.5,,
+2023,2023,Nepal,Nepal,85.32,27.72,54800,38110,143.8,,
+2023,2023,Netherlands,Netherlands,4.9,52.37,51920,64750,80.2,,
+2023,2023,Spain,Spain,-3.7,40.42,42160,47460,88.8,,
+2023,2023,Sri Lanka,Sri Lanka,79.86,6.93,41240,43960,93.8,,
+2024,2024,New Zealand,New Zealand,174.78,-41.29,1392960,1433770,97.2,New Zealand,right
+2024,2024,China,China,116.41,39.9,891550,1438670,62.0,China,topright
+2024,2024,United States of America,United States,-77.04,38.91,712380,817990,87.1,United States,left
+2024,2024,"UK, CIs & IOM",United Kingdom,-0.13,51.51,640760,715820,89.5,United Kingdom,right
+2024,2024,India,India,77.21,28.61,443460,399300,111.1,India,left
+2024,2024,Singapore,Singapore,103.82,1.35,417900,478500,87.3,Singapore,left
+2024,2024,Japan,Japan,139.69,35.69,397330,498640,79.7,Japan,right
+2024,2024,"Korea, South",South Korea,126.98,37.57,374560,280480,133.5,,
+2024,2024,Indonesia,Indonesia,106.85,-6.21,224250,221730,101.1,,
+2024,2024,Hong Kong,Hong Kong,114.17,22.32,216240,315150,68.6,,
+2024,2024,Malaysia,Malaysia,101.69,3.14,203080,384900,52.8,,
+2024,2024,Philippines,Philippines,120.98,14.6,174790,158550,110.2,,
+2024,2024,Vietnam,Vietnam,105.85,21.03,173100,123460,140.2,,
+2024,2024,Germany,Germany,13.4,52.52,168580,207090,81.4,,
+2024,2024,Canada,Canada,-75.7,45.42,165010,189610,87.0,,
+2024,2024,Taiwan,Taiwan,121.56,25.03,164470,194610,84.5,,
+2024,2024,France,France,2.35,48.86,127860,143730,89.0,,
+2024,2024,Thailand,Thailand,100.5,13.76,96430,102700,93.9,,
+2024,2024,Ireland,Ireland,-6.26,53.35,86500,67280,128.6,,
+2024,2024,Italy,Italy,12.5,41.9,65950,75210,87.7,,
+2024,2024,Nepal,Nepal,85.32,27.72,59590,38110,156.4,,
+2024,2024,Fiji,Fiji,178.44,-18.14,55680,45670,121.9,,
+2024,2024,Netherlands,Netherlands,4.9,52.37,51610,64750,79.7,,
+2024,2024,Sri Lanka,Sri Lanka,79.86,6.93,47820,43960,108.8,,
+2024,2024,Spain,Spain,-3.7,40.42,46580,47460,98.1,,
+2025,2025,New Zealand,New Zealand,174.78,-41.29,1435050,1433770,100.1,New Zealand,right
+2025,2025,China,China,116.41,39.9,1040140,1438670,72.3,China,topright
+2025,2025,"UK, CIs & IOM",United Kingdom,-0.13,51.51,758290,715820,105.9,United Kingdom,right
+2025,2025,United States of America,United States,-77.04,38.91,744970,817990,91.1,United States,left
+2025,2025,India,India,77.21,28.61,451530,399300,113.1,India,left
+2025,2025,Singapore,Singapore,103.82,1.35,443710,478500,92.7,Singapore,left
+2025,2025,Japan,Japan,139.69,35.69,423120,498640,84.9,Japan,right
+2025,2025,"Korea, South",South Korea,126.98,37.57,398440,280480,142.1,,
+2025,2025,Hong Kong,Hong Kong,114.17,22.32,249090,315150,79.0,,
+2025,2025,Indonesia,Indonesia,106.85,-6.21,242080,221730,109.2,,
+2025,2025,Malaysia,Malaysia,101.69,3.14,213680,384900,55.5,,
+2025,2025,Taiwan,Taiwan,121.56,25.03,193490,194610,99.4,,
+2025,2025,Philippines,Philippines,120.98,14.6,190660,158550,120.3,,
+2025,2025,Germany,Germany,13.4,52.52,179500,207090,86.7,,
+2025,2025,Canada,Canada,-75.7,45.42,171620,189610,90.5,,
+2025,2025,Vietnam,Vietnam,105.85,21.03,164990,123460,133.6,,
+2025,2025,France,France,2.35,48.86,145300,143730,101.1,,
+2025,2025,Thailand,Thailand,100.5,13.76,98410,102700,95.8,,
+2025,2025,Ireland,Ireland,-6.26,53.35,95890,67280,142.5,,
+2025,2025,Italy,Italy,12.5,41.9,76860,75210,102.2,,
+2025,2025,Nepal,Nepal,85.32,27.72,61960,38110,162.6,,
+2025,2025,Fiji,Fiji,178.44,-18.14,59750,45670,130.8,,
+2025,2025,Netherlands,Netherlands,4.9,52.37,55150,64750,85.2,,
+2025,2025,Spain,Spain,-3.7,40.42,51140,47460,107.8,,
+2025,2025,Sri Lanka,Sri Lanka,79.86,6.93,50380,43960,114.6,,
+2026,Year to Jun 2026,New Zealand,New Zealand,174.78,-41.29,1422760,1433770,99.2,New Zealand,right
+2026,Year to Jun 2026,China,China,116.41,39.9,1127110,1438670,78.3,China,topright
+2026,Year to Jun 2026,United States of America,United States,-77.04,38.91,755490,817990,92.4,United States,left
+2026,Year to Jun 2026,"UK, CIs & IOM",United Kingdom,-0.13,51.51,751430,715820,105.0,United Kingdom,right
+2026,Year to Jun 2026,Singapore,Singapore,103.82,1.35,448310,478500,93.7,Singapore,left
+2026,Year to Jun 2026,Japan,Japan,139.69,35.69,447600,498640,89.8,Japan,right
+2026,Year to Jun 2026,India,India,77.21,28.61,435560,399300,109.1,India,left
+2026,Year to Jun 2026,"Korea, South",South Korea,126.98,37.57,407610,280480,145.3,,
+2026,Year to Jun 2026,Hong Kong,Hong Kong,114.17,22.32,252720,315150,80.2,,
+2026,Year to Jun 2026,Indonesia,Indonesia,106.85,-6.21,244250,221730,110.2,,
+2026,Year to Jun 2026,Malaysia,Malaysia,101.69,3.14,215450,384900,56.0,,
+2026,Year to Jun 2026,Taiwan,Taiwan,121.56,25.03,206910,194610,106.3,,
+2026,Year to Jun 2026,Philippines,Philippines,120.98,14.6,198230,158550,125.0,,
+2026,Year to Jun 2026,Germany,Germany,13.4,52.52,180110,207090,87.0,,
+2026,Year to Jun 2026,Canada,Canada,-75.7,45.42,176900,189610,93.3,,
+2026,Year to Jun 2026,Vietnam,Vietnam,105.85,21.03,162010,123460,131.2,,
+2026,Year to Jun 2026,France,France,2.35,48.86,152300,143730,106.0,,
+2026,Year to Jun 2026,Thailand,Thailand,100.5,13.76,97330,102700,94.8,,
+2026,Year to Jun 2026,Ireland,Ireland,-6.26,53.35,93570,67280,139.1,,
+2026,Year to Jun 2026,Italy,Italy,12.5,41.9,79560,75210,105.8,,
+2026,Year to Jun 2026,Nepal,Nepal,85.32,27.72,63150,38110,165.7,,
+2026,Year to Jun 2026,Fiji,Fiji,178.44,-18.14,60170,45670,131.7,,
+2026,Year to Jun 2026,Netherlands,Netherlands,4.9,52.37,55670,64750,86.0,,
+2026,Year to Jun 2026,Spain,Spain,-3.7,40.42,51710,47460,109.0,,
+2026,Year to Jun 2026,Sri Lanka,Sri Lanka,79.86,6.93,51650,43960,117.5,,
