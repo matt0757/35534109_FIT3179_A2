@@ -1,0 +1,10 @@
+name,group,b2020,b2025,j2019,j2020,j2025,biz_pct,jobs_pct_2020,jobs_pct_2019,label_pos
+Accommodation,Characteristic,14059,13803,75.2,62.0,116.9,-1.8,88.7,55.4,right
+Cafes and restaurants,Characteristic,77095,88685,142.7,105.9,191.5,15.0,80.9,34.2,right
+"Clubs, pubs and bars",Characteristic,9581,10450,33.2,22.8,41.2,9.1,80.7,24.0,left
+Casinos and gambling,Characteristic,1290,1178,2.2,1.2,1.6,-8.7,38.3,-25.3,right
+Cultural services,Characteristic,16570,21297,11.8,8.4,14.1,28.5,68.4,20.0,left
+Sports and recreation,Characteristic,14190,16843,19.4,13.3,29.2,18.7,120.3,50.8,right
+Travel agencies and tours,Characteristic,9000,8995,22.4,19.2,14.5,-0.1,-24.6,-35.5,right
+Passenger transport and vehicle hire,Characteristic,52957,43866,78.0,49.3,79.4,-17.2,61.2,1.9,right
+Retail trade,Connected,139854,156163,105.4,67.5,116.2,11.7,72.2,10.2,right

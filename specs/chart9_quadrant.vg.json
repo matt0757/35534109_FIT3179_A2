@@ -1,0 +1,1936 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Labelled quadrant scatter: change in tourism businesses (2020 to 2025) against change in tourism jobs (2019 to 2025) for nine industries.",
+ "width": "container",
+ "height": 480,
+ "padding": {
+  "left": 6,
+  "right": 10,
+  "top": 6,
+  "bottom": 6
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "data": {
+  "url": "data/chart9_quadrant.csv",
+  "format": {
+   "type": "csv",
+   "parse": {
+    "biz_pct": "number",
+    "jobs_pct_2019": "number",
+    "jobs_pct_2020": "number",
+    "b2020": "number",
+    "b2025": "number"
+   }
+  }
+ },
+ "layer": [
+  {
+   "mark": {
+    "type": "rule",
+    "color": "#777",
+    "strokeWidth": 1.4
+   },
+   "encoding": {
+    "x": {
+     "datum": 0,
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)"
+    }
+   }
+  },
+  {
+   "mark": {
+    "type": "rule",
+    "color": "#777",
+    "strokeWidth": 1.4
+   },
+   "encoding": {
+    "y": {
+     "datum": 0,
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "x": -25,
+      "y": 70,
+      "t": "More jobs,\nfewer businesses"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "top",
+    "fontSize": 12,
+    "fontStyle": "italic",
+    "color": "#777",
+    "lineBreak": "\n"
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)"
+    },
+    "y": {
+     "field": "y",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)"
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "x": 47,
+      "y": 70,
+      "t": "More jobs,\nmore businesses"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "right",
+    "baseline": "top",
+    "fontSize": 12,
+    "fontStyle": "italic",
+    "color": "#777",
+    "lineBreak": "\n"
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)"
+    },
+    "y": {
+     "field": "y",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)"
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "x": -25,
+      "y": -38,
+      "t": "Fewer jobs,\nfewer businesses"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "top",
+    "fontSize": 12,
+    "fontStyle": "italic",
+    "color": "#777",
+    "lineBreak": "\n"
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)"
+    },
+    "y": {
+     "field": "y",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)"
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "x": 47,
+      "y": -38,
+      "t": "Fewer jobs,\nmore businesses"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "align": "right",
+    "baseline": "top",
+    "fontSize": 12,
+    "fontStyle": "italic",
+    "color": "#777",
+    "lineBreak": "\n"
+   },
+   "encoding": {
+    "x": {
+     "field": "x",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)"
+    },
+    "y": {
+     "field": "y",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)"
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  },
+  {
+   "mark": {
+    "type": "circle",
+    "opacity": 0.85,
+    "stroke": "#ffffff",
+    "strokeWidth": 1.5
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "size": {
+     "field": "b2025",
+     "type": "quantitative",
+     "scale": {
+      "type": "sqrt",
+      "domain": [
+       0,
+       160000
+      ],
+      "range": [
+       0,
+       3200
+      ]
+     },
+     "title": "Businesses in 2025",
+     "legend": {
+      "orient": "bottom",
+      "direction": "horizontal",
+      "values": [
+       1000,
+       10000,
+       100000
+      ],
+      "format": ",.0f",
+      "symbolType": "circle",
+      "symbolFillColor": "#9aa5ad",
+      "titleFontSize": 12,
+      "labelFontSize": 12
+     }
+    },
+    "color": {
+     "field": "group",
+     "type": "nominal",
+     "title": "Industry type",
+     "scale": {
+      "domain": [
+       "Characteristic",
+       "Connected"
+      ],
+      "range": [
+       "#16866d",
+       "#8a8f94"
+      ]
+     },
+     "legend": {
+      "orient": "bottom",
+      "direction": "horizontal",
+      "titleFontSize": 12,
+      "labelFontSize": 12,
+      "symbolType": "circle"
+     }
+    },
+    "tooltip": [
+     {
+      "field": "name",
+      "title": "Industry"
+     },
+     {
+      "field": "b2020",
+      "title": "Businesses 2020",
+      "format": ","
+     },
+     {
+      "field": "b2025",
+      "title": "Businesses 2025",
+      "format": ","
+     },
+     {
+      "field": "biz_pct",
+      "title": "Businesses change 2020\u201325 (%)",
+      "format": "+.0f"
+     },
+     {
+      "field": "jobs_pct_2019",
+      "title": "Jobs change 2019\u201325 (%)",
+      "format": "+.0f"
+     },
+     {
+      "field": "jobs_pct_2020",
+      "title": "Jobs change 2020\u201325 (%)",
+      "format": "+.0f"
+     }
+    ]
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Accommodation\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 22.296707018272997,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Accommodation\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 22.296707018272997,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Cafes and restaurants\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 32.53801294432142,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Cafes and restaurants\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 32.53801294432142,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Clubs, pubs and bars\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "right",
+    "baseline": "middle",
+    "dx": -21.13426291775133,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Clubs, pubs and bars\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "right",
+    "baseline": "middle",
+    "dx": -21.13426291775133,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Casinos and gambling\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 14.348810995598198,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Casinos and gambling\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 14.348810995598198,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Cultural services\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "right",
+    "baseline": "middle",
+    "dx": -24.277453529080535,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Cultural services\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "right",
+    "baseline": "middle",
+    "dx": -24.277453529080535,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Sports and recreation\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 23.179206350616376,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Sports and recreation\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 23.179206350616376,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Travel agencies and tours\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 20.540691849547244,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Travel agencies and tours\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 20.540691849547244,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Passenger transport and vehicle hire\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "center",
+    "baseline": "bottom",
+    "dy": -27.094154436234994,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Passenger transport and vehicle hire\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "center",
+    "baseline": "bottom",
+    "dy": -27.094154436234994,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Retail trade\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 36.72229452636486,
+    "color": "#ffffff",
+    "stroke": "#ffffff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.name === \"Retail trade\""
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 36.72229452636486,
+    "color": "#222"
+   },
+   "encoding": {
+    "x": {
+     "field": "biz_pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -26,
+       48
+      ],
+      "nice": false
+     },
+     "title": "Change in number of businesses, 2020 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -20,
+       -10,
+       0,
+       10,
+       20,
+       30,
+       40
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "y": {
+     "field": "jobs_pct_2019",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       -50,
+       72
+      ],
+      "nice": false
+     },
+     "title": "Change in tourism jobs, 2019 to 2025 (%)",
+     "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "values": [
+       -40,
+       -20,
+       0,
+       20,
+       40,
+       60
+      ],
+      "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+     }
+    },
+    "text": {
+     "field": "name"
+    }
+   }
+  }
+ ],
+ "resolve": {
+  "scale": {
+   "size": "independent"
+  }
+ },
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  },
+  "axis": {
+   "labelColor": "#444",
+   "titleColor": "#333"
+  }
+ }
+}
