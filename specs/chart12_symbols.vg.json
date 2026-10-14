@@ -1,0 +1,345 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Proportional symbol map: tourism businesses in 2025 by tourism region (circle area), coloured by change from 2021.",
+ "width": "container",
+ "height": 470,
+ "padding": {
+  "left": 4,
+  "right": 4,
+  "top": 4,
+  "bottom": 4
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "projection": {
+  "type": "albers",
+  "parallels": [
+   -18,
+   -36
+  ],
+  "rotate": [
+   -132,
+   0,
+   0
+  ],
+  "center": [
+   0,
+   -27
+  ]
+ },
+ "layer": [
+  {
+   "data": {
+    "url": "data/australia-states.json",
+    "format": {
+     "type": "topojson",
+     "feature": "states"
+    }
+   },
+   "mark": {
+    "type": "geoshape",
+    "fill": "#e3e6e9",
+    "stroke": "#ffffff",
+    "strokeWidth": 1
+   }
+  },
+  {
+   "data": {
+    "url": "data/chart12_regions.csv",
+    "format": {
+     "type": "csv",
+     "parse": {
+      "b2021": "number",
+      "b2025": "number",
+      "pct": "number",
+      "lon": "number",
+      "lat": "number"
+     }
+    }
+   },
+   "mark": {
+    "type": "circle",
+    "opacity": 0.8,
+    "stroke": "#ffffff",
+    "strokeWidth": 0.8
+   },
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    },
+    "size": {
+     "field": "b2025",
+     "type": "quantitative",
+     "scale": {
+      "type": "sqrt",
+      "domain": [
+       0,
+       50000
+      ],
+      "range": [
+       0,
+       3600
+      ]
+     },
+     "title": "Businesses in 2025",
+     "legend": {
+      "orient": "bottom",
+      "direction": "horizontal",
+      "values": [
+       1000,
+       10000,
+       40000
+      ],
+      "format": ",.0f",
+      "symbolType": "circle",
+      "symbolFillColor": "#9aa5ad",
+      "titleFontSize": 12,
+      "labelFontSize": 12,
+      "columnPadding": 14,
+      "titleAnchor": "start"
+     }
+    },
+    "color": {
+     "field": "pct",
+     "type": "quantitative",
+     "scale": {
+      "type": "threshold",
+      "domain": [
+       -5,
+       0,
+       5,
+       10
+      ],
+      "range": [
+       "#d6604d",
+       "#f4a582",
+       "#92c5de",
+       "#4393c3",
+       "#2166ac"
+      ]
+     },
+     "title": "Change in businesses, 2021 to 2025 (%)",
+     "legend": {
+      "orient": "top",
+      "direction": "horizontal",
+      "titleLimit": 320,
+      "titleFontSize": 12,
+      "labelFontSize": 12,
+      "gradientLength": 240,
+      "titleAnchor": "start"
+     }
+    },
+    "tooltip": [
+     {
+      "field": "region",
+      "title": "Region"
+     },
+     {
+      "field": "state",
+      "title": "State"
+     },
+     {
+      "field": "b2021",
+      "title": "Businesses 2021",
+      "format": ","
+     },
+     {
+      "field": "b2025",
+      "title": "Businesses 2025",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "Change 2021\u201325 (%)",
+      "format": "+.1f"
+     }
+    ]
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.label_pos === 'right'"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "baseline": "middle",
+    "align": "left",
+    "color": "#fff",
+    "stroke": "#fff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "label"
+    }
+   },
+   "data": {
+    "url": "data/chart12_regions.csv",
+    "format": {
+     "type": "csv",
+     "parse": {
+      "b2021": "number",
+      "b2025": "number",
+      "pct": "number",
+      "lon": "number",
+      "lat": "number"
+     }
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.label_pos === 'right'"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "baseline": "middle",
+    "align": "left",
+    "color": "#222"
+   },
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "label"
+    }
+   },
+   "data": {
+    "url": "data/chart12_regions.csv",
+    "format": {
+     "type": "csv",
+     "parse": {
+      "b2021": "number",
+      "b2025": "number",
+      "pct": "number",
+      "lon": "number",
+      "lat": "number"
+     }
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.label_pos === 'left'"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "baseline": "middle",
+    "align": "right",
+    "color": "#fff",
+    "stroke": "#fff",
+    "strokeWidth": 4,
+    "strokeJoin": "round"
+   },
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "label"
+    }
+   },
+   "data": {
+    "url": "data/chart12_regions.csv",
+    "format": {
+     "type": "csv",
+     "parse": {
+      "b2021": "number",
+      "b2025": "number",
+      "pct": "number",
+      "lon": "number",
+      "lat": "number"
+     }
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "datum.label_pos === 'left'"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "baseline": "middle",
+    "align": "right",
+    "color": "#222"
+   },
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "label"
+    }
+   },
+   "data": {
+    "url": "data/chart12_regions.csv",
+    "format": {
+     "type": "csv",
+     "parse": {
+      "b2021": "number",
+      "b2025": "number",
+      "pct": "number",
+      "lon": "number",
+      "lat": "number"
+     }
+    }
+   }
+  }
+ ],
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  }
+ }
+}

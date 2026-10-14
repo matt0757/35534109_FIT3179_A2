@@ -734,7 +734,8 @@
       "titleColor": "#333",
       "labelColor": "#444",
       "titlePadding": 6,
-      "padding": 4
+      "padding": 4,
+      "layout": { "bottom": { "margin": 200 } }
     }
   }
 }
