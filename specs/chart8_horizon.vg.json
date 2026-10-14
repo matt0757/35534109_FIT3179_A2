@@ -1,8 +1,8 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
- "description": "Horizon chart small multiples: tourism jobs by industry compared with each industry's 2019 average, Sep 2016 to Jun 2026.",
+ "description": "Interactive horizon chart: select one of twelve tourism industries to compare its jobs with its 2019 average, Sep 2016 to Jun 2026.",
  "width": "container",
- "height": 408,
+ "height": 120,
  "padding": {
   "left": 6,
   "right": 6,
@@ -13,6 +13,30 @@
   "type": "fit",
   "contains": "padding"
  },
+ "params": [
+  {
+   "name": "industrySelector",
+   "value": "Accommodation",
+   "bind": {
+    "input": "select",
+    "name": "Industry: ",
+    "options": [
+     "Accommodation",
+     "Cafes, restaurants and takeaway food services",
+     "Clubs, pubs, taverns and bars",
+     "Road passenger transport and transport equipment rental",
+     "Air, water and other passenger transport",
+     "Travel agency and information centre services",
+     "Cultural services",
+     "Casinos and other gambling services",
+     "Sports and recreation services",
+     "Retail trade",
+     "Education and training",
+     "Other tourism industries"
+    ]
+   }
+  }
+ ],
  "data": {
   "url": "data/chart8_horizon.csv",
   "format": {
@@ -25,6 +49,15 @@
    }
   }
  },
+ "transform": [
+  {
+   "filter": "datum.industry === industrySelector"
+  },
+  {
+   "calculate": "0",
+   "as": "rowpos"
+  }
+ ],
  "layer": [
   {
    "data": {
@@ -108,7 +141,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -166,7 +199,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -224,7 +257,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -282,7 +315,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -340,7 +373,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -398,7 +431,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -432,7 +465,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -470,7 +503,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -534,7 +567,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
@@ -585,7 +618,7 @@
      "scale": {
       "domain": [
        0,
-       408
+       30
       ],
       "nice": false
      },
