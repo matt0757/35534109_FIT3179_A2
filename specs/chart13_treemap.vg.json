@@ -1,0 +1,335 @@
+{
+ "$schema": "https://vega.github.io/schema/vega/v5.json",
+ "description": "Treemap of tourism-related businesses by turnover band: tile area is businesses in 2025 and colour is the change since 2020.",
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "padding": 4,
+ "height": 480,
+ "signals": [
+  {
+   "name": "width",
+   "init": "isFinite(containerSize()[0]) ? containerSize()[0] - 8 : 700",
+   "on": [
+    {
+     "update": "isFinite(containerSize()[0]) ? containerSize()[0] - 8 : 700",
+     "events": "window:resize"
+    }
+   ]
+  },
+  {
+   "name": "minW",
+   "value": 92
+  },
+  {
+   "name": "minH",
+   "value": 36
+  }
+ ],
+ "data": [
+  {
+   "name": "tree",
+   "url": "data/chart13_treemap.csv",
+   "format": {
+    "type": "csv",
+    "parse": {
+     "size": "number",
+     "b2020": "number",
+     "b2025": "number",
+     "pct": "number"
+    }
+   },
+   "transform": [
+    {
+     "type": "formula",
+     "expr": "datum.parent === '' ? null : datum.parent",
+     "as": "parent"
+    },
+    {
+     "type": "stratify",
+     "key": "id",
+     "parentKey": "parent"
+    },
+    {
+     "type": "treemap",
+     "field": "size",
+     "sort": {
+      "field": "value",
+      "order": "descending"
+     },
+     "method": "squarify",
+     "ratio": 1.2,
+     "round": true,
+     "size": [
+      {
+       "signal": "width"
+      },
+      {
+       "signal": "height"
+      }
+     ],
+     "paddingInner": 2,
+     "paddingOuter": 2,
+     "paddingTop": 22
+    }
+   ]
+  },
+  {
+   "name": "leaves",
+   "source": "tree",
+   "transform": [
+    {
+     "type": "filter",
+     "expr": "!datum.children"
+    }
+   ]
+  },
+  {
+   "name": "groups",
+   "source": "tree",
+   "transform": [
+    {
+     "type": "filter",
+     "expr": "datum.depth === 1"
+    }
+   ]
+  }
+ ],
+ "scales": [
+  {
+   "name": "color",
+   "type": "threshold",
+   "domain": [
+    0,
+    10,
+    20,
+    30
+   ],
+   "range": [
+    "#d6604d",
+    "#d1e5f0",
+    "#92c5de",
+    "#4393c3",
+    "#2166ac"
+   ]
+  }
+ ],
+ "legends": [
+  {
+   "fill": "color",
+   "type": "symbol",
+   "orient": "bottom",
+   "direction": "horizontal",
+   "title": "Change in the number of businesses, 2020 to 2025 (%)",
+   "titleFontSize": 12,
+   "labelFontSize": 12,
+   "symbolType": "square",
+   "symbolSize": 220,
+   "columnPadding": 14,
+   "titleLimit": 420
+  }
+ ],
+ "marks": [
+  {
+   "type": "rect",
+   "from": {
+    "data": "groups"
+   },
+   "encode": {
+    "enter": {
+     "x": {
+      "field": "x0"
+     },
+     "y": {
+      "field": "y0"
+     },
+     "x2": {
+      "field": "x1"
+     },
+     "y2": {
+      "field": "y1"
+     },
+     "fill": {
+      "value": "#f1f3f4"
+     },
+     "stroke": {
+      "value": "#9aa1a6"
+     },
+     "strokeWidth": {
+      "value": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "text",
+   "from": {
+    "data": "groups"
+   },
+   "encode": {
+    "enter": {
+     "x": {
+      "field": "x0",
+      "offset": 6
+     },
+     "y": {
+      "field": "y0",
+      "offset": 15
+     },
+     "text": {
+      "signal": "datum.name + ': ' + format(datum.b2025, ',') + ' (' + format(datum.pct, '+.0f') + '%)'"
+     },
+     "fontSize": {
+      "value": 13
+     },
+     "fontWeight": {
+      "value": "bold"
+     },
+     "fill": {
+      "value": "#222"
+     },
+     "font": {
+      "value": "Arial"
+     }
+    }
+   }
+  },
+  {
+   "type": "rect",
+   "from": {
+    "data": "leaves"
+   },
+   "encode": {
+    "enter": {
+     "x": {
+      "field": "x0"
+     },
+     "y": {
+      "field": "y0"
+     },
+     "x2": {
+      "field": "x1"
+     },
+     "y2": {
+      "field": "y1"
+     },
+     "fill": {
+      "scale": "color",
+      "field": "pct"
+     },
+     "stroke": {
+      "value": "#ffffff"
+     },
+     "strokeWidth": {
+      "value": 1.5
+     },
+     "tooltip": {
+      "signal": "{'Industry group': datum.group, 'Turnover': datum.band, 'Businesses 2020': format(datum.b2020, ','), 'Businesses 2025': format(datum.b2025, ','), 'Change': format(datum.pct, '+.1f') + '%'}"
+     }
+    },
+    "hover": {
+     "strokeWidth": {
+      "value": 3
+     },
+     "stroke": {
+      "value": "#222"
+     }
+    },
+    "update": {
+     "strokeWidth": {
+      "value": 1.5
+     },
+     "stroke": {
+      "value": "#ffffff"
+     }
+    }
+   }
+  },
+  {
+   "type": "text",
+   "from": {
+    "data": "leaves"
+   },
+   "interactive": false,
+   "encode": {
+    "enter": {
+     "x": {
+      "field": "x0",
+      "offset": 6
+     },
+     "y": {
+      "field": "y0",
+      "offset": 16
+     },
+     "text": {
+      "signal": "split(datum.label, '\\n')"
+     },
+     "fontSize": {
+      "value": 12
+     },
+     "fontWeight": {
+      "value": "bold"
+     },
+     "lineHeight": {
+      "value": 15
+     },
+     "font": {
+      "value": "Arial"
+     }
+    },
+    "update": {
+     "opacity": {
+      "signal": "(datum.x1 - datum.x0) > minW && (datum.y1 - datum.y0) > minH ? 1 : 0"
+     },
+     "fill": {
+      "signal": "datum.pct < 0 || datum.pct >= 20 ? '#ffffff' : '#1b1b1b'"
+     }
+    }
+   }
+  },
+  {
+   "type": "text",
+   "from": {
+    "data": "leaves"
+   },
+   "interactive": false,
+   "encode": {
+    "enter": {
+     "align": {
+      "value": "center"
+     },
+     "baseline": {
+      "value": "middle"
+     },
+     "fontSize": {
+      "value": 12
+     },
+     "fontWeight": {
+      "value": "bold"
+     },
+     "font": {
+      "value": "Arial"
+     },
+     "text": {
+      "signal": "format(datum.pct, '+.0f') + '%'"
+     }
+    },
+    "update": {
+     "x": {
+      "signal": "(datum.x0 + datum.x1) / 2"
+     },
+     "y": {
+      "signal": "(datum.y0 + datum.y1) / 2"
+     },
+     "opacity": {
+      "signal": "((datum.x1 - datum.x0) <= minW || (datum.y1 - datum.y0) <= minH) && (datum.x1 - datum.x0) > 34 && (datum.y1 - datum.y0) > 16 ? 1 : 0"
+     },
+     "fill": {
+      "signal": "datum.pct < 0 || datum.pct >= 20 ? '#ffffff' : '#1b1b1b'"
+     }
+    }
+   }
+  }
+ ]
+}

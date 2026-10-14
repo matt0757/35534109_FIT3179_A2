@@ -1,0 +1,28 @@
+id,parent,name,group,band,b2020,b2025,pct,size,label
+root,,All,,,,,,,
+characteristic,root,Tourism industries,Tourism industries,,194743.0,205098.0,5.3,,
+characteristic|Zero to less than $50k,characteristic,Under $50k,Tourism industries,Under $50k,61006.0,51836.0,-15.0,51836.0,"Under $50k
+51,836 (−15%)"
+characteristic|$50k to less than $200k,characteristic,$50k–$200k,Tourism industries,$50k–$200k,49073.0,52028.0,6.0,52028.0,"$50k–$200k
+52,028 (+6%)"
+characteristic|$200k to less than $2m,characteristic,$200k–$2m,Tourism industries,$200k–$2m,72050.0,83868.0,16.4,83868.0,"$200k–$2m
+83,868 (+16%)"
+characteristic|$2m to less than $5m,characteristic,$2m–$5m,Tourism industries,$2m–$5m,7793.0,10822.0,38.9,10822.0,"$2m–$5m
+10,822 (+39%)"
+characteristic|$5m to less than $10m,characteristic,$5m–$10m,Tourism industries,$5m–$10m,2535.0,3375.0,33.1,3375.0,"$5m–$10m
+3,375 (+33%)"
+characteristic|$10m or more,characteristic,$10m or more,Tourism industries,$10m or more,2286.0,3169.0,38.6,3169.0,"$10m or more
+3,169 (+39%)"
+connected,root,Connected industries,Connected industries,,139850.0,156161.0,11.7,,
+connected|Zero to less than $50k,connected,Under $50k,Connected industries,Under $50k,29290.0,31937.0,9.0,31937.0,"Under $50k
+31,937 (+9%)"
+connected|$50k to less than $200k,connected,$50k–$200k,Connected industries,$50k–$200k,30906.0,37390.0,21.0,37390.0,"$50k–$200k
+37,390 (+21%)"
+connected|$200k to less than $2m,connected,$200k–$2m,Connected industries,$200k–$2m,56894.0,58955.0,3.6,58955.0,"$200k–$2m
+58,955 (+4%)"
+connected|$2m to less than $5m,connected,$2m–$5m,Connected industries,$2m–$5m,13322.0,15516.0,16.5,15516.0,"$2m–$5m
+15,516 (+16%)"
+connected|$5m to less than $10m,connected,$5m–$10m,Connected industries,$5m–$10m,4961.0,6334.0,27.7,6334.0,"$5m–$10m
+6,334 (+28%)"
+connected|$10m or more,connected,$10m or more,Connected industries,$10m or more,4477.0,6029.0,34.7,6029.0,"$10m or more
+6,029 (+35%)"

@@ -11,7 +11,8 @@ const charts = [
   { id: "#chart9", spec: "specs/chart9_quadrant.vg.json" },
   { id: "#chart10", spec: "specs/chart10_butterfly.vg.json" },
   { id: "#chart11", spec: "specs/chart11_choropleth.vg.json" },
-  { id: "#chart12", spec: "specs/chart12_symbols.vg.json" }
+  { id: "#chart12", spec: "specs/chart12_symbols.vg.json" },
+  { id: "#chart13", spec: "specs/chart13_treemap.vg.json" }
 ];
 
 charts.forEach(({ id, spec }) => {
