@@ -15,7 +15,33 @@ const charts = [
   { id: "#chart13", spec: "specs/chart13_treemap.vg.json" }
 ];
 
-charts.forEach(({ id, spec }) => {
+const views = {};
+
+// Draw (or redraw) one chart. Clearing the container first means the new chart is
+// measured against the page layout, not against the size of the old chart.
+function draw({ id, spec }) {
+  const el = document.querySelector(id);
+  if (!el) return;
+  if (views[id]) { views[id].finalize(); delete views[id]; }
+  el.innerHTML = "";
   vegaEmbed(id, spec, { actions: false, renderer: "svg" })   // actions:false hides "Open in Vega Editor"
-    .catch(error => document.querySelector(id).textContent = error);
+    .then(result => { views[id] = result.view; })
+    .catch(error => el.textContent = error);
+}
+
+charts.forEach(draw);
+
+// Redraw every chart once the window has stopped being resized (for example when a
+// browser tab is dragged to half the screen and back). Vega's own resize handling
+// does not always re-measure the column after the layout changes.
+let resizeTimer;
+let lastWidth = window.innerWidth;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (window.innerWidth !== lastWidth) {
+      lastWidth = window.innerWidth;
+      charts.forEach(draw);
+    }
+  }, 250);
 });
