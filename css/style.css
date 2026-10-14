@@ -3,6 +3,7 @@ main { max-width: 1050px; margin: auto; }
 h1, h2 { font-family: Georgia, "Times New Roman", serif; }
 h1 { margin-bottom: 8px; font-size: 28px; }
 h2 { font-size: 20px; margin-bottom: 4px; }
+h3 { margin-bottom: 4px; }
 p, h1, h2, h3, footer { background: #fff; }
 p { max-width: 780px; }
 section { margin-bottom: 40px; background: #fff; }
