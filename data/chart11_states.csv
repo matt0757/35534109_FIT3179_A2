@@ -1,0 +1,17 @@
+state,b2020,b2025,pct,peak_year,b_peak,from_peak_pct,name,pct_label,lon,lat,label2
+ACT,2676,3078,15.0,2025,3078,0.0,Australian Capital Territory,+15%,157.2,-38.2,"ACT
++15%"
+NSW,65838,67750,2.9,2025,67750,0.0,New South Wales,+3%,146.6,-32.6,"NSW
++3%"
+NT,1479,1618,9.4,2025,1618,0.0,Northern Territory,+9%,133.4,-19.6,"NT
++9%"
+Qld,34181,36669,7.3,2025,36669,0.0,Queensland,+7%,144.2,-22.6,"Qld
++7%"
+SA,10264,11156,8.7,2025,11156,0.0,South Australia,+9%,135.2,-30.2,"SA
++9%"
+Tas,3842,3889,1.2,2023,4016,-3.2,Tasmania,+1%,146.6,-42.1,"Tas
++1%"
+Vic,59069,62387,5.6,2022,65350,-4.5,Victoria,+6%,144.4,-36.9,"Vic
++6%"
+WA,17280,18477,6.9,2025,18477,0.0,Western Australia,+7%,122.5,-26.0,"WA
++7%"

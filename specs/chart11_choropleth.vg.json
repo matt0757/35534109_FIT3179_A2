@@ -1,0 +1,319 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Choropleth of Australian states: change in the number of tourism businesses, 2020 to 2025.",
+ "width": "container",
+ "height": 430,
+ "padding": {
+  "left": 4,
+  "right": 4,
+  "top": 4,
+  "bottom": 4
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "projection": {
+  "type": "albers",
+  "parallels": [
+   -18,
+   -36
+  ],
+  "rotate": [
+   -132,
+   0,
+   0
+  ],
+  "center": [
+   0,
+   -27
+  ]
+ },
+ "layer": [
+  {
+   "data": {
+    "url": "data/australia-states.json",
+    "format": {
+     "type": "topojson",
+     "feature": "states"
+    }
+   },
+   "transform": [
+    {
+     "lookup": "properties.state",
+     "from": {
+      "data": {
+       "url": "data/chart11_states.csv",
+       "format": {
+        "type": "csv",
+        "parse": {
+         "b2020": "number",
+         "b2025": "number",
+         "pct": "number",
+         "from_peak_pct": "number",
+         "lon": "number",
+         "lat": "number"
+        }
+       }
+      },
+      "key": "state",
+      "fields": [
+       "name",
+       "b2020",
+       "b2025",
+       "pct",
+       "from_peak_pct",
+       "label2",
+       "lon",
+       "lat"
+      ]
+     }
+    }
+   ],
+   "mark": {
+    "type": "geoshape",
+    "stroke": "#ffffff",
+    "strokeWidth": 1.2
+   },
+   "encoding": {
+    "color": {
+     "field": "pct",
+     "type": "quantitative",
+     "scale": {
+      "type": "threshold",
+      "domain": [
+       3,
+       6,
+       9,
+       12
+      ],
+      "range": [
+       "#d6edd0",
+       "#bae4b3",
+       "#74c476",
+       "#31a354",
+       "#006d2c"
+      ]
+     },
+     "title": "Change in tourism businesses, 2020 to 2025 (%)",
+     "legend": {
+      "orient": "bottom",
+      "direction": "horizontal",
+      "symbolType": "square",
+      "symbolSize": 220,
+      "titleLimit": 320,
+      "titleFontSize": 12,
+      "labelFontSize": 12,
+      "columnPadding": 10,
+      "type": "symbol"
+     }
+    },
+    "tooltip": [
+     {
+      "field": "name",
+      "title": "State"
+     },
+     {
+      "field": "b2020",
+      "title": "Businesses 2020",
+      "format": ","
+     },
+     {
+      "field": "b2025",
+      "title": "Businesses 2025",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "Change 2020\u201325 (%)",
+      "format": "+.1f"
+     },
+     {
+      "field": "from_peak_pct",
+      "title": "Compared with peak year (%)",
+      "format": "+.1f"
+     }
+    ]
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "route": {
+       "type": "LineString",
+       "coordinates": [
+        [
+         149.1,
+         -35.5
+        ],
+        [
+         153.9,
+         -37.2
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   "mark": {
+    "type": "geoshape",
+    "filled": false,
+    "stroke": "#555",
+    "strokeWidth": 1
+   },
+   "encoding": {
+    "shape": {
+     "field": "route",
+     "type": "geojson"
+    }
+   }
+  },
+  {
+   "data": {
+    "url": "data/chart11_states.csv",
+    "format": {
+     "type": "csv",
+     "parse": {
+      "b2020": "number",
+      "b2025": "number",
+      "pct": "number",
+      "from_peak_pct": "number",
+      "lon": "number",
+      "lat": "number"
+     }
+    }
+   },
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "lineBreak": "\n",
+    "lineHeight": 14,
+    "align": "center",
+    "baseline": "middle"
+   },
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "label2"
+    },
+    "color": {
+     "condition": {
+      "test": "datum.pct >= 9 && datum.state !== 'ACT'",
+      "value": "#ffffff"
+     },
+     "value": "#1b1b1b"
+    }
+   }
+  },
+  {
+   "data": {
+    "url": "data/chart11_states.csv",
+    "format": {
+     "type": "csv",
+     "parse": {
+      "b2020": "number",
+      "b2025": "number",
+      "pct": "number",
+      "from_peak_pct": "number",
+      "lon": "number",
+      "lat": "number"
+     }
+    }
+   },
+   "transform": [
+    {
+     "filter": "datum.state === 'ACT'"
+    },
+    {
+     "calculate": "153.9",
+     "as": "mlon"
+    },
+    {
+     "calculate": "-37.2",
+     "as": "mlat"
+    }
+   ],
+   "mark": {
+    "type": "circle",
+    "size": 110,
+    "stroke": "#333",
+    "strokeWidth": 1.2,
+    "opacity": 1
+   },
+   "encoding": {
+    "longitude": {
+     "field": "mlon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "mlat",
+     "type": "quantitative"
+    },
+    "color": {
+     "field": "pct",
+     "type": "quantitative",
+     "scale": {
+      "type": "threshold",
+      "domain": [
+       3,
+       6,
+       9,
+       12
+      ],
+      "range": [
+       "#d6edd0",
+       "#bae4b3",
+       "#74c476",
+       "#31a354",
+       "#006d2c"
+      ]
+     },
+     "legend": null
+    },
+    "tooltip": [
+     {
+      "field": "name",
+      "title": "State"
+     },
+     {
+      "field": "b2020",
+      "title": "Businesses 2020",
+      "format": ","
+     },
+     {
+      "field": "b2025",
+      "title": "Businesses 2025",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "Change 2020\u201325 (%)",
+      "format": "+.1f"
+     },
+     {
+      "field": "from_peak_pct",
+      "title": "Compared with peak year (%)",
+      "format": "+.1f"
+     }
+    ]
+   }
+  }
+ ],
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  }
+ }
+}
