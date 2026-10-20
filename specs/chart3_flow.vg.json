@@ -24,6 +24,34 @@
  "layer": [
   {
    "data": {
+    "sphere": true
+   },
+   "mark": {
+    "type": "geoshape",
+    "fill": "#dbe9f3",
+    "stroke": "#b9cfdf",
+    "strokeWidth": 0.8
+   }
+  },
+  {
+   "data": {
+    "graticule": {
+     "step": [
+      30,
+      30
+     ]
+    }
+   },
+   "mark": {
+    "type": "geoshape",
+    "fill": null,
+    "stroke": "#ffffff",
+    "strokeOpacity": 1,
+    "strokeWidth": 0.5
+   }
+  },
+  {
+   "data": {
     "url": "data/world-110m.json",
     "format": {
      "type": "topojson",
@@ -37,9 +65,9 @@
    ],
    "mark": {
     "type": "geoshape",
-    "fill": "#e3e6e9",
-    "stroke": "#ffffff",
-    "strokeWidth": 0.6
+    "fill": "#f1f2f0",
+    "stroke": "#c9ced3",
+    "strokeWidth": 0.5
    }
   },
   {
