@@ -94,7 +94,7 @@
      "as": "route"
     },
     {
-     "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80\u201395%' : datum.pct_of_2019 < 105 ? '95\u2013105%' : datum.pct_of_2019 < 125 ? '105\u2013125%' : 'Over 125%'",
+     "calculate": "datum.pct_of_2019 < 80 ? 'Under 80%' : datum.pct_of_2019 < 95 ? '80–95%' : datum.pct_of_2019 < 105 ? '95–105%' : datum.pct_of_2019 < 125 ? '105–125%' : 'Over 125%'",
      "as": "band"
     }
    ],
@@ -112,13 +112,16 @@
     "stroke": {
      "field": "band",
      "type": "nominal",
-     "title": "Visitors compared with 2019",
+     "title": [
+      "Visitors compared",
+      "with 2019"
+     ],
      "scale": {
       "domain": [
        "Under 80%",
-       "80\u201395%",
-       "95\u2013105%",
-       "105\u2013125%",
+       "80–95%",
+       "95–105%",
+       "105–125%",
        "Over 125%"
       ],
       "range": [
@@ -130,14 +133,15 @@
       ]
      },
      "legend": {
-      "orient": "bottom",
-      "direction": "horizontal",
+      "orient": "bottom-right",
+      "direction": "vertical",
       "symbolType": "stroke",
       "symbolStrokeWidth": 6,
       "titleFontSize": 12,
       "labelFontSize": 12,
-      "columnPadding": 14,
-      "titleLimit": 320
+      "titleLimit": 200,
+      "rowPadding": 4,
+      "offset": 0
      }
     },
     "strokeWidth": {
@@ -156,8 +160,8 @@
       ]
      },
      "legend": {
-      "orient": "bottom",
-      "direction": "horizontal",
+      "orient": "bottom-left",
+      "direction": "vertical",
       "values": [
        100000,
        500000,
@@ -167,7 +171,9 @@
       "symbolType": "stroke",
       "symbolStrokeColor": "#555",
       "titleFontSize": 12,
-      "labelFontSize": 12
+      "labelFontSize": 12,
+      "rowPadding": 6,
+      "offset": 0
      }
     },
     "tooltip": [
@@ -653,12 +659,12 @@
    "mark": {
     "type": "text",
     "align": "left",
-    "baseline": "bottom",
+    "baseline": "top",
     "fontSize": 22,
     "fontWeight": "bold",
     "color": "#333",
     "text": {
-     "expr": "year_sel == 2026 ? 'Year to Jun 2026' : year_sel"
+     "expr": "year_sel == 2026 ? 'Year to June 2026' : year_sel"
     }
    },
    "encoding": {
@@ -666,9 +672,7 @@
      "value": 10
     },
     "y": {
-     "value": {
-      "expr": "height - 8"
-     }
+     "value": 6
     }
    }
   }
