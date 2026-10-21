@@ -212,6 +212,75 @@
         },
         "detail": {
           "field": "series"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 1400,
+        "opacity": 0
+      },
+      "encoding": {
+        "x": {
+          "field": "quarter_date",
+          "type": "temporal",
+          "title": "Year",
+          "scale": {
+            "domain": [
+              "2018-01-01",
+              "2026-07-01"
+            ],
+            "type": "utc"
+          },
+          "axis": {
+            "format": "%Y",
+            "tickCount": 9,
+            "labelAngle": 0,
+            "grid": true
+          }
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative",
+          "title": "Compared with the same quarter of 2019 (2019 = 100)",
+          "scale": {
+            "domain": [
+              0,
+              140
+            ]
+          },
+          "axis": {
+            "values": [
+              0,
+              25,
+              50,
+              75,
+              100,
+              125
+            ],
+            "grid": true
+          }
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Visitors arriving",
+              "Residents returning",
+              "Tourism main jobs",
+              "Whole-economy main jobs"
+            ],
+            "range": [
+              "#2878b5",
+              "#d9770b",
+              "#16866d",
+              "#7b8084"
+            ]
+          },
+          "legend": null
         },
         "tooltip": [
           {
