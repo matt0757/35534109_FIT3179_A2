@@ -1,8 +1,8 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
- "description": "Proportional symbol map: tourism businesses in 2025 by tourism region (circle area), coloured by change from 2021.",
+ "description": "Proportional symbol map: tourism businesses in 2025 by tourism region (circle area), coloured by change from 2021. A dropdown centres the map on a state and a slider zooms; when zoomed, the three largest regions are labelled with a leader line.",
  "width": "container",
- "height": 470,
+ "height": 540,
  "padding": {
   "left": 4,
   "right": 4,
@@ -24,10 +24,12 @@
    0,
    0
   ],
-  "center": [
-   0,
-   -27
-  ]
+  "center": {
+   "expr": "({AUS: [0, -27.5], NSW: [15.3, -33], Vic: [13.5, -37.4], Qld: [13.5, -20], SA: [3, -32], WA: [-11, -25], Tas: [14.5, -42.1], NT: [1.5, -18.5]})[state_view]"
+  },
+  "scale": {
+   "expr": "map_scale"
+  }
  },
  "layer": [
   {
@@ -46,19 +48,6 @@
    }
   },
   {
-   "data": {
-    "url": "data/chart12_regions.csv",
-    "format": {
-     "type": "csv",
-     "parse": {
-      "b2021": "number",
-      "b2025": "number",
-      "pct": "number",
-      "lon": "number",
-      "lat": "number"
-     }
-    }
-   },
    "mark": {
     "type": "circle",
     "opacity": 0.8,
@@ -157,7 +146,7 @@
      },
      {
       "field": "pct",
-      "title": "Change 2021\u201325 (%)",
+      "title": "Change 2021–25 (%)",
       "format": "+.1f"
      }
     ]
@@ -166,7 +155,7 @@
   {
    "transform": [
     {
-     "filter": "datum.label_pos === 'right'"
+     "filter": "(state_view == 'AUS' && zoom_level == 1) && datum.label_pos === 'right'"
     }
    ],
    "mark": {
@@ -192,25 +181,12 @@
     "text": {
      "field": "label"
     }
-   },
-   "data": {
-    "url": "data/chart12_regions.csv",
-    "format": {
-     "type": "csv",
-     "parse": {
-      "b2021": "number",
-      "b2025": "number",
-      "pct": "number",
-      "lon": "number",
-      "lat": "number"
-     }
-    }
    }
   },
   {
    "transform": [
     {
-     "filter": "datum.label_pos === 'right'"
+     "filter": "(state_view == 'AUS' && zoom_level == 1) && datum.label_pos === 'right'"
     }
    ],
    "mark": {
@@ -233,25 +209,12 @@
     "text": {
      "field": "label"
     }
-   },
-   "data": {
-    "url": "data/chart12_regions.csv",
-    "format": {
-     "type": "csv",
-     "parse": {
-      "b2021": "number",
-      "b2025": "number",
-      "pct": "number",
-      "lon": "number",
-      "lat": "number"
-     }
-    }
    }
   },
   {
    "transform": [
     {
-     "filter": "datum.label_pos === 'left'"
+     "filter": "(state_view == 'AUS' && zoom_level == 1) && datum.label_pos === 'left'"
     }
    ],
    "mark": {
@@ -277,25 +240,12 @@
     "text": {
      "field": "label"
     }
-   },
-   "data": {
-    "url": "data/chart12_regions.csv",
-    "format": {
-     "type": "csv",
-     "parse": {
-      "b2021": "number",
-      "b2025": "number",
-      "pct": "number",
-      "lon": "number",
-      "lat": "number"
-     }
-    }
    }
   },
   {
    "transform": [
     {
-     "filter": "datum.label_pos === 'left'"
+     "filter": "(state_view == 'AUS' && zoom_level == 1) && datum.label_pos === 'left'"
     }
    ],
    "mark": {
@@ -318,28 +268,473 @@
     "text": {
      "field": "label"
     }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "(state_view != 'AUS' || zoom_level != 1)"
+    },
+    {
+     "filter": "(state_view == 'AUS' || datum.state == state_view || (state_view == 'NSW' && datum.state == 'ACT'))"
+    },
+    {
+     "window": [
+      {
+       "op": "rank",
+       "as": "rnk"
+      }
+     ],
+     "sort": [
+      {
+       "field": "b2025",
+       "order": "descending"
+      }
+     ]
+    },
+    {
+     "filter": "datum.rnk <= 3"
+    },
+    {
+     "calculate": "isValid(({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region]) ? ({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region] : (isValid(({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region]) ? ({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region] : 40)",
+     "as": "ang"
+    },
+    {
+     "calculate": "sqrt(3600 * sqrt(datum.b2025 / 50000) / PI)",
+     "as": "rad"
+    },
+    {
+     "calculate": "cos(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "ox"
+    },
+    {
+     "calculate": "-sin(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "oy"
+    },
+    {
+     "calculate": "[({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] != null ? ({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] : datum.region, format(datum.b2025, ',')]",
+     "as": "callout"
+    },
+    {
+     "calculate": "datum.lon + datum.ox / (map_scale * cos(datum.lat * PI / 180)) * 180 / PI",
+     "as": "l_lon"
+    },
+    {
+     "calculate": "datum.lat - datum.oy / map_scale * 180 / PI",
+     "as": "l_lat"
+    }
+   ],
+   "mark": {
+    "type": "rule",
+    "stroke": "#fff",
+    "strokeWidth": 4,
+    "strokeCap": "round",
+    "interactive": false
    },
-   "data": {
-    "url": "data/chart12_regions.csv",
-    "format": {
-     "type": "csv",
-     "parse": {
-      "b2021": "number",
-      "b2025": "number",
-      "pct": "number",
-      "lon": "number",
-      "lat": "number"
-     }
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    },
+    "longitude2": {
+     "field": "l_lon"
+    },
+    "latitude2": {
+     "field": "l_lat"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "(state_view != 'AUS' || zoom_level != 1)"
+    },
+    {
+     "filter": "(state_view == 'AUS' || datum.state == state_view || (state_view == 'NSW' && datum.state == 'ACT'))"
+    },
+    {
+     "window": [
+      {
+       "op": "rank",
+       "as": "rnk"
+      }
+     ],
+     "sort": [
+      {
+       "field": "b2025",
+       "order": "descending"
+      }
+     ]
+    },
+    {
+     "filter": "datum.rnk <= 3"
+    },
+    {
+     "calculate": "isValid(({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region]) ? ({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region] : (isValid(({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region]) ? ({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region] : 40)",
+     "as": "ang"
+    },
+    {
+     "calculate": "sqrt(3600 * sqrt(datum.b2025 / 50000) / PI)",
+     "as": "rad"
+    },
+    {
+     "calculate": "cos(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "ox"
+    },
+    {
+     "calculate": "-sin(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "oy"
+    },
+    {
+     "calculate": "[({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] != null ? ({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] : datum.region, format(datum.b2025, ',')]",
+     "as": "callout"
+    },
+    {
+     "calculate": "datum.lon + datum.ox / (map_scale * cos(datum.lat * PI / 180)) * 180 / PI",
+     "as": "l_lon"
+    },
+    {
+     "calculate": "datum.lat - datum.oy / map_scale * 180 / PI",
+     "as": "l_lat"
+    }
+   ],
+   "mark": {
+    "type": "rule",
+    "stroke": "#222",
+    "strokeWidth": 1.3,
+    "strokeCap": "round",
+    "interactive": false
+   },
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    },
+    "longitude2": {
+     "field": "l_lon"
+    },
+    "latitude2": {
+     "field": "l_lat"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "(state_view != 'AUS' || zoom_level != 1)"
+    },
+    {
+     "filter": "(state_view == 'AUS' || datum.state == state_view || (state_view == 'NSW' && datum.state == 'ACT'))"
+    },
+    {
+     "window": [
+      {
+       "op": "rank",
+       "as": "rnk"
+      }
+     ],
+     "sort": [
+      {
+       "field": "b2025",
+       "order": "descending"
+      }
+     ]
+    },
+    {
+     "filter": "datum.rnk <= 3"
+    },
+    {
+     "calculate": "isValid(({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region]) ? ({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region] : (isValid(({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region]) ? ({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region] : 40)",
+     "as": "ang"
+    },
+    {
+     "calculate": "sqrt(3600 * sqrt(datum.b2025 / 50000) / PI)",
+     "as": "rad"
+    },
+    {
+     "calculate": "cos(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "ox"
+    },
+    {
+     "calculate": "-sin(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "oy"
+    },
+    {
+     "calculate": "[({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] != null ? ({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] : datum.region, format(datum.b2025, ',')]",
+     "as": "callout"
+    },
+    {
+     "calculate": "datum.lon + datum.ox / (map_scale * cos(datum.lat * PI / 180)) * 180 / PI",
+     "as": "l_lon"
+    },
+    {
+     "calculate": "datum.lat - datum.oy / map_scale * 180 / PI",
+     "as": "l_lat"
+    }
+   ],
+   "mark": {
+    "type": "circle",
+    "size": 22,
+    "fill": "#222",
+    "stroke": "#fff",
+    "strokeWidth": 1.2,
+    "opacity": 1,
+    "interactive": false
+   },
+   "encoding": {
+    "longitude": {
+     "field": "lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "lat",
+     "type": "quantitative"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "(state_view != 'AUS' || zoom_level != 1)"
+    },
+    {
+     "filter": "(state_view == 'AUS' || datum.state == state_view || (state_view == 'NSW' && datum.state == 'ACT'))"
+    },
+    {
+     "window": [
+      {
+       "op": "rank",
+       "as": "rnk"
+      }
+     ],
+     "sort": [
+      {
+       "field": "b2025",
+       "order": "descending"
+      }
+     ]
+    },
+    {
+     "filter": "datum.rnk <= 3"
+    },
+    {
+     "calculate": "isValid(({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region]) ? ({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region] : (isValid(({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region]) ? ({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region] : 40)",
+     "as": "ang"
+    },
+    {
+     "calculate": "sqrt(3600 * sqrt(datum.b2025 / 50000) / PI)",
+     "as": "rad"
+    },
+    {
+     "calculate": "cos(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "ox"
+    },
+    {
+     "calculate": "-sin(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "oy"
+    },
+    {
+     "calculate": "[({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] != null ? ({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] : datum.region, format(datum.b2025, ',')]",
+     "as": "callout"
+    },
+    {
+     "calculate": "datum.lon + datum.ox / (map_scale * cos(datum.lat * PI / 180)) * 180 / PI",
+     "as": "l_lon"
+    },
+    {
+     "calculate": "datum.lat - datum.oy / map_scale * 180 / PI",
+     "as": "l_lat"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "lineHeight": 14,
+    "baseline": "middle",
+    "align": {
+     "expr": "datum.ox >= 0 ? 'left' : 'right'"
+    },
+    "dx": {
+     "expr": "datum.ox >= 0 ? 5 : -5"
+    },
+    "color": "#fff",
+    "stroke": "#fff",
+    "strokeWidth": 4,
+    "strokeJoin": "round",
+    "interactive": false
+   },
+   "encoding": {
+    "longitude": {
+     "field": "l_lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "l_lat",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "callout"
+    }
+   }
+  },
+  {
+   "transform": [
+    {
+     "filter": "(state_view != 'AUS' || zoom_level != 1)"
+    },
+    {
+     "filter": "(state_view == 'AUS' || datum.state == state_view || (state_view == 'NSW' && datum.state == 'ACT'))"
+    },
+    {
+     "window": [
+      {
+       "op": "rank",
+       "as": "rnk"
+      }
+     ],
+     "sort": [
+      {
+       "field": "b2025",
+       "order": "descending"
+      }
+     ]
+    },
+    {
+     "filter": "datum.rnk <= 3"
+    },
+    {
+     "calculate": "isValid(({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region]) ? ({\"NSW|Sydney\": -15, \"NSW|Hunter\": 160, \"NSW|North Coast NSW\": 125, \"Qld|Brisbane\": 25, \"Qld|Sunshine Coast\": 125, \"Qld|Gold Coast\": -10, \"WA|Australia's South West\": 195, \"Tas|Launceston and the North\": 50, \"Tas|North West\": 165})[state_view + '|' + datum.region] : (isValid(({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region]) ? ({\"Melbourne\": 135, \"Geelong and the Bellarine\": 200, \"Yarra Valley and the Dandenong Ranges\": 40, \"Sydney\": 20, \"North Coast NSW\": 20, \"Hunter\": 55, \"Brisbane\": 45, \"Gold Coast\": -30, \"Sunshine Coast\": 20, \"Perth\": 160, \"Australia's South West\": 215, \"Australia's Golden Outback\": 150, \"Adelaide\": 160, \"Fleurieu Peninsula\": 215, \"Adelaide Hills\": 40, \"Hobart and the South\": 330, \"Launceston and the North\": 150, \"North West\": 200, \"Darwin\": 40, \"Alice Springs\": 40, \"Katherine Daly\": 200, \"Tropical North Queensland\": 30})[datum.region] : 40)",
+     "as": "ang"
+    },
+    {
+     "calculate": "sqrt(3600 * sqrt(datum.b2025 / 50000) / PI)",
+     "as": "rad"
+    },
+    {
+     "calculate": "cos(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "ox"
+    },
+    {
+     "calculate": "-sin(datum.ang * PI / 180) * (datum.rad + 38)",
+     "as": "oy"
+    },
+    {
+     "calculate": "[({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] != null ? ({\"Geelong and the Bellarine\": \"Geelong & Bellarine\", \"Yarra Valley and the Dandenong Ranges\": \"Yarra Valley\", \"Tropical North Queensland\": \"Tropical North Qld\", \"Australia's South West\": \"South West WA\", \"Hobart and the South\": \"Hobart & South\", \"Launceston and the North\": \"Launceston & North\", \"Katherine Daly\": \"Katherine Daly\"})[datum.region] : datum.region, format(datum.b2025, ',')]",
+     "as": "callout"
+    },
+    {
+     "calculate": "datum.lon + datum.ox / (map_scale * cos(datum.lat * PI / 180)) * 180 / PI",
+     "as": "l_lon"
+    },
+    {
+     "calculate": "datum.lat - datum.oy / map_scale * 180 / PI",
+     "as": "l_lat"
+    }
+   ],
+   "mark": {
+    "type": "text",
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "lineHeight": 14,
+    "baseline": "middle",
+    "align": {
+     "expr": "datum.ox >= 0 ? 'left' : 'right'"
+    },
+    "dx": {
+     "expr": "datum.ox >= 0 ? 5 : -5"
+    },
+    "color": "#222",
+    "interactive": false
+   },
+   "encoding": {
+    "longitude": {
+     "field": "l_lon",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "l_lat",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "callout"
     }
    }
   }
  ],
  "config": {
   "view": {
-   "stroke": null
+   "stroke": null,
+   "clip": true
   },
   "text": {
    "font": "Arial"
   }
- }
+ },
+ "data": {
+  "url": "data/chart12_regions.csv",
+  "format": {
+   "type": "csv",
+   "parse": {
+    "b2021": "number",
+    "b2025": "number",
+    "pct": "number",
+    "lon": "number",
+    "lat": "number"
+   }
+  }
+ },
+ "params": [
+  {
+   "name": "map_scale",
+   "expr": "({AUS: 1, NSW: 2.57, Vic: 5.4, Qld: 1.55, SA: 2.57, WA: 1.35, Tas: 5.4, NT: 1.9})[state_view] * min(740, width * 1.3, height * 1.55) * zoom_level"
+  },
+  {
+   "name": "state_view",
+   "value": "AUS",
+   "bind": {
+    "input": "select",
+    "options": [
+     "AUS",
+     "NSW",
+     "Vic",
+     "Qld",
+     "SA",
+     "WA",
+     "Tas",
+     "NT"
+    ],
+    "labels": [
+     "Australia",
+     "New South Wales",
+     "Victoria",
+     "Queensland",
+     "South Australia",
+     "Western Australia",
+     "Tasmania",
+     "Northern Territory"
+    ],
+    "name": "Zoom centre: "
+   }
+  },
+  {
+   "name": "zoom_level",
+   "value": 1,
+   "bind": {
+    "input": "range",
+    "min": 0.5,
+    "max": 3,
+    "step": 0.1,
+    "name": "Zoom: "
+   }
+  }
+ ]
 }
