@@ -1,513 +1,653 @@
 {
- "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
- "description": "Butterfly chart: tourism jobs for men (left) and women (right), split full-time and part-time, 2017 to year to June 2026.",
- "width": "container",
- "height": {
-  "step": 30
- },
- "padding": {
-  "left": 6,
-  "right": 16,
-  "top": 44,
-  "bottom": 6
- },
- "autosize": {
-  "type": "fit",
-  "contains": "padding"
- },
- "data": {
-  "url": "data/chart10_butterfly.csv",
-  "format": {
-   "type": "csv",
-   "parse": {
-    "jobs_k": "number",
-    "signed": "number",
-    "sex_total": "number",
-    "signed_total": "number",
-    "pt_share": "number",
-    "order": "number",
-    "emp_order": "number"
-   }
-  }
- },
- "layer": [
-  {
-   "mark": {
-    "type": "bar",
-    "stroke": "#ffffff",
-    "strokeWidth": 0.8,
-    "height": {
-     "band": 0.82
-    }
-   },
-   "encoding": {
-    "x": {
-     "field": "signed",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       -400,
-       400
-      ],
-      "nice": false
-     },
-     "title": "Tourism jobs (thousands, average over the period)",
-     "axis": {
-      "values": [
-       -400,
-       -300,
-       -200,
-       -100,
-       0,
-       100,
-       200,
-       300,
-       400
-      ],
-      "labelExpr": "abs(datum.value)",
-      "grid": true,
-      "gridColor": "#e6e8ea",
-      "labelFontSize": 12,
-      "titleFontSize": 12
-     }
-    },
-    "y": {
-     "field": "period",
-     "type": "ordinal",
-     "sort": {
-      "field": "order"
-     },
-     "title": null,
-     "axis": {
-      "labelFontSize": 13,
-      "ticks": false,
-      "domain": false,
-      "labelPadding": 8
-     }
-    },
-    "color": {
-     "field": "cat",
-     "type": "nominal",
-     "title": null,
-     "scale": {
-      "domain": [
-       "Male full-time",
-       "Male part-time",
-       "Female full-time",
-       "Female part-time"
-      ],
-      "range": [
-       "#2a6f97",
-       "#8fc1dc",
-       "#a4478c",
-       "#e2aad6"
-      ]
-     },
-     "legend": {
-      "orient": "bottom",
-      "direction": "horizontal",
-      "symbolType": "square",
-      "symbolSize": 150,
-      "labelFontSize": 13,
-      "columnPadding": 16
-     }
-    },
-    "order": {
-     "field": "emp_order",
-     "type": "quantitative"
-    },
-    "tooltip": [
-     {
-      "field": "period",
-      "title": "Period"
-     },
-     {
-      "field": "cat",
-      "title": "Group"
-     },
-     {
-      "field": "jobs_k",
-      "title": "Jobs (thousands)",
-      "format": ".0f"
-     },
-     {
-      "field": "sex_total",
-      "title": "All jobs for this sex (thousands)",
-      "format": ".0f"
-     },
-     {
-      "field": "pt_share",
-      "title": "Part-time share (%)",
-      "format": ".0f"
-     }
-    ]
-   }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Butterfly chart: tourism jobs for men (left) and women (right), split full-time and part-time, 2017 to year to June 2026.",
+  "width": "container",
+  "height": {
+    "step": 30
   },
-  {
-   "transform": [
+  "padding": {
+    "left": 6,
+    "right": 16,
+    "top": 44,
+    "bottom": 6
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "data": {
+    "url": "data/chart10_butterfly.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "jobs_k": "number",
+        "signed": "number",
+        "sex_total": "number",
+        "signed_total": "number",
+        "pt_share": "number",
+        "order": "number",
+        "emp_order": "number"
+      }
+    }
+  },
+  "layer": [
     {
-     "filter": "datum.period === '2019' && datum.employment_type === 'Part-time'"
-    }
-   ],
-   "mark": {
-    "type": "rule",
-    "color": "#222",
-    "strokeDash": [
-     4,
-     3
-    ],
-    "strokeWidth": 1.6
-   },
-   "encoding": {
-    "x": {
-     "field": "signed_total",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       -400,
-       400
-      ],
-      "nice": false
-     },
-     "title": "Tourism jobs (thousands, average over the period)",
-     "axis": {
-      "values": [
-       -400,
-       -300,
-       -200,
-       -100,
-       0,
-       100,
-       200,
-       300,
-       400
-      ],
-      "labelExpr": "abs(datum.value)",
-      "grid": true,
-      "gridColor": "#e6e8ea",
-      "labelFontSize": 12,
-      "titleFontSize": 12
-     }
-    }
-   }
-  },
-  {
-   "transform": [
+      "mark": {
+        "type": "bar",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.8,
+        "height": {
+          "band": 0.82
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "signed",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "title": "Tourism jobs (thousands, average over the period)",
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          }
+        },
+        "y": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": {
+            "field": "order"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "color": {
+          "field": "cat",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Male full-time",
+              "Male part-time",
+              "Female full-time",
+              "Female part-time"
+            ],
+            "range": [
+              "#2a6f97",
+              "#8fc1dc",
+              "#a4478c",
+              "#e2aad6"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "square",
+            "symbolSize": 150,
+            "labelFontSize": 13,
+            "columnPadding": 16
+          }
+        },
+        "order": {
+          "field": "emp_order",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "period",
+            "title": "Period"
+          },
+          {
+            "field": "cat",
+            "title": "Group"
+          },
+          {
+            "field": "jobs_k",
+            "title": "Jobs (thousands)",
+            "format": ".0f"
+          },
+          {
+            "field": "sex_total",
+            "title": "All jobs for this sex (thousands)",
+            "format": ".0f"
+          },
+          {
+            "field": "pt_share",
+            "title": "Part-time share (%)",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
     {
-     "filter": "datum.employment_type === 'Part-time' && datum.sex === 'Male'"
-    }
-   ],
-   "mark": {
-    "type": "text",
-    "fontSize": 12,
-    "fontWeight": "bold",
-    "color": "#222",
-    "baseline": "middle",
-    "align": "right",
-    "dx": -6
-   },
-   "encoding": {
-    "x": {
-     "field": "signed_total",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       -400,
-       400
+      "transform": [
+        {
+          "filter": "datum.period === '2019' && datum.employment_type === 'Part-time'"
+        }
       ],
-      "nice": false
-     },
-     "title": "Tourism jobs (thousands, average over the period)",
-     "axis": {
-      "values": [
-       -400,
-       -300,
-       -200,
-       -100,
-       0,
-       100,
-       200,
-       300,
-       400
-      ],
-      "labelExpr": "abs(datum.value)",
-      "grid": true,
-      "gridColor": "#e6e8ea",
-      "labelFontSize": 12,
-      "titleFontSize": 12
-     }
+      "mark": {
+        "type": "rule",
+        "color": "#222",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "strokeWidth": 1.6
+      },
+      "encoding": {
+        "x": {
+          "field": "signed_total",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "title": "Tourism jobs (thousands, average over the period)",
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          }
+        }
+      }
     },
-    "y": {
-     "field": "period",
-     "type": "ordinal",
-     "sort": {
-      "field": "order"
-     },
-     "title": null,
-     "axis": {
-      "labelFontSize": 13,
-      "ticks": false,
-      "domain": false,
-      "labelPadding": 8
-     }
-    },
-    "text": {
-     "field": "sex_total",
-     "type": "quantitative",
-     "format": ".0f"
-    }
-   }
-  },
-  {
-   "transform": [
     {
-     "filter": "datum.employment_type === 'Part-time' && datum.sex === 'Female'"
-    }
-   ],
-   "mark": {
-    "type": "text",
-    "fontSize": 12,
-    "fontWeight": "bold",
-    "color": "#222",
-    "baseline": "middle",
-    "align": "left",
-    "dx": 6
-   },
-   "encoding": {
-    "x": {
-     "field": "signed_total",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       -400,
-       400
+      "transform": [
+        {
+          "filter": "datum.employment_type === 'Part-time' && datum.sex === 'Male'"
+        }
       ],
-      "nice": false
-     },
-     "title": "Tourism jobs (thousands, average over the period)",
-     "axis": {
-      "values": [
-       -400,
-       -300,
-       -200,
-       -100,
-       0,
-       100,
-       200,
-       300,
-       400
-      ],
-      "labelExpr": "abs(datum.value)",
-      "grid": true,
-      "gridColor": "#e6e8ea",
-      "labelFontSize": 12,
-      "titleFontSize": 12
-     }
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#ffffff",
+        "baseline": "middle",
+        "align": "right",
+        "dx": -6,
+        "stroke": "#ffffff",
+        "strokeWidth": 5,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "signed_total",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "title": "Tourism jobs (thousands, average over the period)",
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          }
+        },
+        "y": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": {
+            "field": "order"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "text": {
+          "field": "sex_total",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
     },
-    "y": {
-     "field": "period",
-     "type": "ordinal",
-     "sort": {
-      "field": "order"
-     },
-     "title": null,
-     "axis": {
-      "labelFontSize": 13,
-      "ticks": false,
-      "domain": false,
-      "labelPadding": 8
-     }
+    {
+      "transform": [
+        {
+          "filter": "datum.employment_type === 'Part-time' && datum.sex === 'Female'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#ffffff",
+        "baseline": "middle",
+        "align": "left",
+        "dx": 6,
+        "stroke": "#ffffff",
+        "strokeWidth": 5,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "signed_total",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "title": "Tourism jobs (thousands, average over the period)",
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          }
+        },
+        "y": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": {
+            "field": "order"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "text": {
+          "field": "sex_total",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.employment_type === 'Part-time' && datum.sex === 'Male'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#222",
+        "baseline": "middle",
+        "align": "right",
+        "dx": -6
+      },
+      "encoding": {
+        "x": {
+          "field": "signed_total",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "title": "Tourism jobs (thousands, average over the period)",
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          }
+        },
+        "y": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": {
+            "field": "order"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "text": {
+          "field": "sex_total",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.employment_type === 'Part-time' && datum.sex === 'Female'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#222",
+        "baseline": "middle",
+        "align": "left",
+        "dx": 6
+      },
+      "encoding": {
+        "x": {
+          "field": "signed_total",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "title": "Tourism jobs (thousands, average over the period)",
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          }
+        },
+        "y": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": {
+            "field": "order"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "text": {
+          "field": "sex_total",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": -200,
+            "t": "Men"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "fontSize": 15,
+        "fontWeight": "bold",
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          },
+          "title": "Tourism jobs (thousands, average over the period)"
+        },
+        "y": {
+          "value": -24
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 200,
+            "t": "Women"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "fontSize": 15,
+        "fontWeight": "bold",
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          },
+          "title": "Tourism jobs (thousands, average over the period)"
+        },
+        "y": {
+          "value": -24
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": -237,
+            "t": "2019 level"
+          },
+          {
+            "x": 308,
+            "t": "2019 level"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "color": "#444",
+        "baseline": "bottom",
+        "align": "center",
+        "dy": -2
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -400,
+              400
+            ],
+            "nice": false
+          },
+          "title": "Tourism jobs (thousands, average over the period)",
+          "axis": {
+            "values": [
+              -400,
+              -300,
+              -200,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "gridColor": "#e6e8ea",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          }
+        },
+        "y": {
+          "value": 0
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
     },
     "text": {
-     "field": "sex_total",
-     "type": "quantitative",
-     "format": ".0f"
+      "font": "Arial"
+    },
+    "axis": {
+      "labelColor": "#444",
+      "titleColor": "#333"
     }
-   }
-  },
-  {
-   "data": {
-    "values": [
-     {
-      "x": -200,
-      "t": "Men"
-     }
-    ]
-   },
-   "mark": {
-    "type": "text",
-    "align": "center",
-    "baseline": "bottom",
-    "fontSize": 15,
-    "fontWeight": "bold",
-    "color": "#333"
-   },
-   "encoding": {
-    "x": {
-     "field": "x",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       -400,
-       400
-      ],
-      "nice": false
-     },
-     "axis": {
-      "values": [
-       -400,
-       -300,
-       -200,
-       -100,
-       0,
-       100,
-       200,
-       300,
-       400
-      ],
-      "labelExpr": "abs(datum.value)",
-      "grid": true,
-      "gridColor": "#e6e8ea",
-      "labelFontSize": 12,
-      "titleFontSize": 12
-     },
-     "title": "Tourism jobs (thousands, average over the period)"
-    },
-    "y": {
-     "value": -24
-    },
-    "text": {
-     "field": "t"
-    }
-   }
-  },
-  {
-   "data": {
-    "values": [
-     {
-      "x": 200,
-      "t": "Women"
-     }
-    ]
-   },
-   "mark": {
-    "type": "text",
-    "align": "center",
-    "baseline": "bottom",
-    "fontSize": 15,
-    "fontWeight": "bold",
-    "color": "#333"
-   },
-   "encoding": {
-    "x": {
-     "field": "x",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       -400,
-       400
-      ],
-      "nice": false
-     },
-     "axis": {
-      "values": [
-       -400,
-       -300,
-       -200,
-       -100,
-       0,
-       100,
-       200,
-       300,
-       400
-      ],
-      "labelExpr": "abs(datum.value)",
-      "grid": true,
-      "gridColor": "#e6e8ea",
-      "labelFontSize": 12,
-      "titleFontSize": 12
-     },
-     "title": "Tourism jobs (thousands, average over the period)"
-    },
-    "y": {
-     "value": -24
-    },
-    "text": {
-     "field": "t"
-    }
-   }
-  },
-  {
-   "data": {
-    "values": [
-     {
-      "x": -237,
-      "t": "2019 level"
-     },
-     {
-      "x": 308,
-      "t": "2019 level"
-     }
-    ]
-   },
-   "mark": {
-    "type": "text",
-    "fontSize": 11,
-    "color": "#444",
-    "baseline": "bottom",
-    "align": "center",
-    "dy": -2
-   },
-   "encoding": {
-    "x": {
-     "field": "x",
-     "type": "quantitative",
-     "scale": {
-      "domain": [
-       -400,
-       400
-      ],
-      "nice": false
-     },
-     "title": "Tourism jobs (thousands, average over the period)",
-     "axis": {
-      "values": [
-       -400,
-       -300,
-       -200,
-       -100,
-       0,
-       100,
-       200,
-       300,
-       400
-      ],
-      "labelExpr": "abs(datum.value)",
-      "grid": true,
-      "gridColor": "#e6e8ea",
-      "labelFontSize": 12,
-      "titleFontSize": 12
-     }
-    },
-    "y": {
-     "value": 0
-    },
-    "text": {
-     "field": "t"
-    }
-   }
   }
- ],
- "config": {
-  "view": {
-   "stroke": null
-  },
-  "text": {
-   "font": "Arial"
-  },
-  "axis": {
-   "labelColor": "#444",
-   "titleColor": "#333"
-  }
- }
 }
