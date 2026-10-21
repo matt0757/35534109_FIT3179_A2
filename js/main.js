@@ -5,8 +5,7 @@ const charts = [
   { id: "#chart4", spec: "specs/chart4_slope.vg.json" },
   { id: "#chart5", spec: "specs/chart5_stream.vg.json" },
   { id: "#chart6", spec: "specs/chart6_heatmap.vg.json" },
-  { id: "#chart7a", spec: "specs/chart7a_purpose.vg.json" },
-  { id: "#chart7b", spec: "specs/chart7b_duration.vg.json" },
+  { id: "#chart7", spec: "specs/chart7_purpose_duration.vg.json" },
   { id: "#chart8", spec: "specs/chart8_horizon.vg.json" },
   { id: "#chart9", spec: "specs/chart9_quadrant.vg.json" },
   { id: "#chart10", spec: "specs/chart10_butterfly.vg.json" },
@@ -24,7 +23,18 @@ function draw({ id, spec }) {
   if (!el) return;
   if (views[id]) { views[id].finalize(); delete views[id]; }
   el.innerHTML = "";
-  vegaEmbed(id, spec, { actions: false, renderer: "svg" })   // actions:false hides "Open in Vega Editor"
+  // Chart 7 is a vconcat, and a vconcat cannot use "container" width (each panel would take the
+  // whole column and push the number columns on the right off the page). So load its spec here
+  // and size the plots from the column: column width minus the row labels on the left (~160px)
+  // and the number columns on the right (~156px).
+  const source = id === "#chart7"
+    ? fetch(spec).then(r => r.json()).then(s => {
+        s.vconcat.forEach(c => c.width = Math.max(240, el.clientWidth - 316));
+        return s;
+      })
+    : Promise.resolve(spec);
+  source
+    .then(s => vegaEmbed(id, s, { actions: false, renderer: "svg" }))   // actions:false hides "Open in Vega Editor"
     .then(result => { views[id] = result.view; })
     .catch(error => el.textContent = error);
 }
