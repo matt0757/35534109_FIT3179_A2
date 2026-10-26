@@ -146,6 +146,44 @@
       }
     },
     {
+      "data": {
+        "values": [
+          {
+            "quarter_date": "2026-04-01",
+            "index": 89.7,
+            "label": "Visitor arrivals fell\nfrom 99% to 90%\nin 2026 Q2"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "right",
+        "lineBreak": "\n",
+        "color": "#2878b5",
+        "fontWeight": "bold",
+        "dx": -10,
+        "dy": 25,
+        "baseline": "top"
+      },
+      "encoding": {
+        "x": {
+          "field": "quarter_date",
+          "type": "temporal",
+          "scale": {
+            "type": "utc"
+          }
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
       "mark": {
         "type": "line",
         "strokeWidth": 3
