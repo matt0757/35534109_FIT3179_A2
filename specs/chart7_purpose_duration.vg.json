@@ -80,8 +80,8 @@
         "gridColor": "#eceff1",
         "domain": false,
         "ticks": false,
-        "titleFontSize": 12,
-        "labelFontSize": 12,
+        "titleFontSize": 16,
+        "labelFontSize": 16,
         "titlePadding": 8
        }
       },
@@ -95,7 +95,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -181,7 +181,7 @@
       "align": "left",
       "baseline": "middle",
       "dx": 6,
-      "fontSize": 12,
+      "fontSize": 16,
       "fontWeight": "bold",
       "color": "#222"
      },
@@ -208,7 +208,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -236,7 +236,7 @@
       "align": "right",
       "baseline": "middle",
       "dx": -6,
-      "fontSize": 12,
+      "fontSize": 16,
       "fontWeight": "bold",
       "color": "#222"
      },
@@ -263,7 +263,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -287,7 +287,7 @@
       "type": "text",
       "align": "left",
       "baseline": "middle",
-      "fontSize": 12,
+      "fontSize": 16,
       "color": "#444"
      },
      "encoding": {
@@ -306,7 +306,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -330,7 +330,7 @@
       "type": "text",
       "align": "left",
       "baseline": "middle",
-      "fontSize": 12,
+      "fontSize": 16,
       "fontWeight": "bold"
      },
      "encoding": {
@@ -349,7 +349,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -381,7 +381,7 @@
       "type": "text",
       "align": "left",
       "baseline": "bottom",
-      "fontSize": 11,
+      "fontSize": 15,
       "color": "#555"
      },
      "encoding": {
@@ -410,7 +410,7 @@
       "type": "text",
       "align": "left",
       "baseline": "bottom",
-      "fontSize": 11,
+      "fontSize": 15,
       "color": "#555"
      },
      "encoding": {
@@ -486,8 +486,8 @@
         "gridColor": "#eceff1",
         "domain": false,
         "ticks": false,
-        "titleFontSize": 12,
-        "labelFontSize": 12,
+        "titleFontSize": 16,
+        "labelFontSize": 16,
         "titlePadding": 8
        }
       },
@@ -500,7 +500,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -586,7 +586,7 @@
       "align": "left",
       "baseline": "middle",
       "dx": 6,
-      "fontSize": 12,
+      "fontSize": 16,
       "fontWeight": "bold",
       "color": "#222"
      },
@@ -612,7 +612,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -640,7 +640,7 @@
       "align": "right",
       "baseline": "middle",
       "dx": -6,
-      "fontSize": 12,
+      "fontSize": 16,
       "fontWeight": "bold",
       "color": "#222"
      },
@@ -666,7 +666,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -690,7 +690,7 @@
       "type": "text",
       "align": "left",
       "baseline": "middle",
-      "fontSize": 12,
+      "fontSize": 16,
       "color": "#444"
      },
      "encoding": {
@@ -708,7 +708,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -732,7 +732,7 @@
       "type": "text",
       "align": "left",
       "baseline": "middle",
-      "fontSize": 12,
+      "fontSize": 16,
       "fontWeight": "bold"
      },
      "encoding": {
@@ -750,7 +750,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 16,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -782,7 +782,7 @@
       "type": "text",
       "align": "left",
       "baseline": "bottom",
-      "fontSize": 11,
+      "fontSize": 15,
       "color": "#555"
      },
      "encoding": {
@@ -811,7 +811,7 @@
       "type": "text",
       "align": "left",
       "baseline": "bottom",
-      "fontSize": 11,
+      "fontSize": 15,
       "color": "#555"
      },
      "encoding": {
