@@ -1,6 +1,6 @@
 /* ---------- Typography: Google Fonts (linked in index.html) ---------- */
 :root {
-  --font-heading: "Outfit", "Segoe UI", Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
   --font-body: "Inter", "Segoe UI", Arial, sans-serif;
   /* semantic colours, reused by every chart:
      visitors = blue, jobs = teal, business growth = purple, decline / below 2019 = red */
