@@ -2,7 +2,7 @@
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
  "description": "Month by year heatmap of overseas visitor arrivals, Jan 2017 to Jun 2026, coloured by percentage of the same month in 2019.",
  "width": "container",
- "height": 400,
+ "height": 500,
  "padding": {
   "left": 8,
   "right": 8,
@@ -75,7 +75,7 @@
      "axis": {
       "orient": "top",
       "labelAngle": 0,
-      "labelFontSize": 13,
+      "labelFontSize": 14,
       "ticks": false,
       "domain": false
      }
@@ -85,7 +85,7 @@
      "type": "ordinal",
      "title": null,
      "axis": {
-      "labelFontSize": 13,
+      "labelFontSize": 14,
       "ticks": false,
       "domain": false,
       "labelPadding": 6
@@ -117,8 +117,8 @@
       "direction": "horizontal",
       "gradientLength": 360,
       "titleLimit": 360,
-      "titleFontSize": 12,
-      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "labelFontSize": 14,
       "values": [
        80,
        90,
@@ -155,7 +155,7 @@
   {
    "mark": {
     "type": "text",
-    "fontSize": 11
+    "fontSize": 14
    },
    "encoding": {
     "x": {
@@ -179,7 +179,7 @@
      "axis": {
       "orient": "top",
       "labelAngle": 0,
-      "labelFontSize": 13,
+      "labelFontSize": 14,
       "ticks": false,
       "domain": false
      }
@@ -189,7 +189,7 @@
      "type": "ordinal",
      "title": null,
      "axis": {
-      "labelFontSize": 13,
+      "labelFontSize": 14,
       "ticks": false,
       "domain": false,
       "labelPadding": 6
@@ -239,7 +239,7 @@
      "axis": {
       "orient": "top",
       "labelAngle": 0,
-      "labelFontSize": 13,
+      "labelFontSize": 14,
       "ticks": false,
       "domain": false
      }
@@ -249,7 +249,7 @@
      "type": "ordinal",
      "title": null,
      "axis": {
-      "labelFontSize": 13,
+      "labelFontSize": 14,
       "ticks": false,
       "domain": false,
       "labelPadding": 6
@@ -277,7 +277,7 @@
    "mark": {
     "type": "text",
     "align": "left",
-    "fontSize": 12,
+    "fontSize": 14,
     "color": "#555",
     "fontStyle": "italic",
     "dx": {
@@ -308,7 +308,7 @@
      "type": "ordinal",
      "title": null,
      "axis": {
-      "labelFontSize": 13,
+      "labelFontSize": 14,
       "ticks": false,
       "domain": false,
       "labelPadding": 6
@@ -331,7 +331,7 @@
    "mark": {
     "type": "text",
     "align": "left",
-    "fontSize": 12,
+    "fontSize": 14,
     "color": "#111111",
     "fontWeight": "bold",
     "dx": {

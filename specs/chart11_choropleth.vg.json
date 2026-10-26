@@ -2,7 +2,7 @@
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
  "description": "Choropleth of Australian states: change in the number of tourism businesses, 2020 to 2025.",
  "width": "container",
- "height": 430,
+ "height": 650,
  "padding": {
   "left": 4,
   "right": 4,
@@ -184,9 +184,15 @@
      }
     }
    },
+   "transform": [
+    {
+     "calculate": "datum.name + '\\n' + datum.pct_label",
+     "as": "full_label"
+    }
+   ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "lineBreak": "\n",
     "lineHeight": 14,
@@ -203,7 +209,7 @@
      "type": "quantitative"
     },
     "text": {
-     "field": "label2"
+     "field": "full_label"
     },
     "color": {
      "condition": {

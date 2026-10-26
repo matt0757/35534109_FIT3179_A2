@@ -122,8 +122,8 @@
    "orient": "bottom",
    "direction": "horizontal",
    "title": "Percentage Change (%)",
-   "titleFontSize": 12,
-   "labelFontSize": 12,
+   "titleFontSize": 15,
+   "labelFontSize": 15,
    "symbolType": "square",
    "symbolSize": 220,
    "columnPadding": 14,
@@ -181,7 +181,7 @@
       "signal": "datum.name + ': ' + format(datum.b2025, ',') + ' (' + format(datum.pct, '+.0f') + '%)'"
      },
      "fontSize": {
-      "value": 13
+      "value": 15
      },
      "fontWeight": {
       "value": "bold"
@@ -266,7 +266,7 @@
       "signal": "split(datum.label, '\\n')"
      },
      "fontSize": {
-      "value": 12
+      "value": 15
      },
      "fontWeight": {
       "value": "bold"
@@ -303,7 +303,7 @@
       "value": "middle"
      },
      "fontSize": {
-      "value": 12
+      "value": 15
      },
      "fontWeight": {
       "value": "bold"
@@ -346,7 +346,7 @@
       "value": "middle"
      },
      "fontSize": {
-      "value": 10
+      "value": 15
      },
      "fontWeight": {
       "value": "bold"

@@ -1,7 +1,7 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
  "description": "Slope chart: rank and visitor numbers of the 11 biggest origin countries, 2019 vs year to June 2026.",
- "width": "container",
+ "width": 700,
  "height": 400,
  "padding": {
   "left": 6,
@@ -89,8 +89,8 @@
       "symbolType": "stroke",
       "symbolStrokeWidth": 5,
       "titleLimit": 300,
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 10,
+      "titleFontSize": 10,
       "columnPadding": 10,
       "rowPadding": 4
      }
@@ -323,7 +323,7 @@
     "align": "right",
     "baseline": "middle",
     "dx": -9,
-    "fontSize": 12,
+    "fontSize": 10,
     "color": "#222"
    },
    "encoding": {
@@ -369,7 +369,8 @@
     "align": "left",
     "baseline": "middle",
     "dx": 9,
-    "fontSize": 12,
+    "dy": 0,
+    "fontSize": 10,
     "color": "#222"
    },
    "encoding": {
@@ -413,7 +414,7 @@
     "type": "text",
     "align": "center",
     "baseline": "bottom",
-    "fontSize": 14,
+    "fontSize": 12,
     "fontWeight": "bold",
     "dy": -4,
     "color": "#222"
@@ -451,7 +452,7 @@
     "type": "text",
     "align": "center",
     "baseline": "bottom",
-    "fontSize": 14,
+    "fontSize": 12,
     "fontWeight": "bold",
     "dy": -4,
     "color": "#222"
@@ -482,7 +483,7 @@
    "stroke": null
   },
   "text": {
-   "font": "Arial"
+   "font": "Inter"
   },
   "legend": {
    "titleColor": "#333",

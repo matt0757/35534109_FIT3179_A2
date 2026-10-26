@@ -67,8 +67,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           }
         },
         "y": {
@@ -79,7 +79,7 @@
           },
           "title": null,
           "axis": {
-            "labelFontSize": 13,
+            "labelFontSize": 15,
             "ticks": false,
             "domain": false,
             "labelPadding": 8
@@ -108,7 +108,7 @@
             "direction": "horizontal",
             "symbolType": "square",
             "symbolSize": 150,
-            "labelFontSize": 13,
+            "labelFontSize": 15,
             "columnPadding": 16
           }
         },
@@ -185,8 +185,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           }
         }
       }
@@ -199,7 +199,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 15,
         "fontWeight": "bold",
         "color": "#ffffff",
         "baseline": "middle",
@@ -236,8 +236,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           }
         },
         "y": {
@@ -248,7 +248,7 @@
           },
           "title": null,
           "axis": {
-            "labelFontSize": 13,
+            "labelFontSize": 15,
             "ticks": false,
             "domain": false,
             "labelPadding": 8
@@ -269,7 +269,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 15,
         "fontWeight": "bold",
         "color": "#ffffff",
         "baseline": "middle",
@@ -306,8 +306,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           }
         },
         "y": {
@@ -318,7 +318,7 @@
           },
           "title": null,
           "axis": {
-            "labelFontSize": 13,
+            "labelFontSize": 15,
             "ticks": false,
             "domain": false,
             "labelPadding": 8
@@ -339,7 +339,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 15,
         "fontWeight": "bold",
         "color": "#222",
         "baseline": "middle",
@@ -373,8 +373,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           }
         },
         "y": {
@@ -385,7 +385,7 @@
           },
           "title": null,
           "axis": {
-            "labelFontSize": 13,
+            "labelFontSize": 15,
             "ticks": false,
             "domain": false,
             "labelPadding": 8
@@ -406,7 +406,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 15,
         "fontWeight": "bold",
         "color": "#222",
         "baseline": "middle",
@@ -440,8 +440,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           }
         },
         "y": {
@@ -508,8 +508,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           },
           "title": "Tourism jobs (thousands, average over the period)"
         },
@@ -564,8 +564,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           },
           "title": "Tourism jobs (thousands, average over the period)"
         },
@@ -592,7 +592,7 @@
       },
       "mark": {
         "type": "text",
-        "fontSize": 11,
+        "fontSize": 15,
         "color": "#444",
         "baseline": "bottom",
         "align": "center",
@@ -625,8 +625,8 @@
             "labelExpr": "abs(datum.value)",
             "grid": true,
             "gridColor": "#e6e8ea",
-            "labelFontSize": 12,
-            "titleFontSize": 12
+            "labelFontSize": 15,
+            "titleFontSize": 15
           }
         },
         "y": {

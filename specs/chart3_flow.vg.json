@@ -136,8 +136,8 @@
       "direction": "vertical",
       "symbolType": "stroke",
       "symbolStrokeWidth": 6,
-      "titleFontSize": 12,
-      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "labelFontSize": 14,
       "titleLimit": 200,
       "rowPadding": 4,
       "offset": 0
@@ -258,8 +258,8 @@
       "format": ",.0f",
       "symbolType": "stroke",
       "symbolStrokeColor": "#555",
-      "titleFontSize": 12,
-      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "labelFontSize": 14,
       "rowPadding": 6,
       "offset": 0
      }
@@ -328,7 +328,7 @@
    ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "color": "#ffffff",
     "align": "center",
@@ -380,7 +380,7 @@
    ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "color": "#222",
     "align": "center",
@@ -429,7 +429,7 @@
    ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "color": "#ffffff",
     "align": "right",
@@ -481,7 +481,7 @@
    ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "color": "#222",
     "align": "right",
@@ -530,7 +530,7 @@
    ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "color": "#ffffff",
     "align": "left",
@@ -582,7 +582,7 @@
    ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "color": "#222",
     "align": "left",
@@ -631,7 +631,7 @@
    ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "color": "#ffffff",
     "align": "left",
@@ -684,7 +684,7 @@
    ],
    "mark": {
     "type": "text",
-    "fontSize": 12,
+    "fontSize": 15,
     "fontWeight": "bold",
     "color": "#222",
     "align": "left",

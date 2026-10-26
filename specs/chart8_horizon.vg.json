@@ -132,13 +132,14 @@
        "2026-06-01"
       ]
      },
-     "title": null,
+     "title": "Year",
      "axis": {
       "format": "%Y",
       "tickCount": 10,
       "labelAngle": 0,
       "grid": false,
-      "labelFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "tickColor": "#bbb"
      }
     },
@@ -169,8 +170,8 @@
       "gridColor": "#eceff1",
       "domain": false,
       "ticks": false,
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "titleColor": "#555"
      }
     },
@@ -210,13 +211,14 @@
        "2026-06-01"
       ]
      },
-     "title": null,
+     "title": "Year",
      "axis": {
       "format": "%Y",
       "tickCount": 10,
       "labelAngle": 0,
       "grid": false,
-      "labelFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "tickColor": "#bbb"
      }
     },
@@ -247,8 +249,8 @@
       "gridColor": "#eceff1",
       "domain": false,
       "ticks": false,
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "titleColor": "#555"
      }
     },
@@ -298,8 +300,8 @@
       "gridColor": "#eceff1",
       "domain": false,
       "ticks": false,
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "titleColor": "#555"
      }
     }
@@ -329,13 +331,14 @@
        "2026-06-01"
       ]
      },
-     "title": null,
+     "title": "Year",
      "axis": {
       "format": "%Y",
       "tickCount": 10,
       "labelAngle": 0,
       "grid": false,
-      "labelFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "tickColor": "#bbb"
      }
     },
@@ -366,8 +369,8 @@
       "gridColor": "#eceff1",
       "domain": false,
       "ticks": false,
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "titleColor": "#555"
      }
     },
@@ -399,13 +402,14 @@
        "2026-06-01"
       ]
      },
-     "title": null,
+     "title": "Year",
      "axis": {
       "format": "%Y",
       "tickCount": 10,
       "labelAngle": 0,
       "grid": false,
-      "labelFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "tickColor": "#bbb"
      }
     },
@@ -436,8 +440,8 @@
       "gridColor": "#eceff1",
       "domain": false,
       "ticks": false,
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "titleColor": "#555"
      }
     }
@@ -467,13 +471,14 @@
        "2026-06-01"
       ]
      },
-     "title": null,
+     "title": "Year",
      "axis": {
       "format": "%Y",
       "tickCount": 10,
       "labelAngle": 0,
       "grid": false,
-      "labelFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "tickColor": "#bbb"
      }
     },
@@ -504,8 +509,8 @@
       "gridColor": "#eceff1",
       "domain": false,
       "ticks": false,
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "titleColor": "#555"
      }
     },
@@ -551,13 +556,14 @@
        "2026-06-01"
       ]
      },
-     "title": null,
+     "title": "Year",
      "axis": {
       "format": "%Y",
       "tickCount": 10,
       "labelAngle": 0,
       "grid": false,
-      "labelFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "tickColor": "#bbb"
      }
     },
@@ -588,8 +594,8 @@
       "gridColor": "#eceff1",
       "domain": false,
       "ticks": false,
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "titleColor": "#555"
      }
     },
@@ -647,13 +653,14 @@
        "2026-06-01"
       ]
      },
-     "title": null,
+     "title": "Year",
      "axis": {
       "format": "%Y",
       "tickCount": 10,
       "labelAngle": 0,
       "grid": false,
-      "labelFontSize": 12,
+      "labelFontSize": 16,
+      "titleFontSize": 17,
       "tickColor": "#bbb"
      }
     },

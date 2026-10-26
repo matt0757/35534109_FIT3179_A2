@@ -28,7 +28,7 @@
    "title": {
     "text": "Why visitors come",
     "anchor": "start",
-    "fontSize": 16,
+    "fontSize": 24,
     "fontWeight": "bold",
     "color": "#222",
     "offset": 26,
@@ -80,8 +80,8 @@
         "gridColor": "#eceff1",
         "domain": false,
         "ticks": false,
-        "titleFontSize": 16,
-        "labelFontSize": 16,
+        "titleFontSize": 18,
+        "labelFontSize": 18,
         "titlePadding": 8
        }
       },
@@ -95,7 +95,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 16,
+        "labelFontSize": 18,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -181,7 +181,8 @@
       "align": "left",
       "baseline": "middle",
       "dx": 6,
-      "fontSize": 16,
+      "dy": 0,
+      "fontSize": 18,
       "fontWeight": "bold",
       "color": "#222"
      },
@@ -208,7 +209,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 16,
+        "labelFontSize": 20,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -236,7 +237,7 @@
       "align": "right",
       "baseline": "middle",
       "dx": -6,
-      "fontSize": 16,
+      "fontSize": 18,
       "fontWeight": "bold",
       "color": "#222"
      },
@@ -336,7 +337,7 @@
      "encoding": {
       "x": {
        "value": {
-        "expr": "width + 96"
+        "expr": "width + 115"
        }
       },
       "y": {
@@ -381,7 +382,7 @@
       "type": "text",
       "align": "left",
       "baseline": "bottom",
-      "fontSize": 15,
+      "fontSize": 18,
       "color": "#555"
      },
      "encoding": {
@@ -410,13 +411,13 @@
       "type": "text",
       "align": "left",
       "baseline": "bottom",
-      "fontSize": 15,
+      "fontSize": 18,
       "color": "#555"
      },
      "encoding": {
       "x": {
        "value": {
-        "expr": "width + 96"
+        "expr": "width + 150"
        }
       },
       "y": {
@@ -434,7 +435,7 @@
    "title": {
     "text": "How long they stay",
     "anchor": "start",
-    "fontSize": 16,
+    "fontSize": 24,
     "fontWeight": "bold",
     "color": "#222",
     "offset": 26,
@@ -486,8 +487,8 @@
         "gridColor": "#eceff1",
         "domain": false,
         "ticks": false,
-        "titleFontSize": 16,
-        "labelFontSize": 16,
+        "titleFontSize": 18,
+        "labelFontSize": 18,
         "titlePadding": 8
        }
       },
@@ -500,12 +501,12 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 16,
+        "labelFontSize": 18,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
         "labelPadding": 8,
-        "minExtent": 150
+        "minExtent": 200
        }
       },
       "color": {
@@ -586,7 +587,7 @@
       "align": "left",
       "baseline": "middle",
       "dx": 6,
-      "fontSize": 16,
+      "fontSize": 18,
       "fontWeight": "bold",
       "color": "#222"
      },
@@ -612,7 +613,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 16,
+        "labelFontSize": 18,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -640,7 +641,8 @@
       "align": "right",
       "baseline": "middle",
       "dx": -6,
-      "fontSize": 16,
+      "dy": 0,
+      "fontSize": 18,
       "fontWeight": "bold",
       "color": "#222"
      },
@@ -666,7 +668,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 16,
+        "labelFontSize": 18,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -690,7 +692,8 @@
       "type": "text",
       "align": "left",
       "baseline": "middle",
-      "fontSize": 16,
+      "dy": 0,
+      "fontSize": 18,
       "color": "#444"
      },
      "encoding": {
@@ -708,7 +711,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 16,
+        "labelFontSize": 18,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -732,13 +735,14 @@
       "type": "text",
       "align": "left",
       "baseline": "middle",
-      "fontSize": 16,
+      "dy": 0,
+      "fontSize": 18,
       "fontWeight": "bold"
      },
      "encoding": {
       "x": {
        "value": {
-        "expr": "width + 96"
+        "expr": "width + 150"
        }
       },
       "y": {
@@ -750,7 +754,7 @@
        },
        "title": null,
        "axis": {
-        "labelFontSize": 16,
+        "labelFontSize": 18,
         "ticks": false,
         "domain": false,
         "labelLimit": 240,
@@ -782,7 +786,7 @@
       "type": "text",
       "align": "left",
       "baseline": "bottom",
-      "fontSize": 15,
+      "fontSize": 18,
       "color": "#555"
      },
      "encoding": {
@@ -811,13 +815,13 @@
       "type": "text",
       "align": "left",
       "baseline": "bottom",
-      "fontSize": 15,
+      "fontSize": 18,
       "color": "#555"
      },
      "encoding": {
       "x": {
        "value": {
-        "expr": "width + 96"
+        "expr": "width + 150"
        }
       },
       "y": {
