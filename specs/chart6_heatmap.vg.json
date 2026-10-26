@@ -26,6 +26,9 @@
  },
  "transform": [
   {
+   "filter": "datum.year !== 2019"
+  },
+  {
    "window": [
     {
      "op": "rank",
@@ -94,16 +97,18 @@
      "title": "Visitors as % of the same month in 2019",
      "scale": {
       "domain": [
-       0,
-       50,
+       80,
+       90,
        100,
-       110
+       110,
+       120
       ],
       "range": [
-       "#b2182b",
-       "#f4a582",
-       "#eceff1",
-       "#2878b5"
+       "#e8f1f8",
+       "#b9d7ea",
+       "#7fb3d5",
+       "#3f83b5",
+       "#155a8a"
       ],
       "clamp": true
      },
@@ -115,11 +120,11 @@
       "titleFontSize": 12,
       "labelFontSize": 12,
       "values": [
-       0,
-       25,
-       50,
-       75,
-       100
+       80,
+       90,
+       100,
+       110,
+       120
       ],
       "format": ".0f",
       "labelExpr": "datum.label + '%'"
@@ -196,11 +201,7 @@
      "format": ",.0f"
     },
     "color": {
-     "condition": {
-      "test": "datum.pct_2019 < 25",
-      "value": "#ffffff"
-     },
-     "value": "#222"
+     "value": "#111111"
     }
    }
   },
@@ -322,7 +323,7 @@
    "data": {
     "values": [
      {
-      "year": 2019,
+      "year": 2017,
       "t": "Black outline = busiest month of the year"
      }
     ]
