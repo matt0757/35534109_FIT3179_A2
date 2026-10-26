@@ -59,6 +59,11 @@ section .paragraph-right { padding: 0 0 0 8px; }
 .kw-char { color: var(--c-char); }
 .kw-conn { color: var(--c-conn); }
 .kw-decline { color: var(--c-down); }
+.kw-band-under { color: #b2182b; }
+.kw-band-midlow { color: #ef8a62; }
+.kw-band-baseline { color: #e0b42f; }
+.kw-band-high { color: #67a9cf; }
+.kw-band-over { color: #2166ac; }
 .kw-biz { color: var(--c-biz); }
 .kw-male { color: var(--c-male); }
 .kw-female { color: var(--c-female); }
