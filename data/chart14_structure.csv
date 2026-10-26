@@ -1,0 +1,9 @@
+row,structure,staff,b2020,b2025,pct,direction,xmax,label
+Incorporated company|With employees,Incorporated company,With employees,97447,120646,23.8,More businesses,120646,+24%
+Sole proprietor|With employees,Sole proprietor,With employees,16250,13414,-17.5,Fewer businesses,16250,−17%
+Trust|With employees,Trust,With employees,39612,34903,-11.9,Fewer businesses,39612,−12%
+Partnership|With employees,Partnership,With employees,14673,10057,-31.5,Fewer businesses,14673,−31%
+Incorporated company|No employees,Incorporated company,No employees,41987,59822,42.5,More businesses,59822,+42%
+Sole proprietor|No employees,Sole proprietor,No employees,86302,86927,0.7,More businesses,86927,+1%
+Trust|No employees,Trust,No employees,20626,21281,3.2,More businesses,21281,+3%
+Partnership|No employees,Partnership,No employees,17632,14065,-20.2,Fewer businesses,17632,−20%

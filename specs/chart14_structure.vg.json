@@ -1,0 +1,419 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Connected dot plot (dumbbell): number of tourism and connected businesses in 2020 and 2025 by legal structure, split into businesses with and without employees.",
+ "data": {
+  "url": "data/chart14_structure.csv"
+ },
+ "width": "container",
+ "height": 400,
+ "padding": {
+  "left": 6,
+  "right": 6,
+  "top": 34,
+  "bottom": 6
+ },
+ "autosize": {
+  "type": "fit",
+  "contains": "padding"
+ },
+ "layer": [
+  {
+   "mark": {
+    "type": "rule",
+    "strokeWidth": 3,
+    "opacity": 0.85
+   },
+   "encoding": {
+    "y": {
+     "field": "row",
+     "type": "nominal",
+     "sort": [
+      "Incorporated company|With employees",
+      "Sole proprietor|With employees",
+      "Trust|With employees",
+      "Partnership|With employees",
+      "Incorporated company|No employees",
+      "Sole proprietor|No employees",
+      "Trust|No employees",
+      "Partnership|No employees"
+     ],
+     "title": null,
+     "scale": {
+      "paddingInner": 0.5,
+      "paddingOuter": 0.3
+     },
+     "axis": {
+      "labelExpr": "split(datum.value, '|')",
+      "labelFontSize": 12,
+      "labelLimit": 200,
+      "labelColor": "#222",
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 10
+     }
+    },
+    "x": {
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       140000
+      ],
+      "nice": false
+     },
+     "axis": {
+      "title": "Number of businesses (tourism and connected industries combined)",
+      "tickCount": 7,
+      "grid": true,
+      "gridColor": "#e6e6e6",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "titleColor": "#333",
+      "labelColor": "#444",
+      "domain": false,
+      "ticks": false,
+      "labelExpr": "format(datum.value, ',')"
+     },
+     "field": "b2020"
+    },
+    "x2": {
+     "field": "b2025"
+    },
+    "color": {
+     "field": "direction",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "More businesses",
+       "Fewer businesses"
+      ],
+      "range": [
+       "#5b2d8c",
+       "#d6604d"
+      ]
+     },
+     "title": "Change, 2020 to 2025"
+    },
+    "tooltip": [
+     {
+      "field": "structure",
+      "title": "Business type"
+     },
+     {
+      "field": "staff",
+      "title": "Staff"
+     },
+     {
+      "field": "b2020",
+      "title": "2020",
+      "format": ","
+     },
+     {
+      "field": "b2025",
+      "title": "2025",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "Change (%)",
+      "format": "+.1f"
+     }
+    ]
+   }
+  },
+  {
+   "mark": {
+    "type": "circle",
+    "size": 150,
+    "opacity": 1,
+    "fill": "#fff",
+    "stroke": "#777",
+    "strokeWidth": 2
+   },
+   "encoding": {
+    "y": {
+     "field": "row",
+     "type": "nominal",
+     "sort": [
+      "Incorporated company|With employees",
+      "Sole proprietor|With employees",
+      "Trust|With employees",
+      "Partnership|With employees",
+      "Incorporated company|No employees",
+      "Sole proprietor|No employees",
+      "Trust|No employees",
+      "Partnership|No employees"
+     ],
+     "title": null,
+     "scale": {
+      "paddingInner": 0.5,
+      "paddingOuter": 0.3
+     },
+     "axis": {
+      "labelExpr": "split(datum.value, '|')",
+      "labelFontSize": 12,
+      "labelLimit": 200,
+      "labelColor": "#222",
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 10
+     }
+    },
+    "x": {
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       140000
+      ],
+      "nice": false
+     },
+     "axis": {
+      "title": "Number of businesses (tourism and connected industries combined)",
+      "tickCount": 7,
+      "grid": true,
+      "gridColor": "#e6e6e6",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "titleColor": "#333",
+      "labelColor": "#444",
+      "domain": false,
+      "ticks": false,
+      "labelExpr": "format(datum.value, ',')"
+     },
+     "field": "b2020"
+    },
+    "tooltip": [
+     {
+      "field": "structure",
+      "title": "Business type"
+     },
+     {
+      "field": "staff",
+      "title": "Staff"
+     },
+     {
+      "field": "b2020",
+      "title": "2020",
+      "format": ","
+     },
+     {
+      "field": "b2025",
+      "title": "2025",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "Change (%)",
+      "format": "+.1f"
+     }
+    ]
+   }
+  },
+  {
+   "mark": {
+    "type": "circle",
+    "size": 150,
+    "opacity": 1
+   },
+   "encoding": {
+    "y": {
+     "field": "row",
+     "type": "nominal",
+     "sort": [
+      "Incorporated company|With employees",
+      "Sole proprietor|With employees",
+      "Trust|With employees",
+      "Partnership|With employees",
+      "Incorporated company|No employees",
+      "Sole proprietor|No employees",
+      "Trust|No employees",
+      "Partnership|No employees"
+     ],
+     "title": null,
+     "scale": {
+      "paddingInner": 0.5,
+      "paddingOuter": 0.3
+     },
+     "axis": {
+      "labelExpr": "split(datum.value, '|')",
+      "labelFontSize": 12,
+      "labelLimit": 200,
+      "labelColor": "#222",
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 10
+     }
+    },
+    "x": {
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       140000
+      ],
+      "nice": false
+     },
+     "axis": {
+      "title": "Number of businesses (tourism and connected industries combined)",
+      "tickCount": 7,
+      "grid": true,
+      "gridColor": "#e6e6e6",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "titleColor": "#333",
+      "labelColor": "#444",
+      "domain": false,
+      "ticks": false,
+      "labelExpr": "format(datum.value, ',')"
+     },
+     "field": "b2025"
+    },
+    "color": {
+     "field": "direction",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "More businesses",
+       "Fewer businesses"
+      ],
+      "range": [
+       "#5b2d8c",
+       "#d6604d"
+      ]
+     },
+     "title": "Change, 2020 to 2025",
+     "legend": {
+      "orient": "top",
+      "direction": "horizontal",
+      "symbolType": "circle",
+      "symbolSize": 120,
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "titleLimit": 300,
+      "offset": 8
+     }
+    },
+    "tooltip": [
+     {
+      "field": "structure",
+      "title": "Business type"
+     },
+     {
+      "field": "staff",
+      "title": "Staff"
+     },
+     {
+      "field": "b2020",
+      "title": "2020",
+      "format": ","
+     },
+     {
+      "field": "b2025",
+      "title": "2025",
+      "format": ","
+     },
+     {
+      "field": "pct",
+      "title": "Change (%)",
+      "format": "+.1f"
+     }
+    ]
+   }
+  },
+  {
+   "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "middle",
+    "dx": 12,
+    "fontSize": 13,
+    "fontWeight": "bold"
+   },
+   "encoding": {
+    "y": {
+     "field": "row",
+     "type": "nominal",
+     "sort": [
+      "Incorporated company|With employees",
+      "Sole proprietor|With employees",
+      "Trust|With employees",
+      "Partnership|With employees",
+      "Incorporated company|No employees",
+      "Sole proprietor|No employees",
+      "Trust|No employees",
+      "Partnership|No employees"
+     ],
+     "title": null,
+     "scale": {
+      "paddingInner": 0.5,
+      "paddingOuter": 0.3
+     },
+     "axis": {
+      "labelExpr": "split(datum.value, '|')",
+      "labelFontSize": 12,
+      "labelLimit": 200,
+      "labelColor": "#222",
+      "ticks": false,
+      "domain": false,
+      "labelPadding": 10
+     }
+    },
+    "x": {
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       140000
+      ],
+      "nice": false
+     },
+     "axis": {
+      "title": "Number of businesses (tourism and connected industries combined)",
+      "tickCount": 7,
+      "grid": true,
+      "gridColor": "#e6e6e6",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "titleColor": "#333",
+      "labelColor": "#444",
+      "domain": false,
+      "ticks": false,
+      "labelExpr": "format(datum.value, ',')"
+     },
+     "field": "xmax"
+    },
+    "text": {
+     "field": "label"
+    },
+    "color": {
+     "field": "direction",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "More businesses",
+       "Fewer businesses"
+      ],
+      "range": [
+       "#5b2d8c",
+       "#d6604d"
+      ]
+     },
+     "title": "Change, 2020 to 2025"
+    }
+   }
+  }
+ ],
+ "config": {
+  "view": {
+   "stroke": null
+  },
+  "text": {
+   "font": "Arial"
+  },
+  "legend": {
+   "titleColor": "#333",
+   "labelColor": "#444"
+  }
+ }
+}
