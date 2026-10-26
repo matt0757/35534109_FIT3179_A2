@@ -7,7 +7,7 @@
   "left": 6,
   "right": 10,
   "top": 6,
-  "bottom": 6
+  "bottom": 105
  },
  "autosize": {
   "type": "fit",
@@ -601,10 +601,10 @@
       "titleFontSize": 12,
       "labelFontSize": 12,
       "legendX": {
-       "expr": "max(width - 300, 260)"
+       "expr": "0"
       },
       "legendY": {
-       "expr": "height + 52"
+       "expr": "height + 55"
       }
      }
     },
@@ -623,11 +623,17 @@
       ]
      },
      "legend": {
-      "orient": "bottom",
+      "orient": "none",
       "direction": "horizontal",
       "titleFontSize": 12,
       "labelFontSize": 12,
-      "symbolType": "circle"
+      "symbolType": "circle",
+      "legendX": {
+       "expr": "max(width - 300, 260)"
+      },
+      "legendY": {
+       "expr": "height + 55"
+      }
      }
     },
     "tooltip": [
