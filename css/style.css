@@ -5,13 +5,62 @@ h1 { margin-bottom: 0; padding-left: 0; font-size: 64px; text-align: center; }
 h2 { font-size: 32px; margin-bottom: 0px; }
 h3 { margin-bottom: 4px; }
 p, h1, h2, h3, footer { background: #fff; }
-p { max-width: 780px; }
+p { max-width: 52ch; }
 .subtitle { margin: 0 0 12px; padding: 0 12px 12px; max-width: none; font-size: 26px; color: #555; text-align:center; }
-.intro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; width: calc(100% - 96px); margin: 0 auto; padding: 0 12px 12px; max-width: none; }
-.intro-column { margin: 0; box-sizing: border-box; max-width: none; }
-#intro-left { padding: 0 8px 0 32px; }
-#intro-right { padding: 0 32px 0 8px; }
-.intro-lead::first-letter { float: left; margin: 0 4px 0 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.5em; line-height: 1; color: #075985; }
+/* two-column paragraph block (intro and chart sections): .paragraph-columns > .paragraph-left + .paragraph-right */
+.paragraph-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; width: 100%; margin: 0 auto; padding: 0 12px 12px; max-width: none; }
+header .paragraph-columns { width: calc(100% - 96px); }
+.paragraph-column { margin: 0; box-sizing: border-box; max-width: 52ch; }
+.paragraph-left { padding: 0 8px 0 32px; }
+.paragraph-right { padding: 0 32px 0 8px; }
+section .paragraph-left { padding: 0 8px 0 0; }
+section .paragraph-right { padding: 0 0 0 8px; }
+/* entity colours: each one matches its chart colour and no two entities share a colour */
+:root {
+  --c-visitors: #2878b5;   /* chart 1: visitors arriving */
+  --c-residents: #d9770b;  /* chart 1: residents returning */
+  --c-tjobs: #16866d;      /* chart 1: tourism main jobs */
+  --c-econ: #7b8084;       /* chart 1: whole-economy main jobs */
+  --c-nea: #9e2e6a;        /* chart 5: North-East Asia */
+  --c-sea: #6b8e23;        /* chart 5: South-East Asia */
+  --c-sca: #8c564b;        /* chart 5: South & Central Asia */
+  --c-oce: #249fa8;        /* chart 5: Oceania */
+  --c-eur: #414faa;        /* chart 5: Europe */
+  --c-ame: #d4a017;        /* chart 5: Americas */
+  --c-afr: #3a3a3a;        /* chart 5: Africa & Middle East */
+  --c-char: #50a824;       /* chart 9: characteristic (tourism) industries */
+  --c-conn: #946938;       /* chart 9: connected industries */
+  --c-male: #1f3a6e;       /* chart 10: male */
+  --c-female: #e0529c;     /* chart 10: female */
+}
+.kw { font-weight: 700; }
+.kw-visitors { color: var(--c-visitors); }
+.kw-residents { color: var(--c-residents); }
+.kw-tjobs { color: var(--c-tjobs); }
+.kw-econ { color: var(--c-econ); }
+.kw-nea { color: var(--c-nea); }
+.kw-sea { color: var(--c-sea); }
+.kw-sca { color: var(--c-sca); }
+.kw-oce { color: var(--c-oce); }
+.kw-eur { color: var(--c-eur); }
+.kw-ame { color: var(--c-ame); }
+.kw-afr { color: var(--c-afr); }
+.kw-char { color: var(--c-char); }
+.kw-conn { color: var(--c-conn); }
+.kw-male { color: var(--c-male); }
+.kw-female { color: var(--c-female); }
+/* enlarged first letter (inline, sans-serif, stays on the first line) of every text paragraph (not chart descriptions, notes or the subtitle).
+   Neutral black unless the paragraph starts with a colour-coded keyword (then it takes that colour). */
+p:not(.chart-desc):not(.note):not(.subtitle) { --drop: #000000; }
+p.first-visitors { --drop: var(--c-visitors); }
+p.first-residents { --drop: var(--c-residents); }
+p.first-tjobs { --drop: var(--c-tjobs); }
+p.first-econ { --drop: var(--c-econ); }
+p.first-nea { --drop: var(--c-nea); }
+p.first-sca { --drop: var(--c-sca); }
+p.first-male { --drop: var(--c-male); }
+p.first-female { --drop: var(--c-female); }
+p:not(.chart-desc):not(.note):not(.subtitle)::first-letter { font-family: inherit; font-size: 1.7em; font-weight: 400; line-height: 0.85; color: var(--drop); }
 section { margin-bottom: 40px; padding: 12px 0; background: #fff; border-radius: 16px; overflow: hidden; }
 header { margin-bottom: 40px; padding-top: 12px; background: #fff; border-radius: 16px; overflow: hidden; }
 main > section:last-of-type { margin-bottom: 0; }
@@ -26,11 +75,18 @@ footer { padding-left: 12px; border-radius: 16px; }
 .vega-bind { display: flex; align-items: center; gap: 10px; }
 .vega-bind input[type=range] { width: 320px; max-width: 70%; }
 /* greyed-out description under each chart title: what the chart shows and how to interact with it */
-.chart-desc { margin: 0; padding: 4px 0 8px; max-width: none; font-size: 18px; line-height: 1.4; color: #6b6b6b; }
+.chart-desc { margin: 0; padding: 4px 0 8px; max-width: 52ch; font-size: 18px; line-height: 1.4; color: #6b6b6b; }
 
 /* centre only the interpretation paragraphs (not descriptions, notes or headings) */
-section p:not(.note):not(.chart-desc) { text-align: center; margin-left: auto; margin-right: auto; }
+section p:not(.note):not(.chart-desc):not(.paragraph-column) { text-align: center; margin-left: auto; margin-right: auto; }
 
 @media (max-width: 700px) {
-  .intro { grid-template-columns: 1fr; gap: 0; width: auto; }
+  .paragraph-columns, header .paragraph-columns { grid-template-columns: 1fr; gap: 0; width: auto; }
 }
+/* grouped story parts: a numbered part title, then several charts inside the same card */
+.part-title { margin: 0; padding: 8px 0 4px; font-size: 38px; }
+.chart-title { margin: 0; padding: 0 0 2px; font-family: Georgia, "Times New Roman", serif; font-size: 26px; }
+.chart-block + .chart-block .chart-title { margin-top: 40px; padding-top: 32px; border-top: 1px solid #d9d9d9; }
+.part-title + .chart-block, .pure-g > .chart-block:first-of-type { padding-top: 0; }
+.how-to-read { max-width: none; margin: 0; padding: 4px 92px 20px; text-align: left; }
+@media (max-width: 700px) { .how-to-read { padding: 4px 24px 20px; } .part-title { font-size: 30px; } .chart-title { font-size: 22px; } }

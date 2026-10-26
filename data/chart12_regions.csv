@@ -1,7 +1,7 @@
 state,region,b2021,b2025,pct,lon,lat,label,label_pos
 Vic,Melbourne,43929,46058,4.8,144.96,-37.81,Melbourne,left
 NSW,Sydney,44752,45992,2.8,151.2,-33.87,Sydney,right
-Qld,Brisbane,16232,17268,6.4,153.03,-27.47,Brisbane,right
+Qld,Brisbane,16232,17268,6.4,153.03,-27.47,Brisbane,left
 WA,Perth,14268,15208,6.6,115.86,-31.95,Perth,left
 SA,Adelaide,7743,8251,6.6,138.6,-34.93,Adelaide,left
 Qld,Gold Coast,5787,6352,9.8,153.4,-28.0,,

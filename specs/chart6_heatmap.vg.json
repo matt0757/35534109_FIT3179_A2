@@ -197,7 +197,7 @@
    "mark": {
     "type": "rect",
     "fill": null,
-    "stroke": "#d9770b",
+    "stroke": "#111111",
     "strokeWidth": 3
    },
    "encoding": {
@@ -307,7 +307,7 @@
     "values": [
      {
       "year": 2019,
-      "t": "Orange outline = busiest month of the year"
+      "t": "Black outline = busiest month of the year"
      }
     ]
    },
@@ -315,7 +315,7 @@
     "type": "text",
     "align": "left",
     "fontSize": 12,
-    "color": "#b35f00",
+    "color": "#111111",
     "fontWeight": "bold",
     "dx": {
      "expr": "width/24+10"
