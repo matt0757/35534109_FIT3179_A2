@@ -7,6 +7,9 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="css/style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -34,19 +37,20 @@
         <p class="chart-desc">* Hover over the chart to compare any quarter.</p>
         <div id="chart1"></div>
         <div class="paragraph-columns">
-          <p class="paragraph-column paragraph-left">While <span class="kw kw-visitors">international visitor arrivals</span> to Australia remain constrained at 90% of pre-pandemic baseline levels (2019), the domestic tourism sector has demonstrated remarkable employment growth, with <span class="kw kw-tjobs">tourism main jobs</span> surging to 128% of 2019 levels. This significant divergence indicates that workforce demand in the sector is no longer strictly tied to <span class="kw kw-visitors">foreign tourist volumes</span>.</p>
+          <p class="paragraph-column paragraph-left">While <span class="kw kw-visitors">international visitor arrivals</span> to Australia remain constrained at 90% of pre-pandemic baseline levels (the latest quarter, April to June 2026, against 2019), the domestic tourism sector has demonstrated remarkable employment growth, with <span class="kw kw-tjobs">tourism main jobs</span> surging to 128% of 2019 levels. This significant divergence indicates that workforce demand in the sector is no longer strictly tied to <span class="kw kw-visitors">foreign tourist volumes</span>.</p>
           <p class="paragraph-column paragraph-right">Instead, employment expansion is primarily sustained by robust domestic activity, mirrored by <span class="kw kw-residents">returning residents</span> reaching 112% of 2019 levels, alongside broader national employment growth where <span class="kw kw-econ">whole-economy jobs</span> stand at 116%. Overall, domestic travel demand and localized industry adaptation are effectively driving job creation despite the incomplete recovery of <span class="kw kw-visitors">international arrival numbers</span>.</p>
         </div>
+        <p class="note">Note: this chart uses the latest single quarter, so visitors are at about 90% of 2019. Charts 1.3 and 2.3 use 12-month rolling totals, which smooth out seasonality and put visitors at about 96% of 2019.</p>
       </div>
       <div class="pure-u-1 chart-block">
         <h3 class="chart-title">1.2 The December peak survived the shutdown, but the quiet months are still quieter</h3>
-        <p class="chart-desc">Visitors per month (thousands), with colour showing each month as a percentage of the same month in 2019.<br>* Hover over a square for details.</p>
+        <p class="chart-desc">Colour shows each month as a percentage of the same month in 2019 (blue is above 2019, red is below); the number in each square is visitors per month (thousands).<br>* Hover over a square for details.</p>
         <div id="chart6"></div>
         <p>The gap is not even across the year either. December 2025 reached 96% of its 2019 level and February 2026 slightly passed its old peak, but June is still at 86%. Peak-season demand is close to normal while the quieter months lag, so the recovery is arriving in bursts rather than evenly.</p>
       </div>
       <div class="pure-u-1 chart-block">
         <h3 class="chart-title">1.3 The <span class="kw kw-tjobs">jobs</span> came back long before the <span class="kw kw-visitors">visitors</span> did</h3>
-        <p class="chart-desc">Overseas visitors (12-month total) and tourism jobs (12-month average), connected in time order.<br>* Hover over a dot for details.</p>
+        <p class="chart-desc">Overseas visitors (12-month rolling total, about 96% of 2019 by mid-2026) and tourism jobs (12-month average), connected in time order.<br>* Hover over a dot for details.</p>
         <div id="chart2"></div>
         <p class="first-tjobs"><span class="kw kw-tjobs">Tourism jobs</span> were near or above their old level while <span class="kw kw-visitors">international arrivals</span> were still recovering, and they kept climbing as <span class="kw kw-visitors">visitors</span> slowly returned. Employment, it seems, is not simply following the number of <span class="kw kw-visitors">international arrivals</span>, so the next question is who is arriving now.</p>
       </div>
@@ -61,7 +65,7 @@
         <h3 class="chart-title">2.1 New Zealand now leads China in visitors</h3>
         <p class="chart-desc">Top visitor markets ranked by number of visitors, 2019 compared with the year to June 2026.<br>* Hover over a line or dot for details.</p>
         <div id="chart4"></div>
-        <p>The first answer is in the ranking. New Zealand (1.42 million visitors) has overtaken China (1.13 million), which was the largest source market in 2019, a lead of about 300,000 visitors. China is 22% below 2019 while South Korea is 45% above it, so this is not a general slowdown: some markets have shrunk and others have grown.</p>
+        <p>The first answer is in the ranking. New Zealand (1.42 million visitors) has overtaken China (1.13 million), which was the largest source market in 2019, a lead of about 300,000 visitors. China is 22% below 2019 while South Korea is 45% above it, so this is not a general slowdown: some markets have shrunk and others have grown. The sharpest fall among the top markets is Malaysia, down 44% from 385,000 to 215,000 visitors, which drops it from 8th to 11th place.</p>
       </div>
       <div class="pure-u-1 chart-block">
         <h3 class="chart-title">2.2 Australia’s visitor map has been redrawn</h3>
@@ -74,15 +78,15 @@
         <p class="chart-desc">Overseas visitors to Australia by region of residence, 12-month totals (millions).<br>* Hover over the chart for details.</p>
         <div id="chart5"></div>
         <div class="paragraph-columns">
-          <p class="paragraph-column paragraph-left">Following the reopening of borders in February 2022, visitor numbers have steadily rebounded. However, the recovery is asymmetrical: regions like <span class="kw kw-sca">South &amp; Central Asia</span> have grown past previous levels (+0.61M with +0.08 growth), while others remain slightly below pre-pandemic baselines.</p>
-          <p class="paragraph-column paragraph-right">As highlighted by the title, <span class="kw kw-nea">North-East Asia</span> accounted for the largest share of visitors prior to 2020. Post-reopening, it remains the largest component of visitors still "missing" compared to pre-pandemic peaks, showing a larger deficit (-0.28) than any other region.</p>
+          <p class="paragraph-column paragraph-left">Following the reopening of borders in February 2022, visitor numbers have steadily rebounded. However, the recovery is asymmetrical: regions like <span class="kw kw-sca">South &amp; Central Asia</span> have grown past previous levels (now 0.61M visitors, up 0.08M or about 80,000 on 2019), while others remain slightly below pre-pandemic baselines.</p>
+          <p class="paragraph-column paragraph-right">As highlighted by the title, <span class="kw kw-nea">North-East Asia</span> accounted for the largest share of visitors prior to 2020. Post-reopening, it remains the largest component of visitors still "missing" compared to pre-pandemic peaks, showing a larger deficit (−0.28M) than any other region.</p>
         </div>
       </div>
       <div class="pure-u-1 chart-block">
         <h3 class="chart-title">2.4 Fewer holidaymakers and short stays, more workers and long stays</h3>
         <p class="chart-desc">Change in visitors since 2019 by purpose of visit (top) and length of stay (bottom).<br>* Hover over a bar for details.</p>
         <div id="chart7"></div>
-        <p>So who is filling the gap? The mix of visitors has changed. Holiday and business travel have fallen, while employment-related visits are up 81% and stays of six to twelve months are up 18%. Visitors are coming for work more than for holidays and staying longer, which may be how fewer arrivals can still support so much activity.</p>
+        <p>So who is filling the gap? The mix of visitors has changed. Holiday and business travel have fallen, while employment-related visits are up 81% and stays of six to twelve months are up 18%. Holidays are still by far the biggest reason to visit (about 4.13 million visitors against 389,000 for work), but the share of visitors who come for work has almost doubled, from about 2.3% of visitors in 2019 to about 4.3% now, and more of them are staying longer. That shift in the mix may be how fewer arrivals can still support so much activity.</p>
       </div>
     </section>
 
@@ -113,10 +117,10 @@
         <p>Looking inside the jobs themselves, employment has grown for both <span class="kw kw-male">men</span> and <span class="kw kw-female">women</span>, but mostly in part-time work. <span class="kw kw-male">Men’s</span> part-time jobs rose 39%, lifting their share of <span class="kw kw-male">male</span> tourism employment, while <span class="kw kw-female">women’s</span> part-time share stayed around two-thirds. The recovery is adding flexible work more than conventional full-time positions.</p>
       </div>
       <div class="pure-u-1 chart-block">
-        <h3 class="chart-title">3.4 Business numbers grew in every state, led by the smaller jurisdictions</h3>
+        <h3 class="chart-title">3.4 Business numbers grew in every state, but unevenly: the ACT leads at +15% and Tasmania trails at +1%</h3>
         <p class="chart-desc">Change in tourism businesses by state, 2020 to 2025.<br>* Hover over a state for details.</p>
         <div id="chart11"></div>
-        <p>Business numbers grew in every state, and the gains are strongest in the smaller jurisdictions, with the ACT leading at 15%. The map starts in 2020, so it does not show the change from before COVID.</p>
+        <p>Business numbers grew in every state, but the gains were uneven. The ACT leads at 15%, followed by the Northern Territory and South Australia at about 9% each, while Tasmania (1%) and New South Wales (3%) barely moved. Tasmania and Victoria are also still below their earlier peaks. The map starts in 2020, so it does not show the change from before COVID.</p>
       </div>
       <div class="pure-u-1 chart-block">
         <h3 class="chart-title">3.5 Sydney and Melbourne hold almost half of the businesses</h3>

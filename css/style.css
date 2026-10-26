@@ -1,25 +1,15 @@
-body { margin: 0; padding: 32px; background: #D3D3D3; color: #222; font: 18px/1.5 Arial, sans-serif; }
-main { max-width: 1100px; margin: auto; }
-h1, h2 { font-family: Georgia, "Times New Roman", serif; }
-h1 { margin-bottom: 0; padding-left: 0; font-size: 64px; text-align: center; }
-h2 { font-size: 32px; margin-bottom: 0px; }
-h3 { margin-bottom: 4px; }
-p, h1, h2, h3, footer { background: #fff; }
-p { max-width: 52ch; }
-.subtitle { margin: 0 0 12px; padding: 0 12px 12px; max-width: none; font-size: 26px; color: #555; text-align:center; }
-/* two-column paragraph block (intro and chart sections): .paragraph-columns > .paragraph-left + .paragraph-right */
-.paragraph-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; width: 100%; margin: 0 auto; padding: 0 12px 12px; max-width: none; }
-header .paragraph-columns { width: calc(100% - 96px); }
-.paragraph-column { margin: 0; box-sizing: border-box; max-width: 52ch; }
-.paragraph-left { padding: 0 8px 0 32px; }
-.paragraph-right { padding: 0 32px 0 8px; }
-section .paragraph-left { padding: 0 8px 0 0; }
-section .paragraph-right { padding: 0 0 0 8px; }
-/* entity colours: each one matches its chart colour and no two entities share a colour */
+/* ---------- Typography: Google Fonts (linked in index.html) ---------- */
 :root {
-  --c-visitors: #2878b5;   /* chart 1: visitors arriving */
+  --font-heading: "Outfit", "Segoe UI", Arial, sans-serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+  /* semantic colours, reused by every chart:
+     visitors = blue, jobs = teal, business growth = purple, decline / below 2019 = red */
+  --c-visitors: #2878b5;   /* visitors / tourism demand (charts 1, 2, 6, 7) */
+  --c-jobs: #16866d;       /* employment / jobs (charts 1, 2, 8) */
+  --c-biz: #5b2d8c;        /* business numbers and business growth (charts 11, 12, 13) */
+  --c-down: #d6604d;       /* decline / below 2019 (charts 6, 7, 8, 12, 13) */
   --c-residents: #d9770b;  /* chart 1: residents returning */
-  --c-tjobs: #16866d;      /* chart 1: tourism main jobs */
+  --c-tjobs: var(--c-jobs);
   --c-econ: #7b8084;       /* chart 1: whole-economy main jobs */
   --c-nea: #9e2e6a;        /* chart 5: North-East Asia */
   --c-sea: #6b8e23;        /* chart 5: South-East Asia */
@@ -30,14 +20,34 @@ section .paragraph-right { padding: 0 0 0 8px; }
   --c-afr: #3a3a3a;        /* chart 5: Africa & Middle East */
   --c-char: #50a824;       /* chart 9: characteristic (tourism) industries */
   --c-conn: #946938;       /* chart 9: connected industries */
-  --c-decline: #d6604d;    /* chart 13: turnover decline */
+  --c-decline: var(--c-down);
   --c-male: #1f3a6e;       /* chart 10: male */
   --c-female: #e0529c;     /* chart 10: female */
+  --ui-accent: #2f5d8a;    /* controls: dropdowns and sliders */
+  --ui-border: #aeb7c0;
 }
-.kw { font-weight: 700; }
+body { margin: 0; padding: 32px; background: #D3D3D3; color: #222; font: 17px/1.6 var(--font-body); }
+main { max-width: 1100px; margin: auto; }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; letter-spacing: -0.01em; }
+h1 { margin-bottom: 0; padding-left: 0; font-size: 64px; font-weight: 700; text-align: center; }
+h2 { font-size: 32px; margin-bottom: 0px; }
+h3 { margin-bottom: 4px; }
+p, h1, h2, h3, footer { background: #fff; }
+p { max-width: 68ch; }
+.subtitle { margin: 0 0 12px; padding: 0 12px 12px; max-width: none; font-size: 24px; color: #555; text-align: center; }
+/* two-column paragraph block (intro and chart sections): .paragraph-columns > .paragraph-left + .paragraph-right */
+.paragraph-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; width: 100%; margin: 0 auto; padding: 0 12px 12px; max-width: none; }
+header .paragraph-columns { width: calc(100% - 96px); }
+.paragraph-column { margin: 0; box-sizing: border-box; max-width: 62ch; text-align: left; }
+.paragraph-left { padding: 0 8px 0 32px; }
+.paragraph-right { padding: 0 32px 0 8px; }
+section .paragraph-left { padding: 0 8px 0 0; }
+section .paragraph-right { padding: 0 0 0 8px; }
+/* keyword accents: bold weight with the entity colour, no background highlighting */
+.kw { font-weight: 600; }
 .kw-visitors { color: var(--c-visitors); }
 .kw-residents { color: var(--c-residents); }
-.kw-tjobs { color: var(--c-tjobs); }
+.kw-tjobs { color: var(--c-jobs); }
 .kw-econ { color: var(--c-econ); }
 .kw-nea { color: var(--c-nea); }
 .kw-sea { color: var(--c-sea); }
@@ -48,21 +58,11 @@ section .paragraph-right { padding: 0 0 0 8px; }
 .kw-afr { color: var(--c-afr); }
 .kw-char { color: var(--c-char); }
 .kw-conn { color: var(--c-conn); }
-.kw-decline { color: var(--c-decline); }
+.kw-decline { color: var(--c-down); }
+.kw-biz { color: var(--c-biz); }
 .kw-male { color: var(--c-male); }
 .kw-female { color: var(--c-female); }
-/* enlarged first letter (inline, sans-serif, stays on the first line) of every text paragraph (not chart descriptions, notes or the subtitle).
-   Neutral black unless the paragraph starts with a colour-coded keyword (then it takes that colour). */
-p:not(.chart-desc):not(.note):not(.subtitle) { --drop: #000000; }
-p.first-visitors { --drop: var(--c-visitors); }
-p.first-residents { --drop: var(--c-residents); }
-p.first-tjobs { --drop: var(--c-tjobs); }
-p.first-econ { --drop: var(--c-econ); }
-p.first-nea { --drop: var(--c-nea); }
-p.first-sca { --drop: var(--c-sca); }
-p.first-male { --drop: var(--c-male); }
-p.first-female { --drop: var(--c-female); }
-p:not(.chart-desc):not(.note):not(.subtitle)::first-letter { font-family: inherit; font-size: 1.7em; font-weight: 400; line-height: 0.85; color: var(--drop); }
+strong { font-weight: 600; }
 section { margin-bottom: 40px; padding: 12px 0; background: #fff; border-radius: 16px; overflow: hidden; }
 header { margin-bottom: 40px; padding-top: 12px; background: #fff; border-radius: 16px; overflow: hidden; }
 main > section:last-of-type { margin-bottom: 0; }
@@ -82,22 +82,55 @@ footer {
 /* let Vega charts fill their column (needed for "width": "container") */
 .vega-embed { display: block; width: 100%; max-width: 100%; overflow: hidden; }
 .vega-embed svg { display: block; width: 100%; max-width: 100%; height: auto; }
-/* year slider under the flow map (created by Vega-Lite) */
-.vega-bindings { margin: 6px 0 0 12px; font: 14px Arial, sans-serif; color: #333; }
-.vega-bind { display: flex; align-items: center; gap: 10px; }
-.vega-bind input[type=range] { width: 320px; max-width: 70%; }
-/* greyed-out description under each chart title: what the chart shows and how to interact with it */
-.chart-desc { margin: 0; padding: 4px 0 8px; max-width: 52ch; font-size: 18px; line-height: 1.4; color: #6b6b6b; }
 
-/* centre only the interpretation paragraphs (not descriptions, notes or headings) */
-section p:not(.note):not(.chart-desc):not(.paragraph-column) { text-align: center; margin-left: auto; margin-right: auto; }
+/* ---------- Controls: dropdowns and sliders (created by Vega-Lite) ---------- */
+.vega-bindings { margin: 8px 0 4px 12px; font: 500 14px/1.2 var(--font-body); color: #333; }
+.vega-bind { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin: 4px 0; }
+.vega-bind .vega-bind-name { font-weight: 600; color: #333; }
+.vega-bind label { display: inline-flex; align-items: center; gap: 12px; }
+.vega-bind-value { min-width: 3.5ch; font-variant-numeric: tabular-nums; color: #333; }
+
+.vega-bind select {
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  min-width: 190px; padding: 9px 38px 9px 14px;
+  font: 500 14px/1.2 var(--font-body); color: #222;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%232f5d8a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  border: 1.5px solid var(--ui-border); border-radius: 8px;
+  cursor: pointer; transition: border-color .15s, box-shadow .15s;
+}
+.vega-bind select:hover { border-color: var(--ui-accent); }
+.vega-bind select:focus-visible { outline: none; border-color: var(--ui-accent); box-shadow: 0 0 0 3px rgba(47, 93, 138, .25); }
+
+.vega-bind input[type=range] {
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  width: 320px; max-width: 70%; height: 28px; margin: 0; padding: 0;
+  background: transparent; cursor: pointer; accent-color: var(--ui-accent);
+}
+.vega-bind input[type=range]::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: #cfd6dd; border: 0; }
+.vega-bind input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; background: #cfd6dd; border: 0; }
+.vega-bind input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 20px; height: 20px; margin-top: -7px;
+  border-radius: 50%; background: var(--ui-accent); border: 3px solid #fff; box-shadow: 0 0 0 1.5px var(--ui-accent);
+}
+.vega-bind input[type=range]::-moz-range-thumb {
+  width: 14px; height: 14px; border-radius: 50%; background: var(--ui-accent); border: 3px solid #fff; box-shadow: 0 0 0 1.5px var(--ui-accent);
+}
+.vega-bind input[type=range]:focus-visible { outline: none; }
+.vega-bind input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 1.5px var(--ui-accent), 0 0 0 5px rgba(47, 93, 138, .25); }
+.vega-bind input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 1.5px var(--ui-accent), 0 0 0 5px rgba(47, 93, 138, .25); }
+
+/* greyed-out description under each chart title: what the chart shows and how to interact with it */
+.chart-desc { margin: 0; padding: 4px 0 8px; max-width: 68ch; font-size: 16px; line-height: 1.45; color: #5f5f5f; text-align: left; }
+
+/* narrative paragraphs under charts: left-aligned, readable line length */
+section p:not(.note):not(.chart-desc):not(.paragraph-column) { text-align: left; margin-left: 0; margin-right: auto; }
 
 @media (max-width: 700px) {
   .paragraph-columns, header .paragraph-columns { grid-template-columns: 1fr; gap: 0; width: auto; }
 }
 /* grouped story parts: a numbered part title, then several charts inside the same card */
 .part-title { margin: 0; padding: 8px 0 4px; font-size: 38px; }
-.chart-title { margin: 0; padding: 0 0 2px; font-family: Georgia, "Times New Roman", serif; font-size: 26px; }
+.chart-title { margin: 0; padding: 0 0 2px; font-family: var(--font-heading); font-size: 26px; line-height: 1.25; }
 .chart-block + .chart-block .chart-title { margin-top: 40px; padding-top: 32px; border-top: 1px solid #d9d9d9; }
 .part-title + .chart-block, .pure-g > .chart-block:first-of-type { padding-top: 0; }
 @media (max-width: 700px) { .how-to-read { padding: 4px 24px 20px; } .part-title { font-size: 30px; } .chart-title { font-size: 22px; } }

@@ -108,10 +108,10 @@
    ],
    "range": [
     "#d6604d",
-    "#d1e5f0",
-    "#92c5de",
-    "#4393c3",
-    "#2166ac"
+    "#e4dcf0",
+    "#c0abdc",
+    "#8a63b5",
+    "#5b2d8c"
    ]
   }
  ],
@@ -121,13 +121,13 @@
    "type": "symbol",
    "orient": "bottom",
    "direction": "horizontal",
-   "title": "Change in the number of businesses, 2020 to 2025 (%)",
+   "title": "Percentage Change (%)",
    "titleFontSize": 12,
    "labelFontSize": 12,
    "symbolType": "square",
    "symbolSize": 220,
    "columnPadding": 14,
-   "titleLimit": 420
+   "titleLimit": 300
   }
  ],
  "marks": [
@@ -323,7 +323,53 @@
       "signal": "(datum.y0 + datum.y1) / 2"
      },
      "opacity": {
-      "signal": "((datum.x1 - datum.x0) <= minW || (datum.y1 - datum.y0) <= minH) && (datum.x1 - datum.x0) > 34 && (datum.y1 - datum.y0) > 16 ? 1 : 0"
+      "signal": "((datum.x1 - datum.x0) <= minW || (datum.y1 - datum.y0) <= minH) && (datum.x1 - datum.x0) > 34 && (datum.y1 - datum.y0) > 16 && !((datum.x1 - datum.x0) > 42 && (datum.y1 - datum.y0) > 28) ? 1 : 0"
+     },
+     "fill": {
+      "signal": "datum.pct < 0 || datum.pct >= 20 ? '#ffffff' : '#1b1b1b'"
+     }
+    }
+   }
+  },
+  {
+   "type": "text",
+   "from": {
+    "data": "leaves"
+   },
+   "interactive": false,
+   "encode": {
+    "enter": {
+     "align": {
+      "value": "center"
+     },
+     "baseline": {
+      "value": "middle"
+     },
+     "fontSize": {
+      "value": 10
+     },
+     "fontWeight": {
+      "value": "bold"
+     },
+     "font": {
+      "value": "Arial"
+     },
+     "lineHeight": {
+      "value": 12
+     },
+     "text": {
+      "signal": "[{'Under $50k':'<$50k','$50k\u2013$200k':'$50\u2013200k','$200k\u2013$2m':'$0.2\u20132m','$2m\u2013$5m':'$2\u20135m','$5m\u2013$10m':'$5\u201310m','$10m or more':'$10m+'}[datum.band], format(datum.pct, '+.0f') + '%']"
+     }
+    },
+    "update": {
+     "x": {
+      "signal": "(datum.x0 + datum.x1) / 2"
+     },
+     "y": {
+      "signal": "(datum.y0 + datum.y1) / 2"
+     },
+     "opacity": {
+      "signal": "((datum.x1 - datum.x0) <= minW || (datum.y1 - datum.y0) <= minH) && (datum.x1 - datum.x0) > 42 && (datum.y1 - datum.y0) > 28 ? 1 : 0"
      },
      "fill": {
       "signal": "datum.pct < 0 || datum.pct >= 20 ? '#ffffff' : '#1b1b1b'"

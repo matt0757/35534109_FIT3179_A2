@@ -106,9 +106,9 @@
       "color": {
        "condition": {
         "test": "datum.change_k >= 0",
-        "value": "#2166ac"
+        "value": "#2878b5"
        },
-       "value": "#b2182b"
+       "value": "#d6604d"
       },
       "tooltip": [
        {
@@ -363,9 +363,9 @@
       "color": {
        "condition": {
         "test": "datum.pct >= 100",
-        "value": "#2166ac"
+        "value": "#2878b5"
        },
-       "value": "#b2182b"
+       "value": "#d6604d"
       }
      }
     },
@@ -511,9 +511,9 @@
       "color": {
        "condition": {
         "test": "datum.change_k >= 0",
-        "value": "#2166ac"
+        "value": "#2878b5"
        },
-       "value": "#b2182b"
+       "value": "#d6604d"
       },
       "tooltip": [
        {
@@ -764,9 +764,9 @@
       "color": {
        "condition": {
         "test": "datum.pct >= 100",
-        "value": "#2166ac"
+        "value": "#2878b5"
        },
-       "value": "#b2182b"
+       "value": "#d6604d"
       }
      }
     },

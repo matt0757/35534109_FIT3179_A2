@@ -117,7 +117,7 @@
    ],
    "mark": {
     "type": "area",
-    "color": "#2166ac",
+    "color": "#16866d",
     "opacity": 0.28,
     "interpolate": "linear"
    },
@@ -195,7 +195,7 @@
    ],
    "mark": {
     "type": "area",
-    "color": "#b2182b",
+    "color": "#d6604d",
     "opacity": 0.28,
     "interpolate": "linear"
    },
@@ -599,9 +599,9 @@
     "color": {
      "condition": {
       "test": "datum.dev >= 0",
-      "value": "#2166ac"
+      "value": "#16866d"
      },
-     "value": "#b2182b"
+     "value": "#d6604d"
     }
    }
   },

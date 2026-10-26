@@ -1,6 +1,6 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
- "description": "Month by year heatmap of overseas visitor arrivals, Jan 2017 to Jun 2026.",
+ "description": "Month by year heatmap of overseas visitor arrivals, Jan 2017 to Jun 2026, coloured by percentage of the same month in 2019.",
  "width": "container",
  "height": 400,
  "padding": {
@@ -89,24 +89,40 @@
      }
     },
     "color": {
-     "field": "visitors_k",
+     "field": "pct_2019",
      "type": "quantitative",
-     "title": "Visitors per month (thousands)",
+     "title": "Visitors as % of the same month in 2019",
      "scale": {
-      "scheme": "blues",
       "domain": [
        0,
-       1100
-      ]
+       50,
+       100,
+       110
+      ],
+      "range": [
+       "#b2182b",
+       "#f4a582",
+       "#eceff1",
+       "#2878b5"
+      ],
+      "clamp": true
      },
      "legend": {
       "orient": "bottom",
       "direction": "horizontal",
-      "gradientLength": 300,
-      "titleLimit": 320,
+      "gradientLength": 360,
+      "titleLimit": 360,
       "titleFontSize": 12,
       "labelFontSize": 12,
-      "format": ",.0f"
+      "values": [
+       0,
+       25,
+       50,
+       75,
+       100
+      ],
+      "format": ".0f",
+      "labelExpr": "datum.label + '%'"
      }
     },
     "tooltip": [
@@ -119,14 +135,14 @@
       "title": "Month"
      },
      {
-      "field": "visitors_k",
-      "title": "Visitors (thousands)",
-      "format": ",.0f"
-     },
-     {
       "field": "pct_2019",
       "title": "% of same month in 2019",
       "format": ".0f"
+     },
+     {
+      "field": "visitors_k",
+      "title": "Visitors (thousands)",
+      "format": ",.0f"
      }
     ]
    }
@@ -181,7 +197,7 @@
     },
     "color": {
      "condition": {
-      "test": "datum.visitors_k > 650",
+      "test": "datum.pct_2019 < 25",
       "value": "#ffffff"
      },
      "value": "#222"
