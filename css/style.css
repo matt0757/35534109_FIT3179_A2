@@ -30,6 +30,7 @@ section .paragraph-right { padding: 0 0 0 8px; }
   --c-afr: #3a3a3a;        /* chart 5: Africa & Middle East */
   --c-char: #50a824;       /* chart 9: characteristic (tourism) industries */
   --c-conn: #946938;       /* chart 9: connected industries */
+  --c-decline: #d6604d;    /* chart 13: turnover decline */
   --c-male: #1f3a6e;       /* chart 10: male */
   --c-female: #e0529c;     /* chart 10: female */
 }
@@ -47,6 +48,7 @@ section .paragraph-right { padding: 0 0 0 8px; }
 .kw-afr { color: var(--c-afr); }
 .kw-char { color: var(--c-char); }
 .kw-conn { color: var(--c-conn); }
+.kw-decline { color: var(--c-decline); }
 .kw-male { color: var(--c-male); }
 .kw-female { color: var(--c-female); }
 /* enlarged first letter (inline, sans-serif, stays on the first line) of every text paragraph (not chart descriptions, notes or the subtitle).
@@ -88,5 +90,4 @@ section p:not(.note):not(.chart-desc):not(.paragraph-column) { text-align: cente
 .chart-title { margin: 0; padding: 0 0 2px; font-family: Georgia, "Times New Roman", serif; font-size: 26px; }
 .chart-block + .chart-block .chart-title { margin-top: 40px; padding-top: 32px; border-top: 1px solid #d9d9d9; }
 .part-title + .chart-block, .pure-g > .chart-block:first-of-type { padding-top: 0; }
-.how-to-read { max-width: none; margin: 0; padding: 4px 92px 20px; text-align: left; }
 @media (max-width: 700px) { .how-to-read { padding: 4px 24px 20px; } .part-title { font-size: 30px; } .chart-title { font-size: 22px; } }
