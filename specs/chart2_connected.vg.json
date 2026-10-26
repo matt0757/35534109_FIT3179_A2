@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Connected scatterplot: each dot is a 12-month period, plotting overseas visitors against tourism jobs from 2018 to mid-2026.",
   "width": "container",
-  "height": 400,
+  "height": 500,
   "padding": {
     "left": 12,
     "right": 20,
@@ -70,7 +70,7 @@
       "mark": {
         "type": "text",
         "align": "right",
-        "fontSize": 12,
+        "fontSize": 14,
         "color": "#555",
         "dx": -5
       },
@@ -101,7 +101,7 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "fontSize": 12,
+        "fontSize": 14,
         "color": "#555",
         "dx": 4,
         "baseline": "top"
@@ -133,7 +133,7 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "fontSize": 13,
+        "fontSize": 14,
         "fontStyle": "italic",
         "color": "#555",
         "dx": 4
@@ -156,7 +156,7 @@
       "mark": {
         "type": "line",
         "color": "#b8bcc0",
-        "strokeWidth": 2
+        "strokeWidth": 2.5
       },
       "encoding": {
         "x": {
@@ -177,7 +177,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 70,
+        "size": 85,
         "opacity": 1
       },
       "encoding": {
@@ -201,7 +201,9 @@
               10
             ],
             "grid": true,
-            "format": "d"
+            "format": "d",
+            "labelFontSize": 15,
+            "titleFontSize": 16
           }
         },
         "y": {
@@ -222,7 +224,9 @@
               600,
               700
             ],
-            "grid": true
+            "grid": true,
+            "labelFontSize": 15,
+            "titleFontSize": 16
           }
         },
         "color": {
@@ -285,7 +289,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
         "lineBreak": "\n",
         "align": "right",
@@ -323,7 +327,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
         "lineBreak": "\n",
         "align": "left",
@@ -361,7 +365,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
         "lineBreak": "\n",
         "align": "right",
@@ -399,7 +403,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
         "lineBreak": "\n",
         "align": "right",
