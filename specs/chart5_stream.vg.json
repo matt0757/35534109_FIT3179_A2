@@ -99,8 +99,29 @@
             "title": "Visitors (millions)",
             "format": ".2f"
           }
-        ]
-      }
+        ],
+        "opacity": {
+          "condition": {
+            "param": "region_hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.35
+        }
+      },
+      "params": [
+        {
+          "name": "region_hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "region"
+            ],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ]
     },
     {
       "data": {
@@ -315,6 +336,14 @@
               "#7a7a7a"
             ]
           }
+        },
+        "opacity": {
+          "condition": {
+            "param": "region_hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.35
         }
       }
     }
