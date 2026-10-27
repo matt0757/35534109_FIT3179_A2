@@ -80,32 +80,37 @@
      "field": "pct",
      "type": "quantitative",
      "scale": {
-      "type": "threshold",
+      "type": "linear",
       "domain": [
-       3,
-       6,
-       9,
-       12
+       0,
+       15
       ],
       "range": [
        "#efe9f5",
-       "#d4c4e6",
-       "#b196d1",
-       "#8a63b5",
        "#5b2d8c"
-      ]
+      ],
+      "interpolate": "lab",
+      "clamp": true
      },
      "title": "Change in tourism businesses, 2020 to 2025 (%)",
      "legend": {
+      "type": "gradient",
       "orient": "bottom",
       "direction": "horizontal",
-      "symbolType": "square",
-      "symbolSize": 220,
+      "gradientLength": 260,
+      "gradientThickness": 14,
+      "values": [
+       0,
+       3,
+       6,
+       9,
+       12,
+       15
+      ],
+      "format": "d",
       "titleLimit": 320,
       "titleFontSize": 12,
-      "labelFontSize": 12,
-      "columnPadding": 10,
-      "type": "symbol"
+      "labelFontSize": 12
      }
     },
     "tooltip": [
@@ -213,7 +218,7 @@
     },
     "color": {
      "condition": {
-      "test": "datum.pct >= 9 && datum.state !== 'ACT'",
+      "test": "datum.pct >= 11 && datum.state !== 'ACT'",
       "value": "#ffffff"
      },
      "value": "#1b1b1b"
@@ -268,20 +273,17 @@
      "field": "pct",
      "type": "quantitative",
      "scale": {
-      "type": "threshold",
+      "type": "linear",
       "domain": [
-       3,
-       6,
-       9,
-       12
+       0,
+       15
       ],
       "range": [
        "#efe9f5",
-       "#d4c4e6",
-       "#b196d1",
-       "#8a63b5",
        "#5b2d8c"
-      ]
+      ],
+      "interpolate": "lab",
+      "clamp": true
      },
      "legend": null
     },
